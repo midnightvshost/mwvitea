@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Midnight Webs</title>
+<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicons/android-chrome-512x512.png">
+<meta name="theme-color" content="#050914">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -67,9 +75,7 @@
     border-radius:3px;
     color:var(--ink);
     cursor:pointer;
-    /* Keep the language control on the exact same animation curve as the island. */
-    transition: background .25s cubic-bezier(.22,1,.36,1), border-color .25s cubic-bezier(.22,1,.36,1), border-radius .25s cubic-bezier(.22,1,.36,1), padding .25s cubic-bezier(.22,1,.36,1);
-    will-change:border-radius,padding,background,border-color;
+    transition:background .2s ease, border-color .2s ease, border-radius .55s cubic-bezier(.22,1,.36,1), padding .55s cubic-bezier(.22,1,.36,1);
   }
   .lang-trigger:hover{background:rgba(143,178,255,0.06);border-color:var(--blue-light);}
   .lang-trigger .global-icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex:none;}
@@ -174,8 +180,8 @@
     padding:12px 22px;
     border-radius:2px;
     display:inline-block;
-    transition: filter .25s ease, transform .25s ease, background .25s cubic-bezier(.22,1,.36,1), border-color .25s cubic-bezier(.22,1,.36,1), border-radius .25s cubic-bezier(.22,1,.36,1), padding .25s cubic-bezier(.22,1,.36,1);
-    will-change:border-radius,padding,background,border-color;
+    transition:filter .25s ease, transform .25s ease, background .25s ease, border-color .25s ease,
+      border-radius .55s cubic-bezier(.22,1,.36,1), padding .55s cubic-bezier(.22,1,.36,1);
   }
   .btn-primary{
     background:linear-gradient(135deg, var(--blue), var(--blue-light));
@@ -385,8 +391,6 @@
     opacity:0.85; transition:opacity .2s ease;
   }
   .footer-col a:hover{opacity:1; color:var(--blue-light);}
-  .footer-bottom a{color:inherit; transition:color .2s ease, opacity .2s ease;}
-  .footer-bottom a:hover{color:var(--blue-light); opacity:1;}
   .footer-bottom{
     display:flex; justify-content:space-between; align-items:center;
     padding-top:28px; border-top:1px solid var(--line);
@@ -647,7 +651,7 @@
     </div>
     <div class="footer-bottom">
       <span data-i18n="footer_bottom1">© 2026 Midnight Webs. All rights reserved.</span>
-      <span data-i18n-html="footer_bottom2">Built &amp; hosted by Midnight Webs &amp; <a href="https://viteastudios.com" target="_blank" rel="noopener noreferrer">Vitea Studios</a></span>
+      <span data-i18n="footer_bottom2">Built &amp; hosted by Midnight Webs & Vitea Studios</span>
     </div>
   </div>
 </footer>
@@ -844,19 +848,19 @@
   })();
 
   const header = document.getElementById('siteHeader');
-  let headerScrolled = false;
-
-  function syncHeader() {
-    const shouldScroll = window.scrollY > 40;
-    if (shouldScroll === headerScrolled) return;
-    headerScrolled = shouldScroll;
-    header.classList.toggle('scrolled', shouldScroll);
+  let headerTicking = false;
+  function updateHeaderScrolled(){
+    const y = window.scrollY;
+    if (y > 40) header.classList.add('scrolled');
+    else if (y < 15) header.classList.remove('scrolled');
+    headerTicking = false;
   }
-
-  // One class controls the island + both controls, so entering and leaving
-  // the compact state always starts all three transitions on the same frame.
-  window.addEventListener('scroll', syncHeader, { passive: true });
-  syncHeader();
+  window.addEventListener('scroll', () => {
+    if (!headerTicking){
+      headerTicking = true;
+      requestAnimationFrame(updateHeaderScrolled);
+    }
+  }, { passive: true });
 
   const canvas = document.getElementById('constellation');
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
