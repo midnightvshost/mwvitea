@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers - Midnight Webs</title>
+<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#050914;
+    --deep:#0a1230;
+    --panel:#0c1638;
+    --blue:#3e63e0;
+    --blue-light:#8fb4ff;
+    --ink:#f2f5ff;
+    --muted:#8792b3;
+    --line:rgba(143,178,255,0.14);
+    --line-strong:rgba(143,178,255,0.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue-light); text-decoration:underline;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--blue-light);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px; height:1px;
+    background:var(--blue-light);
+    display:inline-block;
+  }
+  h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em; color:var(--ink);}
+  :focus-visible{outline:2px solid var(--blue-light); outline-offset:3px;}
+
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    background:rgba(5,9,20,0.86);
+    backdrop-filter:blur(14px);
+    position:sticky; top:0; z-index:100;
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand img{height:26px; width:auto;}
+  .brand-word{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--blue-light);
+    font-weight:500;
+  }
+  .brand-word em{font-style:normal; color:var(--ink);}
+  .back-link{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.05em;
+    color:var(--muted);
+    text-decoration:none;
+  }
+  .back-link:hover{color:var(--ink);}
+
+  main{padding:80px 0 100px;}
+  .page-head{margin-bottom:56px; max-width:680px;}
+  .page-head h1{font-size:clamp(30px,4vw,44px); margin-top:16px; line-height:1.15;}
+  .page-head p.lede{color:var(--muted); margin-top:16px; font-size:16px; line-height:1.65; max-width:600px;}
+
+  section.block{margin-bottom:80px;}
+  section.block h2{font-size:22px; margin-bottom:14px; color:var(--ink); font-weight:500;}
+  section.block > p{color:#c4cbe2; font-size:15px; line-height:1.75; margin-bottom:32px; max-width:640px;}
+
+  .role-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .role-card{
+    background:var(--void);
+    padding:32px 28px;
+    transition:background .3s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .role-card:hover{background:var(--panel);}
+  .role-card .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; color:var(--blue-light);
+    letter-spacing:0.1em; text-transform:uppercase;
+  }
+  .role-card h3{font-size:20px; color:var(--ink); margin:16px 0 12px; font-weight:500;}
+  .role-card p{font-size:14.5px; color:var(--muted); line-height:1.6; flex:1; margin-bottom:22px;}
+
+  .btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    padding:12px 22px;
+    border-radius:2px;
+    display:inline-block;
+    border:1px solid transparent;
+    cursor:pointer;
+    text-decoration:none;
+    transition:filter .25s ease, transform .25s ease, background .25s ease, border-color .25s ease;
+    text-align:center;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--blue), var(--blue-light));
+    color:#050914 !important;
+    font-weight:600;
+  }
+  .btn-primary:hover{filter:brightness(1.1); transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid var(--line-strong);
+    color:var(--ink) !important;
+    background:none;
+  }
+  .btn-ghost:hover{border-color:var(--blue-light); background:rgba(143,178,255,0.06);}
+  .btn-block{width:100%;}
+  .btn:disabled{opacity:0.5; cursor:not-allowed; filter:none; transform:none;}
+
+  .not-a-fit{
+    border:1px solid var(--line);
+    background:var(--panel);
+    padding:40px 36px;
+    text-align:center;
+    border-radius:4px;
+  }
+  .not-a-fit h2{font-size:22px; margin-bottom:10px;}
+  .not-a-fit p{color:#c4cbe2; font-size:15px; line-height:1.7; max-width:520px; margin:0 auto 20px;}
+
+  .legal-note{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.02em;
+    line-height:1.8;
+  }
+  .legal-note a{color:var(--blue-light);}
+
+  .divider{height:1px; background:var(--line); margin:56px 0;}
+
+  footer{padding:40px 0 60px; border-top:1px solid var(--line); margin-top:20px;}
+  footer p{font-size:13px; color:var(--muted);}
+  footer a{color:var(--blue-light);}
+
+  /* Application modal, styled like a compact email compose window */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:300;
+    background:rgba(5,9,20,0.72);
+    backdrop-filter:blur(8px);
+    display:flex; align-items:center; justify-content:center;
+    padding:24px;
+    opacity:0; visibility:hidden;
+    transition:opacity .2s ease, visibility .2s ease;
+  }
+  .modal-overlay.open{opacity:1; visibility:visible;}
+  .modal{
+    width:100%; max-width:560px;
+    max-height:88vh;
+    overflow-y:auto;
+    background:var(--panel);
+    border:1px solid var(--line-strong);
+    border-radius:8px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+    transform:translateY(10px) scale(.98);
+    transition:transform .2s ease;
+  }
+  .modal-overlay.open .modal{transform:translateY(0) scale(1);}
+  .modal-titlebar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 22px;
+    border-bottom:1px solid var(--line);
+  }
+  .modal-titlebar span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .modal-close{
+    background:none; border:0; color:var(--muted); cursor:pointer;
+    font-size:20px; line-height:1; padding:4px 8px;
+  }
+  .modal-close:hover{color:var(--ink);}
+  .modal-body{padding:22px;}
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:8px;
+  }
+  .field input[type="text"],
+  .field input[readonly],
+  .field textarea{
+    width:100%;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line-strong);
+    border-radius:4px;
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    font-size:14.5px;
+    padding:11px 13px;
+    resize:vertical;
+  }
+  .field input[readonly]{color:var(--muted); cursor:default;}
+  .field textarea{min-height:140px; line-height:1.55;}
+  .field input:focus, .field textarea:focus{border-color:var(--blue-light);}
+
+  .file-drop{
+    border:1px dashed var(--line-strong);
+    border-radius:4px;
+    padding:18px;
+    text-align:center;
+    cursor:pointer;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .file-drop:hover, .file-drop.dragover{border-color:var(--blue-light); background:rgba(143,178,255,0.05);}
+  .file-drop p{font-size:13px; color:var(--muted);}
+  .file-drop input[type="file"]{display:none;}
+  .file-list{margin-top:10px; display:flex; flex-direction:column; gap:6px;}
+  .file-list .file-item{
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:7px 10px;
+    font-size:13px; color:var(--ink);
+  }
+  .file-item button{
+    background:none; border:0; color:var(--muted); cursor:pointer; font-size:15px; line-height:1;
+  }
+  .file-item button:hover{color:#ff9d9d;}
+  .file-note{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.6;}
+  .modal-actions{display:flex; gap:12px; margin-top:6px;}
+  .modal-actions .btn{flex:1;}
+
+  @media (max-width:900px){
+    .role-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:640px){
+    .role-grid{grid-template-columns:1fr;}
+    .not-a-fit{padding:32px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-mark.png" alt="">
+      <span class="brand-word">Midnight<em>Webs</em></span>
+    </a>
+    <a href="index.html" class="back-link">&larr; Back to site</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow">Careers</div>
+      <h1>Help us build the sites small businesses run on.</h1>
+      <p class="lede">Midnight Webs is a small, hands-on studio. We design, host, and secure websites for real businesses, and we're looking for people who care about doing that well. Below are the roles we're hiring for right now.</p>
+    </div>
+
+    <section class="block" id="open-roles">
+      <h2>Open roles</h2>
+      <p>Every role here works closely with the rest of the team. Pick the one that fits, or scroll down if none of them quite do.</p>
+
+      <div class="role-grid">
+        <div class="role-card">
+          <div class="tag">Engineering</div>
+          <h3>Web Developer</h3>
+          <p>Build and maintain custom sites for our clients, from first draft to launch, with an eye for clean code, speed, and pixel-level detail.</p>
+          <button type="button" class="btn btn-primary btn-block apply-btn" data-role="Web Developer">Apply</button>
+        </div>
+        <div class="role-card">
+          <div class="tag">Client Relations</div>
+          <h3>Clients Manager</h3>
+          <p>Be the main point of contact for our clients, from onboarding through ongoing support, keeping projects on track and clients informed.</p>
+          <button type="button" class="btn btn-primary btn-block apply-btn" data-role="Clients Manager">Apply</button>
+        </div>
+        <div class="role-card">
+          <div class="tag">Moderation</div>
+          <h3>Server Staff</h3>
+          <p>Manage and maintain the Midnight Webs Discord server, helping members, keeping channels organized, enforcing server rules, and making sure the community stays welcoming and active.</p>
+          <button type="button" class="btn btn-primary btn-block apply-btn" data-role="Server Staff">Apply</button>
+        </div>
+        <div class="role-card">
+          <div class="tag">Quality</div>
+          <h3>QA / Web Tester</h3>
+          <p>Test sites across browsers and devices before launch, track down bugs, and help make sure nothing ships broken.</p>
+          <button type="button" class="btn btn-primary btn-block apply-btn" data-role="QA / Web Tester">Apply</button>
+        </div>
+        <div class="role-card">
+          <div class="tag">Delivery</div>
+          <h3>Project Manager</h3>
+          <p>Plan timelines, coordinate between design, development, and clients, and make sure every project ships on time and on scope.</p>
+          <button type="button" class="btn btn-primary btn-block apply-btn" data-role="Project Manager">Apply</button>
+        </div>
+          <div class="role-card">
+          <div class="tag">Support</div>
+          <h3>Technical Support Specialist</h3>
+          <p>Assist clients with technical issues after launch, help resolve issues involving domains, email, integrations, and other services to keep everything running smoothly.</p>
+          <button type="button" class="btn btn-primary btn-block apply-btn" data-role="Technical Support Specialist">Apply</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="not-a-fit">
+        <h2>Don't see a perfect fit?</h2>
+        <p>We're always looking for talented people. Reach out at <a href="mailto:career.midnightwebs@gmail.com">career.midnightwebs@gmail.com</a></p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <p class="legal-note">
+      Know Your Rights: Workplace Discrimination is Illegal (EEOC Poster) — <a href="https://www.eeoc.gov/know-your-rights-workplace-discrimination-illegal" target="_blank" rel="noopener noreferrer">eeoc.gov/know-your-rights-workplace-discrimination-illegal</a>
+    </p>
+    <p class="legal-note" style="margin-top:10px;">
+      For more info on how we handle application data, check our <a href="privacy.html">Privacy Policy</a>.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Midnight Webs. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+  <div class="modal">
+    <div class="modal-titlebar">
+      <span>New message</span>
+      <button type="button" class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label for="applyTo">To</label>
+        <input type="text" id="applyTo" value="career.midnightwebs@gmail.com" readonly>
+      </div>
+      <div class="field">
+        <label for="applySubject" id="applyModalTitle">Subject</label>
+        <input type="text" id="applySubject" value="Application for ">
+      </div>
+      <div class="field">
+        <label>Attachments</label>
+        <div class="file-drop" id="fileDrop">
+          <p>Click to add your CV, portfolio, or past work<br>(or drag files here)</p>
+          <input type="file" id="fileInput" multiple>
+        </div>
+        <div class="file-list" id="fileList"></div>
+        <p class="file-note">Email links can't attach files automatically. Once your email app opens, please attach these files yourself before hitting send &mdash; we've listed them in the message body as a reminder.</p>
+      </div>
+      <div class="field">
+        <label for="applyMessage">Message</label>
+        <textarea id="applyMessage" placeholder="Tell us a bit about yourself, your experience, and why you're a good fit for this role."></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="modalCancel">Cancel</button>
+        <button type="button" class="btn btn-primary" id="modalSend">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const applyButtons = document.querySelectorAll('.apply-btn');
+  const modal = document.getElementById('applyModal');
+  const subjectInput = document.getElementById('applySubject');
+  const messageInput = document.getElementById('applyMessage');
+  const fileDrop = document.getElementById('fileDrop');
+  const fileInput = document.getElementById('fileInput');
+  const fileListEl = document.getElementById('fileList');
+  const modalClose = document.getElementById('modalClose');
+  const modalCancel = document.getElementById('modalCancel');
+  const modalSend = document.getElementById('modalSend');
+
+  const RECIPIENT = 'career.midnightwebs@gmail.com';
+  let selectedFiles = [];
+
+  function renderFileList(){
+    fileListEl.innerHTML = '';
+    selectedFiles.forEach((file, idx) => {
+      const row = document.createElement('div');
+      row.className = 'file-item';
+      const name = document.createElement('span');
+      name.textContent = file.name;
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.setAttribute('aria-label', 'Remove file');
+      remove.textContent = '\u00d7';
+      remove.addEventListener('click', () => {
+        selectedFiles.splice(idx, 1);
+        renderFileList();
+      });
+      row.appendChild(name);
+      row.appendChild(remove);
+      fileListEl.appendChild(row);
+    });
+  }
+
+  function addFiles(fileArray){
+    Array.from(fileArray).forEach(f => selectedFiles.push(f));
+    renderFileList();
+  }
+
+  fileDrop.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', (e) => {
+    addFiles(e.target.files);
+    fileInput.value = '';
+  });
+  ['dragenter','dragover'].forEach(evt => {
+    fileDrop.addEventListener(evt, (e) => {
+      e.preventDefault();
+      fileDrop.classList.add('dragover');
+    });
+  });
+  ['dragleave','drop'].forEach(evt => {
+    fileDrop.addEventListener(evt, (e) => {
+      e.preventDefault();
+      fileDrop.classList.remove('dragover');
+    });
+  });
+  fileDrop.addEventListener('drop', (e) => {
+    if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+  });
+
+  function openModal(role){
+    subjectInput.value = 'Application for ' + role;
+    messageInput.value = '';
+    selectedFiles = [];
+    renderFileList();
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  applyButtons.forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.role));
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modalCancel.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  modalSend.addEventListener('click', () => {
+    const subject = subjectInput.value.trim() || 'Job application';
+    let body = messageInput.value.trim();
+
+    if (selectedFiles.length){
+      body += '\n\n---\nFiles to attach before sending:\n';
+      body += selectedFiles.map(f => '- ' + f.name).join('\n');
+    }
+
+    const mailto = 'mailto:' + RECIPIENT
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+    closeModal();
+  });
+</script>
+
+</body>
+</html>
