@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found - Midnight Webs</title>
+<meta name="description" content="The page you're looking for doesn't exist or may have moved. Head back to the Midnight Webs homepage.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicons/android-chrome-512x512.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#050914">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#050914;
+    --deep:#0a1230;
+    --panel:#0c1638;
+    --blue:#3e63e0;
+    --blue-light:#8fb4ff;
+    --ink:#f2f5ff;
+    --muted:#8792b3;
+    --line:rgba(143,178,255,0.14);
+    --line-strong:rgba(143,178,255,0.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{max-width:100%; overflow-x:hidden; height:100%;}
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  img,svg{max-width:100%; height:auto;}
+  a{color:var(--blue-light); overflow-wrap:anywhere; word-break:break-word;}
+  :focus-visible{outline:2px solid var(--blue-light); outline-offset:3px;}
+
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:0 32px; width:100%;}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-word{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--blue-light);
+    font-weight:500;
+  }
+  .brand-word em{font-style:normal; color:var(--ink);}
+
+  main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 0;
+  }
+  .content{
+    max-width:560px;
+    padding:0 32px;
+    text-align:center;
+  }
+  .code{
+    font-family:'Bodoni Moda',serif;
+    font-weight:500;
+    font-size:clamp(72px,14vw,120px);
+    line-height:1;
+    background:linear-gradient(135deg, var(--blue-light), var(--blue));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  h1{
+    font-family:'Bodoni Moda',serif;
+    font-weight:500;
+    font-size:clamp(22px,3vw,28px);
+    margin-top:8px;
+    color:var(--ink);
+  }
+  p.lede{
+    color:var(--muted);
+    font-size:15.5px;
+    line-height:1.7;
+    margin-top:14px;
+  }
+  .actions{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:32px;
+  }
+  .btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    padding:12px 22px;
+    border-radius:2px;
+    display:inline-block;
+    border:1px solid transparent;
+    cursor:pointer;
+    text-decoration:none;
+    transition:filter .25s ease, transform .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--blue), var(--blue-light));
+    color:#050914 !important;
+    font-weight:600;
+  }
+  .btn-primary:hover{filter:brightness(1.1); transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid var(--line-strong);
+    color:var(--ink) !important;
+    background:none;
+  }
+  .btn-ghost:hover{border-color:var(--blue-light); background:rgba(143,178,255,0.06);}
+
+  .links{
+    margin-top:28px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.03em;
+  }
+  .links a{color:var(--blue-light); text-decoration:underline;}
+  .links span{color:var(--line-strong); margin:0 8px;}
+
+  footer{padding:28px 0; border-top:1px solid var(--line);}
+  footer p{font-size:13px; color:var(--muted); text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="/index.html" class="brand">
+      <span class="brand-word">Midnight<em>Webs</em></span>
+    </a>
+  </nav>
+</header>
+
+<main>
+  <div class="content">
+    <div class="code">404</div>
+    <h1>This page took a detour.</h1>
+    <p class="lede">The page you're looking for doesn't exist, or it may have moved. Let's get you back on track.</p>
+    <div class="actions">
+      <a href="../index.html" class="btn btn-primary">Back to homepage</a>
+      <a href="mailto:contact.midnightwebs@gmail.com" class="btn btn-ghost">Contact us</a>
+    </div>
+    <p class="links">
+      <a href="/careers">Careers</a><span>&middot;</span><a href="/privacy">Privacy Policy</a><span>&middot;</span><a href="/terms">Terms &amp; Conditions</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Midnight Webs. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

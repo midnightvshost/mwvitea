@@ -4,7 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers - Midnight Webs</title>
-<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+<meta name="description" content="See current openings at Midnight Webs, a small studio designing, hosting, and securing websites for real businesses, and apply directly by email.">
+<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicons/android-chrome-512x512.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#050914">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -18,16 +27,20 @@
     --muted:#8792b3;
     --line:rgba(143,178,255,0.14);
     --line-strong:rgba(143,178,255,0.28);
+    --error:#ff9d9d;
+    --success:#7be0c9;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
+  html,body{max-width:100%; overflow-x:hidden;}
   body{
     background:var(--void);
     color:var(--ink);
     font-family:'Manrope',sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--blue-light); text-decoration:underline;}
+  img,svg{max-width:100%; height:auto; display:block;}
+  a{color:var(--blue-light); text-decoration:underline; overflow-wrap:anywhere; word-break:break-word;}
   .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
@@ -249,6 +262,39 @@
   }
   .file-item button:hover{color:#ff9d9d;}
   .file-note{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.6;}
+
+  .consent-field{
+    display:flex; align-items:flex-start; gap:10px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:13px 14px;
+    margin-bottom:16px;
+  }
+  .consent-field input[type="checkbox"]{
+    width:17px; height:17px; margin-top:1px; flex-shrink:0;
+    accent-color:var(--blue-light); cursor:pointer;
+  }
+  .consent-field label{
+    font-family:'Manrope',sans-serif;
+    font-size:13.5px; line-height:1.55; color:#c4cbe2;
+    text-transform:none; letter-spacing:normal; margin:0; cursor:pointer;
+  }
+  .consent-field a{color:var(--blue-light);}
+
+  .form-message{
+    display:none;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px; line-height:1.6;
+    padding:11px 13px;
+    border-radius:4px;
+    margin-bottom:16px;
+    border:1px solid transparent;
+  }
+  .form-message.visible{display:block;}
+  .form-message.error{color:var(--error); background:rgba(255,157,157,0.08); border-color:rgba(255,157,157,0.3);}
+  .form-message.success{color:var(--success); background:rgba(123,224,201,0.08); border-color:rgba(123,224,201,0.3);}
+
   .modal-actions{display:flex; gap:12px; margin-top:6px;}
   .modal-actions .btn{flex:1;}
 
@@ -337,7 +383,7 @@
       Know Your Rights: Workplace Discrimination is Illegal (EEOC Poster) — <a href="https://www.eeoc.gov/know-your-rights-workplace-discrimination-illegal" target="_blank" rel="noopener noreferrer">eeoc.gov/know-your-rights-workplace-discrimination-illegal</a>
     </p>
     <p class="legal-note" style="margin-top:10px;">
-      For more info on how we handle application data, check our <a href="privacy.html">Privacy Policy</a>.
+      For more on how we handle application data, see our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms &amp; Conditions</a>.
     </p>
   </div>
 </main>
@@ -370,15 +416,23 @@
           <input type="file" id="fileInput" multiple>
         </div>
         <div class="file-list" id="fileList"></div>
-        <p class="file-note">Email links can't attach files automatically. Once your email app opens, please attach these files yourself before hitting send &mdash; we've listed them in the message body as a reminder.</p>
+        <p class="file-note">Email links can't attach files automatically. Once your email app opens, please attach these files yourself before hitting send, we've listed them in the message body as a reminder.</p>
       </div>
       <div class="field">
         <label for="applyMessage">Message</label>
         <textarea id="applyMessage" placeholder="Tell us a bit about yourself, your experience, and why you're a good fit for this role."></textarea>
       </div>
+
+      <div class="consent-field">
+        <input type="checkbox" id="agreeConsent">
+        <label for="agreeConsent">I confirm that I am 18 years of age or older, and I agree to Midnight Webs' <a href="/terms" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</label>
+      </div>
+
+      <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+
       <div class="modal-actions">
         <button type="button" class="btn btn-ghost" id="modalCancel">Cancel</button>
-        <button type="button" class="btn btn-primary" id="modalSend">Send</button>
+        <button type="button" class="btn btn-primary" id="modalSend" disabled>Send</button>
       </div>
     </div>
   </div>
@@ -395,9 +449,26 @@
   const modalClose = document.getElementById('modalClose');
   const modalCancel = document.getElementById('modalCancel');
   const modalSend = document.getElementById('modalSend');
+  const agreeConsent = document.getElementById('agreeConsent');
+  const formMessage = document.getElementById('formMessage');
 
   const RECIPIENT = 'career.midnightwebs@gmail.com';
   let selectedFiles = [];
+
+  function showMessage(text, type){
+    formMessage.textContent = text;
+    formMessage.className = 'form-message visible ' + type;
+  }
+
+  function clearMessage(){
+    formMessage.textContent = '';
+    formMessage.className = 'form-message';
+  }
+
+  agreeConsent.addEventListener('change', () => {
+    modalSend.disabled = !agreeConsent.checked;
+    if (agreeConsent.checked) clearMessage();
+  });
 
   function renderFileList(){
     fileListEl.innerHTML = '';
@@ -451,6 +522,9 @@
     messageInput.value = '';
     selectedFiles = [];
     renderFileList();
+    agreeConsent.checked = false;
+    modalSend.disabled = true;
+    clearMessage();
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -472,6 +546,16 @@
   });
 
   modalSend.addEventListener('click', () => {
+    if (!agreeConsent.checked){
+      showMessage('Please confirm you\u2019re 18 or older and agree to our Terms & Conditions and Privacy Policy before sending.', 'error');
+      return;
+    }
+    if (!messageInput.value.trim()){
+      showMessage('Add a short note about yourself before sending \u2014 it helps us know why you\u2019re a good fit.', 'error');
+      messageInput.focus();
+      return;
+    }
+
     const subject = subjectInput.value.trim() || 'Job application';
     let body = messageInput.value.trim();
 
@@ -484,8 +568,13 @@
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(body);
 
-    window.location.href = mailto;
-    closeModal();
+    try {
+      window.location.href = mailto;
+      showMessage('Opening your email app now. If nothing happens, email us directly at ' + RECIPIENT + '.', 'success');
+      setTimeout(closeModal, 1800);
+    } catch (err) {
+      showMessage('We couldn\u2019t open your email app. Please email us directly at ' + RECIPIENT + '.', 'error');
+    }
   });
 </script>
 
