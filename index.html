@@ -418,6 +418,11 @@
     z-index:1;
   }
   .client-logo{height:34px; width:auto; opacity:0.96;}
+  .partner-card{display:flex;flex-direction:column;}
+  .partner-card .client-foot{margin-top:auto;}
+  .partner-card::before{content:"＋";font-family:'Manrope',sans-serif;font-size:110px;top:-12px;right:18px;opacity:0.055;}
+  .partner-logo{height:54px;max-width:170px;object-fit:contain;}
+  .partner-mark{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-light);border:1px solid var(--line-strong);padding:8px 10px;}
   .client-stars{
     font-family:'JetBrains Mono',monospace;
     font-size:14px;
@@ -1099,6 +1104,20 @@
           <a href="https://legit-interactive.com" target="_blank" rel="noopener" class="client-link" data-i18n="client1_link">legit-interactive.com →</a>
         </div>
       </div>
+      <article class="client-card partner-card">
+        <div class="client-top">
+          <img src="vitea-studios.png" alt="Vitea Studios" class="client-logo partner-logo">
+          <span class="partner-mark" data-i18n="partner_badge">Studio partner</span>
+        </div>
+        <p class="client-quote" data-i18n="partner_quote">A creative partnership built around shared momentum. As a studio partner, Vitea Studios benefits from our ongoing hosting, maintenance, and security support, leaving them free to focus on the work they do best.</p>
+        <div class="client-foot">
+          <div>
+            <div class="client-name">Vitea Studios</div>
+            <div class="client-role" data-i18n="partner_role">Partnership</div>
+          </div>
+          <a href="https://viteastudios.com" target="_blank" rel="noopener noreferrer" class="client-link" data-i18n="partner_link">viteastudios.com →</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1280,6 +1299,10 @@
       clients_p:"Câțiva dintre clienții care ne-au încredințat site-ul lor și ce au avut de spus despre colaborare.",
       client1_role:"Client",
       client1_link:"legit-interactive.com →",
+      partner_badge:"Studio partener",
+      partner_role:"Parteneriat",
+      partner_link:"viteastudios.com →",
+      partner_quote:"Un parteneriat creativ construit pe progres comun. În calitate de studio partener, Vitea Studios beneficiază de găzduire, mentenanță și securitate continuă, pentru a se putea concentra pe ceea ce face cel mai bine.",
       client1_quote:"„Am avut o experiență excelentă lucrând cu Midnight Webs. Serviciile lor au fost excelente de la început până la sfârșit și au fost mereu disponibili ori de câte ori am avut nevoie de actualizări sau modificări. Mi-au transformat ideile într-un site complet funcțional, exact așa cum mi-am dorit. Comunicarea a fost fluentă, munca a fost realizată profesionist, iar rezultatul final mi-a depășit așteptările. I-aș recomanda cu încredere oricui caută o echipă de dezvoltare web de încredere.”",
       cta_eyebrow:"Suntem gata când ești și tu",
       cta_h2:"Spune-ne despre afacerea ta. Îți spunem ce trebuie să facă site-ul tău.",
@@ -1350,6 +1373,10 @@
       clients_p:"Несколько клиентов, которые доверили нам свой сайт, и их отзывы о совместной работе.",
       client1_role:"Клиент",
       client1_link:"legit-interactive.com →",
+      partner_badge:"Студия-партнёр",
+      partner_role:"Партнёрство",
+      partner_link:"viteastudios.com →",
+      partner_quote:"Творческое партнёрство, основанное на общем развитии. Как студия-партнёр, Vitea Studios получает постоянную поддержку хостинга, обслуживания и безопасности, чтобы сосредоточиться на том, что получается лучше всего.",
       client1_quote:"«У меня остались отличные впечатления от работы с Midnight Webs. Их сервис был превосходным от начала до конца, и они всегда были готовы помочь, когда мне нужны были обновления или изменения. Они воплотили мои идеи в полностью функциональный сайт, который точно соответствовал тому, что я хотел. Общение было слаженным, работа выполнена профессионально, а итоговый результат превзошёл мои ожидания. Я бы точно порекомендовал их всем, кто ищет надёжную команду веб-разработки».",
       cta_eyebrow:"Готовы, когда и вы готовы",
       cta_h2:"Расскажите о своём бизнесе. Мы скажем, каким должен быть ваш сайт.",
