@@ -1,6 +1,6 @@
 const translations = {
   ro: {
-    nav_services:"Servicii", nav_process:"Proces", nav_pricing:"Prețuri", nav_contact:"Contact", nav_careers:"Cariere",
+    nav_faq:"Întrebări frecvente", nav_services:"Servicii", nav_process:"Proces", nav_pricing:"Prețuri", nav_contact:"Contact", nav_careers:"Cariere",
     start_project:"Începe un proiect",
     hero_h1:"Îți construim <span class=\"hl\">site-ul</span>.<br><em>Tu <span class=\"hl\">crești</span>.</em>",
     hero_lede:"Midnight Webs proiectează, găzduiește și securizează site-urile pe care se bazează afacerile mici, construite o singură dată, întreținute pe termen lung, ca tu să-ți petreci timpul cu clienții, nu cu codul.",
@@ -16,7 +16,7 @@ const translations = {
     svc6_title:"Vindem online", svc6_desc:"Magazine online cu plăți securizate, gestionarea produselor și a stocului și livrarea configurată. Tot ce ai nevoie ca să primești comenzi din prima zi.",
     svc7_title:"Audit", svc7_desc:"Audituri de securitate și teste de penetrare pentru site-uri și aplicații existente. Găsim punctele slabe, ți le explicăm pe înțeles și te ajutăm să le remediezi.",
     svc8_title:"Întreținem", svc8_desc:"Actualizări, backup-uri și mici modificări gestionate în fiecare lună. Incluse în fiecare plan, ca site-ul tău să rămână la zi fără să urmărești pe nimeni.",
-    plan1_edit:"1 mică modificare pe lună", plan2_edit:"Aproximativ 2 ore de modificări lunar", plan3_edit:"Ore de dezvoltare stabilite împreună",
+    plan_setup:"Tariful unic pentru design și construcție se calculează pentru proiectul tău și se aprobă înainte de începerea lucrului.", plan3_quote_note:"Stabilim împreună scopul, tarifele și calendarul de plată înainte de începerea lucrului.", plan1_edit:"1 oră de modificări incluse în fiecare lună", plan2_edit:"4 ore de modificări incluse în fiecare lună", plan3_edit:"Ore de dezvoltare stabilite împreună",
     process_hint:"Parcurge fiecare pas ca să vezi ce se întâmplă și ce primești.", process_aria:"Pașii proiectului", process_get:"Ce primești", process_next:"Pasul următor", process_back:"Înapoi",
     step1_time:"1–2 zile", step2_time:"1–3 săptămâni", step3_time:"1–2 zile", step4_time:"Continuu",
     step1_d1:"Un apel scurt despre afacerea și obiectivele tale", step1_d2:"Un domeniu de lucru scris, ca să știi pentru ce plătești", step1_d3:"Un calendar simplu, cu etape clare",
@@ -33,15 +33,15 @@ const translations = {
     pricing_eyebrow:"Prețuri",
     pricing_h2:"Planuri clare, fără facturi surpriză.",
     pricing_p:"Fiecare plan include găzduire și securitate. Munca de design este stabilită din start, ca să știi mereu pentru ce plătești.",
-    plan1_tag:"Start", plan1_title:"Foundation", plan1_suffix:"/lună + tarif de construcție",
+    plan1_tag:"Start", plan1_title:"Foundation", plan1_suffix:"/lună",
     plan1_desc:"Pentru un singur site care trebuie doar să fie live, rapid și sigur.",
     plan1_li1:"Site personalizat de până la 3 pagini", plan1_li2:"Găzduire administrată & SSL", plan1_li3:"Backup-uri zilnice",
     plan1_li4:"Monitorizare malware & uptime", plan1_li5:"Suport prin email", plan1_btn:"Alege Foundation",
-    plan2_tag:"Cel mai ales", plan2_title:"Growth", plan2_suffix:"/lună + tarif de construcție",
+    plan2_tag:"Cel mai ales", plan2_title:"Growth", plan2_suffix:"/lună",
     plan2_desc:"Pentru afaceri care se promovează activ și adaugă pagini în timp.",
     plan2_li1:"Site personalizat de până la 10 pagini", plan2_li2:"Găzduire prioritară & SSL", plan2_li3:"Backup-uri zilnice & firewall",
     plan2_li4:"Optimizare lunară de performanță", plan2_li5:"Structură pregătită pentru SEO", plan2_li6:"Suport prioritar", plan2_btn:"Alege Growth",
-    plan3_tag:"Personalizat", plan3_title:"Enterprise", plan3_price:"Hai să discutăm",
+    plan3_tag:"Personalizat", plan3_title:"Enterprise", plan3_price:"Ofertă pentru proiect",
     plan3_desc:"Pentru site-uri, magazine sau aplicații mai mari, cu cerințe specifice.",
     plan3_li1:"Pagini nelimitate & funcționalități personalizate", plan3_li2:"Resurse de găzduire dedicate", plan3_li3:"Securitate & conformitate avansată",
     plan3_li4:"Contact dedicat de cont", plan3_li5:"Revizuire trimestrială a strategiei",
@@ -59,10 +59,10 @@ const translations = {
     cta_eyebrow:"Suntem gata când ești și tu",
     cta_h2:"Spune-ne despre afacerea ta. Îți spunem ce trebuie să facă site-ul tău.",
     footer_brand_desc:"Îți construim site-ul. Tu crești. Design, găzduire și securitate pentru afaceri care preferă să se concentreze pe clienți, nu pe cod.",
-    footer_col1_title:"Studio", footer_col3_title:"În altă parte", footer_careers:"Cariere", footer_privacy:"Politica de confidențialitate",
+    footer_col1_title:"Studio", footer_col3_title:"În altă parte", footer_careers:"Cariere", footer_privacy:"Politica de confidențialitate", footer_terms:"Termeni și condiții",
     footer_bottom1:"© 2026 Midnight Webs. Toate drepturile rezervate.",
     footer_bottom2:"Construit & găzduit de Midnight Webs & Vitea Studios",
-    cookie_text:"Folosim cookie-uri pentru a face site-ul să funcționeze și pentru a înțelege cum este folosit. Poți accepta toate cookie-urile sau le poți refuza pe cele neesențiale. <a href=\"privacy.html\">Află mai multe</a>.",
+    cookie_text:"Folosim cookie-uri pentru a face site-ul să funcționeze și pentru a înțelege cum este folosit. Poți accepta toate cookie-urile sau le poți refuza pe cele neesențiale. <a href=\"privacy/\">Politica de confidențialitate</a> și <a href=\"terms/\">Termenii și condițiile</a>.",
     cookie_accept:"Acceptă tot", cookie_decline:"Refuză",
     pm_eyebrow:"Brief de proiect",
     pm_plan_l:"Ce plan te interesează?", pm_plan_undecided:"Încă nu știu",
@@ -84,7 +84,7 @@ const translations = {
     pm_paste_line:"LIPEȘTE DETALIILE PROIECTULUI MAI JOS (Ctrl+V / Cmd+V). Au fost copiate în clipboard."
   },
   ru: {
-    nav_services:"Услуги", nav_process:"Процесс", nav_pricing:"Тарифы", nav_contact:"Контакты", nav_careers:"Карьера",
+    nav_faq:"Частые вопросы", nav_services:"Услуги", nav_process:"Процесс", nav_pricing:"Тарифы", nav_contact:"Контакты", nav_careers:"Карьера",
     start_project:"Начать проект",
     hero_h1:"Мы создаём ваш <span class=\"hl\">сайт</span>.<br><em>Вы <span class=\"hl\">растёте</span>.</em>",
     hero_lede:"Midnight Webs проектирует, размещает и защищает сайты, на которых держится малый бизнес, создано один раз, поддерживается постоянно, чтобы вы могли тратить время на клиентов, а не на код.",
@@ -100,7 +100,7 @@ const translations = {
     svc6_title:"Продаём онлайн", svc6_desc:"Интернет-магазины с безопасными платежами, управлением товарами и остатками и настроенной доставкой. Всё, что нужно, чтобы принимать заказы с первого дня.",
     svc7_title:"Аудит", svc7_desc:"Аудит безопасности и тестирование на проникновение для существующих сайтов и приложений. Находим слабые места, понятно объясняем их и помогаем устранить.",
     svc8_title:"Поддерживаем", svc8_desc:"Обновления, резервные копии и небольшие правки каждый месяц. Входит в каждый тариф, так что сайт всегда актуален, и вам не нужно никого догонять.",
-    plan1_edit:"1 небольшая правка в месяц", plan2_edit:"Около 2 часов правок в месяц", plan3_edit:"Часы разработки по договорённости",
+    plan_setup:"Разовая стоимость дизайна и разработки рассчитывается для вашего проекта и согласуется до начала работ.", plan3_quote_note:"До начала работ мы согласуем объём проекта, стоимость и график оплаты.", plan1_edit:"1 час включённых изменений в месяц", plan2_edit:"4 часа включённых изменений в месяц", plan3_edit:"Часы разработки по договорённости",
     process_hint:"Нажимайте на шаги, чтобы увидеть, что происходит и что вы получаете.", process_aria:"Этапы проекта", process_get:"Что вы получаете", process_next:"Следующий шаг", process_back:"Назад",
     step1_time:"1–2 дня", step2_time:"1–3 недели", step3_time:"1–2 дня", step4_time:"Постоянно",
     step1_d1:"Короткий звонок о вашем бизнесе и целях", step1_d2:"Письменное описание работ, чтобы вы знали, за что платите", step1_d3:"Простой график с понятными этапами",
@@ -117,15 +117,15 @@ const translations = {
     pricing_eyebrow:"Тарифы",
     pricing_h2:"Понятные тарифы, без сюрпризов в счетах.",
     pricing_p:"Каждый тариф включает хостинг и защиту. Работа над дизайном оценивается заранее, поэтому вы всегда знаете, за что платите.",
-    plan1_tag:"Стартовый", plan1_title:"Foundation", plan1_suffix:"/мес + плата за разработку",
+    plan1_tag:"Стартовый", plan1_title:"Foundation", plan1_suffix:"/мес.",
     plan1_desc:"Для одного сайта, которому просто нужно быть онлайн, быстрым и защищённым.",
     plan1_li1:"Индивидуальный сайт до 3 страниц", plan1_li2:"Управляемый хостинг и SSL", plan1_li3:"Ежедневное резервное копирование",
     plan1_li4:"Мониторинг вредоносного ПО и доступности", plan1_li5:"Поддержка по email", plan1_btn:"Выбрать Foundation",
-    plan2_tag:"Популярный выбор", plan2_title:"Growth", plan2_suffix:"/мес + плата за разработку",
+    plan2_tag:"Популярный выбор", plan2_title:"Growth", plan2_suffix:"/мес.",
     plan2_desc:"Для бизнеса, который активно продвигается и со временем добавляет страницы.",
     plan2_li1:"Индивидуальный сайт до 10 страниц", plan2_li2:"Приоритетный хостинг и SSL", plan2_li3:"Ежедневное резервное копирование и файрвол",
     plan2_li4:"Ежемесячная оптимизация производительности", plan2_li5:"Структура, готовая для SEO", plan2_li6:"Приоритетная поддержка", plan2_btn:"Выбрать Growth",
-    plan3_tag:"Индивидуально", plan3_title:"Enterprise", plan3_price:"Давайте обсудим",
+    plan3_tag:"Индивидуально", plan3_title:"Enterprise", plan3_price:"Расчёт стоимости проекта",
     plan3_desc:"Для более крупных сайтов, магазинов или приложений со специфическими требованиями.",
     plan3_li1:"Неограниченное число страниц и функций", plan3_li2:"Выделенные ресурсы хостинга", plan3_li3:"Расширенная безопасность и соответствие требованиям",
     plan3_li4:"Персональный контакт по аккаунту", plan3_li5:"Ежеквартальный стратегический обзор",
@@ -143,10 +143,10 @@ const translations = {
     cta_eyebrow:"Готовы, когда и вы готовы",
     cta_h2:"Расскажите о своём бизнесе. Мы скажем, каким должен быть ваш сайт.",
     footer_brand_desc:"Мы создаём ваш сайт. Вы растёте. Дизайн, хостинг и защита для бизнеса, который предпочитает заниматься клиентами, а не кодом.",
-    footer_col1_title:"Студия", footer_col3_title:"Мы также здесь", footer_careers:"Карьера", footer_privacy:"Политика конфиденциальности",
+    footer_col1_title:"Студия", footer_col3_title:"Мы также здесь", footer_careers:"Карьера", footer_privacy:"Политика конфиденциальности", footer_terms:"Условия использования",
     footer_bottom1:"© 2026 Midnight Webs. Все права защищены.",
     footer_bottom2:"Создано и размещено Midnight Webs & Vitea Studios",
-    cookie_text:"Мы используем файлы cookie, чтобы сайт работал, и чтобы понимать, как им пользуются. Вы можете принять все cookie или отклонить необязательные. <a href=\"privacy.html\">Подробнее</a>.",
+    cookie_text:"Мы используем файлы cookie, чтобы сайт работал, и чтобы понимать, как им пользуются. Вы можете принять все cookie или отклонить необязательные. <a href=\"privacy/\">Политика конфиденциальности</a> и <a href=\"terms/\">Условия использования</a>.",
     cookie_accept:"Принять все", cookie_decline:"Отклонить",
     pm_eyebrow:"Бриф проекта",
     pm_plan_l:"Какой тариф вас интересует?", pm_plan_undecided:"Пока не знаю",
@@ -243,7 +243,15 @@ langTrigger.addEventListener('click', (e) => {
 
 document.querySelectorAll('.lang-menu button').forEach(btn => {
   btn.addEventListener('click', () => {
-    applyLanguage(btn.dataset.lang);
+    const chosenLang = btn.dataset.lang;
+    applyLanguage(chosenLang);
+    const pathParts = location.pathname.split('/').filter(Boolean);
+    if (pathParts[0] === 'ro' || pathParts[0] === 'ru') pathParts.shift();
+    // Live Server may expose the homepage as /index.html. Treat that as the locale root.
+    if (pathParts[pathParts.length - 1] === 'index.html') pathParts.pop();
+    const remainder = pathParts.join('/');
+    const targetPath = chosenLang === 'en' ? '/' + (remainder ? remainder + '/' : '') : '/' + chosenLang + '/' + (remainder ? remainder + '/' : '');
+    if (location.pathname !== targetPath) location.assign(targetPath);
     langSwitch.classList.remove('open');
     langTrigger.setAttribute('aria-expanded', 'false');
   });
@@ -256,6 +264,8 @@ document.addEventListener('click', () => {
 
 let savedLang = 'en';
 try { savedLang = localStorage.getItem('mw_lang') || 'en'; } catch(e){}
+const routeLang = location.pathname.split('/').filter(Boolean)[0];
+if (routeLang === 'ro' || routeLang === 'ru') savedLang = routeLang;
 applyLanguage(savedLang);
 
 /* ===== Hero typing animation ===== */

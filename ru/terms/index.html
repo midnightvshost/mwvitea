@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Условия использования — Midnight Webs</title>
+<meta name="description" content="Условия использования сайта Midnight Webs, подачи заявок и приобретения услуг веб-дизайна, хостинга, защиты и обслуживания.">
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../../assets/img/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/img/android-chrome-512x512.png">
+<meta name="theme-color" content="#050914">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#050914;
+    --deep:#0a1230;
+    --panel:#0c1638;
+    --blue:#3e63e0;
+    --blue-light:#8fb4ff;
+    --ink:#f2f5ff;
+    --muted:#8792b3;
+    --line:rgba(143,178,255,0.14);
+    --line-strong:rgba(143,178,255,0.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html,body{max-width:100%; overflow-x:hidden;}
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%; height:auto;}
+  a{color:var(--blue-light); text-decoration:underline; overflow-wrap:anywhere; word-break:break-word;}
+  :focus-visible{outline:2px solid var(--blue-light); outline-offset:3px;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--blue-light);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px; height:1px;
+    background:var(--blue-light);
+    display:inline-block;
+    flex-shrink:0;
+  }
+  h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em; color:var(--ink);}
+
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    background:rgba(5,9,20,0.86);
+    backdrop-filter:blur(14px);
+    position:sticky; top:0; z-index:100;
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-word{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--blue-light);
+    font-weight:500;
+  }
+  .brand-word em{font-style:normal; color:var(--ink);}
+  .back-link{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.05em;
+    color:var(--muted);
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .back-link:hover{color:var(--ink);}
+
+  main{padding:80px 0 100px;}
+  .page-head{margin-bottom:56px;}
+  .page-head h1{font-size:clamp(30px,4vw,44px); margin-top:16px; line-height:1.15;}
+  .page-head p.lede{color:var(--muted); margin-top:16px; font-size:16px; line-height:1.65; max-width:600px;}
+  .updated{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); margin-top:20px; letter-spacing:0.04em;}
+
+  section.block{margin-bottom:44px;}
+  section.block h2{font-size:20px; margin-bottom:14px; color:var(--blue-light); font-weight:500;}
+  section.block p{color:#c4cbe2; font-size:15px; line-height:1.75; margin-bottom:14px;}
+  section.block ul{margin:0 0 14px 22px; color:#c4cbe2; font-size:15px; line-height:1.75;}
+  section.block li{margin-bottom:8px;}
+  section.block strong{color:var(--ink); font-weight:600;}
+
+  .note-box{
+    border:1px solid var(--line);
+    background:var(--panel);
+    border-radius:4px;
+    padding:16px 18px;
+    font-size:13.5px;
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:14px;
+  }
+  .note-box strong{color:var(--blue-light);}
+
+  .divider{height:1px; background:var(--line); margin:56px 0;}
+
+  footer{padding:40px 0 60px; border-top:1px solid var(--line); margin-top:20px;}
+  footer p{font-size:13px; color:var(--muted);}
+  footer a{color:var(--blue-light);}
+
+  @media (max-width:640px){
+    main{padding:56px 0 72px;}
+    .wrap{padding:0 20px;}
+  }
+nav.wrap{gap:16px}.locale-links{font:11px monospace}.locale-links a{color:var(--blue-light);margin-left:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="/ru/" class="brand">
+      <span class="brand-word">Midnight<em>Webs</em></span>
+    </a>
+    <a href="/ru/" class="back-link">&larr; Back to site</a>
+  <div class="locale-links"><a href="/terms/">EN</a> <a href="/ro/terms/">RO</a> <a href="/ru/terms/">RU</a></div></nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow">Правовая информация</div>
+      <h1>Условия использования</h1>
+      <p class="lede">Эти условия регулируют использование сайта, процесс подачи заявок на вакансии и услуги Midnight Webs. Используя сайт, связываясь с нами, подавая заявку или заказывая услуги, вы соглашаетесь с этими условиями.</p>
+      <div class="updated">Обновлено: 24 октября 2026</div>
+    </div>
+
+    <section class="block">
+      <h2>1. О нас</h2>
+      <p>Midnight Webs ("we," "us," "our") is a small web design and development studio. We design, build, host, secure, and maintain websites and web applications for businesses. You can reach us at <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>2. Использование сайта</h2>
+      <p>Сайт содержит информацию о студии, услугах, вакансиях, тарифах и часто задаваемых вопросах. Он доступен на английском, румынском и русском языках, в том числе по адресам с языковым префиксом. FAQ носит общий информационный характер и не является сметой проекта или отдельной гарантией доступности либо результата. Вы соглашаетесь использовать сайт только в законных целях и не:</p>
+      <ul><li>пытаться получить несанкционированный доступ к сайту, его коду или инфраструктуре,</li><li>копировать, перепродавать или выдавать наш контент, бренд или логотип за свои, или</li><li>использовать сайт способом, который может повредить, отключить или нарушить его работу для других посетителей.</li></ul>
+      <p>Мы можем обновлять, изменять или удалять части сайта. Мы стараемся поддерживать версии на разных языках и сведения в актуальном состоянии. Для конкретного клиентского проекта при расхождении с этими общими условиями применяются условия подписанного предложения или отдельного письменного соглашения.</p>
+    </section>
+
+    <section class="block">
+      <h2>3. Контактыing us</h2>
+      <p>When you use our contact or project form or email us directly, you're responsible for making sure the information you give us is accurate and that you have the right to send us any files you attach. We handle what you send us as described in our <a href="/ru/privacy/">Политика конфиденциальности</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>4. Подача заявки на вакансию</h2>
+      <p>Our <a href="/ru/careers/">Careers</a> page lets you open a pre-filled email in your own email app to apply for an open role. Before you can send an application, you must confirm both of the following:</p>
+      <div class="note-box">
+        <strong>You are 16 years of age or older.</strong> We do not accept or consider applications from anyone under 16, and by checking the confirmation box you're representing to us that this is true.
+      </div>
+      <div class="note-box">
+        <strong>You agree to these Условия использования and our Политика конфиденциальности.</strong> This covers how we handle the information in your application and any files you choose to attach.
+      </div>
+      <p>Submitting an application does not guarantee an interview, an offer, or any response by a specific date. We review applications as our hiring needs allow, and we may close, change, or repost a role at any time.</p>
+      <p>You're responsible for anything you attach to your application email. Please don't send files you don't have the rights to share, or any sensitive personal information beyond what's needed to consider you for the role.</p>
+    </section>
+
+    <section class="block">
+      <h2>5. Наши услуги</h2>
+      <p>Depending on what you agree with us, our services may include:</p>
+      <ul>
+        <li><strong>Design and build:</strong> custom-designed, responsive websites.</li>
+        <li><strong>Backend development:</strong> APIs, databases, user accounts, payments, and admin panels.</li>
+        <li><strong>Online stores:</strong> product and stock management, secure payment, and shipping setup.</li>
+        <li><strong>Hosting and security:</strong> managed hosting, SSL, backups, firewall, malware scanning, and uptime monitoring.</li>
+        <li><strong>Security audits:</strong> audits and penetration testing of existing sites and applications.</li>
+        <li><strong>Maintenance:</strong> monthly updates, backups, and small changes.</li>
+        <li><strong>Growth:</strong> search-ready structure, performance tuning, and ongoing improvements.</li>
+      </ul>
+      <p>The specific scope, pricing, timeline, and deliverables for your project will be agreed separately with you, typically in writing over email or in a proposal. These general terms apply alongside any such agreement; where the two conflict, the specific agreement with you takes priority.</p>
+    </section>
+
+    <section class="block">
+      <h2>6. Тарифы, оплата и включённые изменения</h2>
+      <p>На странице цен сейчас указаны Foundation за $49 в месяц и Growth за $89 в месяц. Это регулярная стоимость тарифов. Отдельно взимается разовая плата за дизайн и разработку: она рассчитывается для проекта и утверждается вами до начала работ. Стоимость Enterprise определяется индивидуально. Точные суммы, валюта, даты выставления счетов, способ оплаты и применимые налоги указываются в предложении или соглашении; этот письменный документ имеет преимущественную силу, если информация на сайте изменится.</p>
+      <p>Foundation включает до одного часа изменений сайта в месяц; Growth — до четырёх часов; объём разработки для Enterprise согласуется письменно. Включённое время покрывает согласованные обновления, например правки текста или изображений и небольшие изменения содержимого. Крупные запросы, работы сверх месячного лимита, страницы или функции вне выбранного тарифа, интеграции и новые системы оцениваются отдельно и требуют вашего одобрения до начала работ. Неиспользованное время не переносится, если мы письменно не договорились иначе.</p>
+      <p>Ежемесячные тарифы на хостинг и обслуживание можно прекратить, уведомив нас в порядке, указанном в предложении или соглашении. Уже внесённая оплата за текущий период не возвращается, если соглашение не предусматривает иное. Особые условия оплаты или прекращения в подписанном соглашении имеют преимущественную силу.</p>
+    </section>
+
+    <section class="block">
+      <h2>7. Серверные системы, интернет-магазины и ваши данные</h2>
+      <p>If we build or run a backend, user accounts, or an online store for you, you remain responsible for the way your business uses it. In particular, you're responsible for:</p>
+      <ul>
+        <li>the products, prices, descriptions, taxes, shipping, refunds, and customer service of your store, and for complying with the consumer and tax laws that apply to your sales,</li>
+        <li>having your own terms and privacy notice for your site's users, and obtaining any consent you need from them, and</li>
+        <li>the accuracy and lawfulness of the content, data, and third-party material you give us.</li>
+      </ul>
+      <p>Payments are handled by third-party payment providers under their own terms. We set up the integration but aren't a party to your sales, and we aren't responsible for the provider's fees, outages, or decisions. You keep ownership of the data in your systems, and we handle it on your behalf and on your instructions, as described in our <a href="/ru/privacy/">Политика конфиденциальности</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>8. Аудит безопасности и тестирование на проникновение</h2>
+      <p>We only audit or test systems that you've authorized us in writing to test, and only within the scope and timeframe we agree. By asking us to carry out an audit or test, you confirm that you own the systems involved or have the authority to permit testing, including from any hosting provider or third party whose approval is required.</p>
+      <p>Security testing can occasionally cause slowdowns, errors, or interruptions, and you accept that risk within the agreed scope. We treat the findings as confidential and share them only with you. An audit reflects what we find in the agreed scope at that time. It isn't a guarantee that a system is free of vulnerabilities or can't be breached, and you remain responsible for deciding which fixes to apply. You must not use our findings, methods, or reports to test systems you're not authorized to test.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Хостинг, резервные копии и доступность</h2>
+      <p>We aim to keep hosted sites fast, backed up, and available, and we monitor them for downtime and security problems. We don't guarantee uninterrupted service. Outages caused by third-party providers, your own changes, attacks, or events outside our control may happen. Backups reduce risk but don't replace your own copies of important content. You're responsible for keeping the credentials you control secure.</p>
+    </section>
+
+    <section class="block">
+      <h2>10. Интеллектуальная собственность</h2>
+      <p>The Midnight Webs name, logo, and the design and content of this site belong to us, unless otherwise noted. You may not use them without our permission. Once a client project is delivered and paid for in full, ownership of the final deliverables transfers as agreed in that project's own terms. We may keep ownership of our general tools, code libraries, and know-how that aren't specific to your project, and we may continue to use them for other clients.</p>
+    </section>
+
+    <section class="block">
+      <h2>11. Сторонние ссылки и сервисы</h2>
+      <p>This site and the projects we deliver may link to or rely on third-party pages and services, such as payment providers, hosting infrastructure, or the EEOC's workplace rights information on our Careers page. We aren't responsible for the content, availability, or practices of sites and services we don't operate.</p>
+    </section>
+
+    <section class="block">
+      <h2>12. Отказ от гарантий и ограничение ответственности</h2>
+      <p>This site and its content are provided "as is," without guarantees of any kind. We do our best to keep information accurate and the site running smoothly, but we don't promise it will always be error-free, uninterrupted, or available. To the extent permitted by law, Midnight Webs isn't liable for any indirect or incidental loss, such as lost sales, lost profits, or lost data, arising from your use of this site or our services. Where the law allows us to limit it, our total liability for any claim relating to a service is limited to the fees you paid us for that service.</p>
+    </section>
+
+    <section class="block">
+      <h2>13. Изменения условий</h2>
+      <p>We may update these terms from time to time to reflect changes to our site, our services, our process, or the law. We'll update the "Last updated" date above when we do. Continuing to use the site or our services after a change means you accept the updated terms.</p>
+    </section>
+
+    <section class="block">
+      <h2>14. Применимое право</h2>
+      <p>These terms are governed by the laws applicable to where Midnight Webs operates, without regard to conflict-of-law rules. If any part of these terms is found unenforceable, the rest will continue to apply.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="block">
+      <h2>Контакты</h2>
+      <p>Questions about these terms can be sent to <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Midnight Webs. This page is provided for transparency and is not a substitute for legal advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
