@@ -1050,3 +1050,36 @@ html.pm-lock{overflow:hidden;}
 @media (max-width:560px){
   .pm-plan-grid{grid-template-columns:repeat(2,1fr);}
 }
+/* Homepage mobile alignment */
+@media (max-width:560px){
+  header nav.wrap,
+  header.scrolled nav.wrap{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  }
+  header .brand,
+  header.scrolled .brand{
+    grid-column:2;
+    grid-row:1;
+    justify-self:center;
+  }
+  header .nav-right,
+  header.scrolled .nav-right{
+    grid-column:3;
+    grid-row:1;
+    justify-self:end;
+  }
+  .hero-logo-col{justify-content:center;}
+  .hero-text{text-align:center;}
+  .hero p.lede{margin-left:auto; margin-right:auto;}
+  .hero-cta{justify-content:center;}
+  .section-head{text-align:center; margin-left:auto; margin-right:auto;}
+  .section-head .eyebrow{justify-content:center;}
+  .section-head p{margin-left:auto; margin-right:auto;}
+  .service-card{text-align:center;}
+  .service-card svg{margin-left:auto; margin-right:auto;}
+  .plan h3,
+  .plan .price,
+  .plan .desc{text-align:center;}
+  .footer-bottom{justify-content:center; text-align:center;}
+}
