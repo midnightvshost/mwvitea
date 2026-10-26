@@ -472,20 +472,10 @@ section{padding:120px 0;}
   transition:border-color .3s ease;
 }
 .client-card:hover{border-color:var(--line-strong);}
-.client-card::before{
-  content:"\201C";
-  position:absolute;
-  top:-46px; right:18px;
-  font-family:'Bodoni Moda',serif;
-  font-size:190px;
-  line-height:1;
-  color:var(--blue-light);
-  opacity:0.07;
-  pointer-events:none;
-}
 .client-top{
   display:flex;
-  align-items:center;
+  width:100%;
+  align-items:flex-start;
   justify-content:space-between;
   gap:16px;
   margin-bottom:30px;
@@ -493,7 +483,7 @@ section{padding:120px 0;}
   position:relative;
   z-index:1;
 }
-.client-logo{height:34px; width:auto; opacity:0.96;}
+.client-logo{height:34px; width:auto; max-width:55%; margin:0 auto 0 0; object-fit:contain; object-position:left top; opacity:0.96;}
 .client-stars{
   font-family:'JetBrains Mono',monospace;
   font-size:14px;
@@ -654,7 +644,6 @@ footer{padding:80px 0 32px; border-top:1px solid var(--line);}
   .stats-grid{grid-template-columns:1fr 1fr;}
   section{padding:80px 0;}
   .client-card{padding:34px 26px 28px;}
-  .client-card::before{font-size:130px; top:-30px; right:8px;}
   .footer-grid{grid-template-columns:1fr;}
   header nav.wrap{padding:0 16px;}
   .brand{gap:6px;}
