@@ -1084,3 +1084,6 @@ html.pm-lock{overflow:hidden;}
 .client-plan{display:inline;font-family:inherit;font-size:inherit;letter-spacing:normal;text-transform:none;color:var(--blue-light);white-space:normal;margin:0;padding:0;border:0;border-radius:0;background:transparent;line-height:inherit}
 .client-plan::before{content:" — ";width:auto;height:auto;flex:none;border-radius:0;background:none;box-shadow:none}
 
+
+/* Keep language labels on the system mono stack so extra Cyrillic/Latin-ext web fonts are not downloaded just for them. */
+.lang-menu button{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;}
