@@ -12,16 +12,14 @@
 # Static assets
 #
 # IMPORTANT: "immutable" is only safe for filenames that contain a content
-# hash. These bundles are not hashed yet, so they get a long-but-safer TTL.
-# Once you rename them (script.<hash>.min.js, style.<hash>.css) switch both
-# rules below to:
-#   Cache-Control: public, max-age=31536000, immutable
+# hash. These bundles are not hashed, so they use 30 days plus a ?v= query
+# on their <script> references. Bump ?v= whenever the file changes.
 # ---------------------------------------------------------------------------
 /assets/js/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
 
 /assets/css/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
 
 # Images use stable filenames, so do not mark them immutable.
 /assets/img/*

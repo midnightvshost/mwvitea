@@ -6,9 +6,10 @@
 //   - Unmatched routes are handled by assets.not_found_handling = "404-page",
 //     which serves 404.html with a real 404 status.
 //
-// The previous in-memory rate limiter has been removed: it was per-isolate,
-// reset on every cold start, and returned 429s (4xx) that polluted the error
-// rate. Use a Cloudflare WAF Rate Limiting rule if you need real limiting.
+// API rate limiting is implemented in rate-limiter.js using Cloudflare's
+// Rate Limiting binding (API_RATE_LIMITER in wrangler.jsonc).
+
+import { enforceApiRateLimit } from './rate-limiter.js';
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json; charset=utf-8',
@@ -38,6 +39,11 @@ async function sendDiscordWebhook(webhookUrl, payload) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname.startsWith('/api/')) {
+      const limited = await enforceApiRateLimit(request, env);
+      if (limited) return limited;
+    }
 
     if (url.pathname === '/api/health' || url.pathname === '/api/health/') {
       if (request.method !== 'GET' && request.method !== 'HEAD') {

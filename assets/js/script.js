@@ -57,7 +57,7 @@ const translations = {
     clients_eyebrow:"Clienții noștri",
     clients_h2:"Afaceri pentru care am construit site-uri.",
     clients_p:"Câțiva dintre clienții care ne-au încredințat site-ul lor și ce au avut de spus despre colaborare.",
-    client1_role:"Client",
+    client1_role:"Client", client1_plan:"Planul Foundation",
     client1_link:"legit-interactive.com →",
     client1_quote:"„Am avut o experiență excelentă lucrând cu Midnight Webs. Serviciile lor au fost excelente de la început până la sfârșit și au fost mereu disponibili ori de câte ori am avut nevoie de actualizări sau modificări. Mi-au transformat ideile într-un site complet funcțional, exact așa cum mi-am dorit. Comunicarea a fost fluentă, munca a fost realizată profesionist, iar rezultatul final mi-a depășit așteptările. I-aș recomanda cu încredere oricui caută o echipă de dezvoltare web de încredere.”",
     cta_eyebrow:"Suntem gata când ești și tu",
@@ -145,7 +145,7 @@ const translations = {
     clients_eyebrow:"Наши клиенты",
     clients_h2:"Бизнесы, для которых мы создали сайты.",
     clients_p:"Несколько клиентов, которые доверили нам свой сайт, и их отзывы о совместной работе.",
-    client1_role:"Клиент",
+    client1_role:"Клиент", client1_plan:"Тариф Foundation",
     client1_link:"legit-interactive.com →",
     client1_quote:"«У меня остались отличные впечатления от работы с Midnight Webs. Их сервис был превосходным от начала до конца, и они всегда были готовы помочь, когда мне нужны были обновления или изменения. Они воплотили мои идеи в полностью функциональный сайт, который точно соответствовал тому, что я хотел. Общение было слаженным, работа выполнена профессионально, а итоговый результат превзошёл мои ожидания. Я бы точно порекомендовал их всем, кто ищет надёжную команду веб-разработки».",
     cta_eyebrow:"Готовы, когда и вы готовы",
@@ -733,15 +733,16 @@ window.addEventListener('scroll', () => {
   let resizeTimer;
 
   function build(){
+    const setW = original.getBoundingClientRect().width;
+    const marqueeW = marquee.clientWidth;
+    if (!setW) return;
+
     // Remove only generated copies. Never rebuild the original set while it is animating.
     track.querySelectorAll('.partner-set[data-clone]').forEach(node => node.remove());
 
-    const setW = original.getBoundingClientRect().width;
-    if (!setW) return;
-
     // Keep enough identical sets in the track so the next set is always ready
     // when the current one reaches the exact same starting position.
-    const copies = Math.max(3, Math.ceil(marquee.clientWidth / setW) + 2);
+    const copies = Math.max(3, Math.ceil(marqueeW / setW) + 2);
     for (let i = 0; i < copies; i++){
       const clone = original.cloneNode(true);
       clone.setAttribute('data-clone', '');

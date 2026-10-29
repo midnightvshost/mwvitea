@@ -300,6 +300,99 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
     .not-a-fit{padding:32px 22px;}
   }
  .locale-links{display:flex;gap:8px}.locale-links a{font:11px monospace;color:var(--blue-light);text-decoration:none;border:1px solid var(--line-strong);padding:8px 10px}nav.wrap{gap:16px}
+
+  /* Careers application panel: match the homepage project modal. */
+  .modal-overlay{
+    padding:24px;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    background:rgba(5,9,20,0.55);
+    -webkit-backdrop-filter:blur(14px) saturate(125%);
+    backdrop-filter:blur(14px) saturate(125%);
+    transition:opacity .28s ease, visibility 0s linear .28s;
+  }
+  .modal-overlay.open{transition:opacity .28s ease, visibility 0s;}
+  .modal{
+    position:relative;
+    width:100%;
+    max-width:640px;
+    max-height:calc(100vh - 48px);
+    margin:auto;
+    padding:40px 40px 34px;
+    background:rgba(10,18,48,0.96);
+    border:1px solid var(--line-strong);
+    border-radius:6px;
+    box-shadow:0 30px 90px rgba(0,0,0,0.55);
+    transform:translateY(16px) scale(.985);
+    transition:transform .35s cubic-bezier(.22,1,.36,1);
+  }
+  .modal-overlay.open .modal{transform:none;}
+  .modal-titlebar{
+    display:block;
+    padding:0 48px 22px 0;
+    border:0;
+  }
+  .modal-titlebar span{
+    font-family:'Bodoni Moda',serif;
+    font-size:clamp(26px,3.4vw,34px);
+    line-height:1.15;
+    letter-spacing:.01em;
+    text-transform:none;
+    color:var(--ink);
+  }
+  .modal-close{
+    position:absolute;
+    top:14px;
+    right:14px;
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    padding:0;
+    background:none;
+    border:1px solid transparent;
+    border-radius:3px;
+    color:var(--muted);
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    transition:color .2s ease,background .2s ease,border-color .2s ease;
+  }
+  .modal-close:hover{color:var(--ink);background:rgba(143,178,255,0.08);border-color:var(--line);}
+  .modal-close:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px;}
+  .modal-close svg{width:18px;height:18px;display:block;}
+  .modal-body{padding:0;}
+  .modal .field input[type="text"],
+  .modal .field input[readonly],
+  .modal .field textarea{
+    border-radius:3px;
+    font-size:15px;
+    line-height:1.5;
+    padding:13px 14px;
+    transition:border-color .2s ease,background .2s ease;
+  }
+  .modal .field input:hover,.modal .field textarea:hover{border-color:rgba(143,178,255,0.45);}
+  .modal .field input:focus,.modal .field textarea:focus{border-color:var(--blue-light);background:rgba(143,178,255,0.05);}
+  @media(max-width:640px){
+    .modal-overlay{padding:12px;}
+    .modal{max-height:calc(100vh - 24px);padding:32px 20px 24px;}
+    .modal-titlebar{padding-bottom:20px;}
+    .modal-close{top:10px;right:10px;}
+  }
+
+
+  .application-panel-message .field textarea{min-height:92px;}
+  .field-requirement{margin-left:7px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.04em;color:var(--muted);text-transform:none;white-space:nowrap;}
+  .application-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 22px;border-bottom:1px solid var(--line);}
+  .application-tab{min-width:0;padding:11px 8px 12px;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;cursor:pointer;white-space:nowrap;transition:color .2s ease,border-color .2s ease;}
+  .application-tab:hover{color:var(--ink);}
+  .application-tab[aria-selected="true"]{color:var(--blue-light);border-bottom-color:var(--blue-light);}
+  .application-tab:focus-visible{outline:2px solid var(--blue-light);outline-offset:2px;}
+  .application-panel[hidden]{display:none;}
+  .application-panel:focus{outline:0;}
+  .modal-actions{padding-top:18px;border-top:1px solid var(--line);}
+  @media(max-width:420px){.application-tab{font-size:10px;letter-spacing:.02em;padding-left:4px;padding-right:4px;}}
+
 </style>
 </head>
 <body>
@@ -386,13 +479,19 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
   </div>
 </footer>
 
-<div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+<div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applicationHeading">
   <div class="modal">
     <div class="modal-titlebar">
-      <span>Mesaj nou</span>
-      <button type="button" class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <span id="applicationHeading">Candidatura ta</span>
+      <button type="button" class="modal-close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
     </div>
     <div class="modal-body">
+    <div class="application-tabs" role="tablist" aria-label="Secțiunile candidaturii">
+      <button type="button" class="application-tab" id="application-tab-details" role="tab" aria-selected="true" aria-controls="application-panel-details" tabindex="0">Detalii</button>
+      <button type="button" class="application-tab" id="application-tab-files" role="tab" aria-selected="false" aria-controls="application-panel-files" tabindex="-1">Atașamente</button>
+      <button type="button" class="application-tab" id="application-tab-message" role="tab" aria-selected="false" aria-controls="application-panel-message" tabindex="-1">Răspunsuri</button>
+    </div>
+    <div class="application-panel" id="application-panel-details" role="tabpanel" aria-labelledby="application-tab-details" tabindex="0">
       <div class="field">
         <label for="applyCătre">Către</label>
         <input type="text" id="applyCătre" value="career.midnightwebs@gmail.com" readonly>
@@ -401,6 +500,8 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
         <label for="applySubiect" id="applyModalTitle">Subiect</label>
         <input type="text" id="applySubiect" value="Application for ">
       </div>
+    </div>
+    <div class="application-panel" id="application-panel-files" role="tabpanel" aria-labelledby="application-tab-files" tabindex="0" hidden>
       <div class="field">
         <label>Atașamente</label>
         <div class="file-drop" id="fileDrop">
@@ -410,31 +511,40 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
         <div class="file-list" id="fileList"></div>
         <p class="file-note">Email links can't attach files automatically. Once your email app opens, please attach these files yourself before hitting send, we've listed them in the message body as a reminder.</p>
       </div>
+    </div>
+    <div class="application-panel application-panel-message" id="application-panel-message" role="tabpanel" aria-labelledby="application-tab-message" tabindex="0" hidden>
       <div class="field">
-        <label for="applyMesaj">Mesaj</label>
-        <textarea id="applyMesaj" placeholder="Tell us a bit about yourself, your experience, and why you're a good fit for this role."></textarea>
+        <label for="applyAbout">Despre tine <span class="field-requirement">Obligatoriu</span></label>
+        <textarea id="applyAbout" required placeholder="Spune-ne câteva lucruri despre tine, interesele tale și ce ai putea aduce echipei."></textarea>
       </div>
-
+      <div class="field">
+        <label for="applyExperience">Experiență și competențe relevante <span class="field-requirement">Opțional</span></label>
+        <textarea id="applyExperience" placeholder="Povestește despre muncă, proiecte, cursuri sau competențe transferabile. Dacă ești la început, spune-ne ce ai învățat până acum."></textarea>
+      </div>
+      <div class="field">
+        <label for="applyMotivation">De ce acest rol? <span class="field-requirement">Obligatoriu</span></label>
+        <textarea id="applyMotivation" required placeholder="Ce te-a atras la acest post și la ideea de a lucra cu Midnight Webs?"></textarea>
+      </div>
       <div class="consent-field">
         <input type="checkbox" id="agreeConsent">
         <label for="agreeConsent">I confirm that I am 16 years of age or older, and I agree to Midnight Webs' <a href="/ro/terms/" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and <a href="/ro/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</label>
       </div>
-
       <div class="form-message" id="formMesaj" role="status" aria-live="polite"></div>
-
-      <div class="modal-actions">
-        <button type="button" class="btn btn-ghost" id="modalAnulează">Anulează</button>
-        <button type="button" class="btn btn-primary" id="modalTrimite" disabled>Trimite</button>
-      </div>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" id="modalAnulează">Anulează</button>
+      <button type="button" class="btn btn-primary" id="modalTrimite" disabled>Trimite</button>
     </div>
   </div>
+  </div>
 </div>
-
 <script>
   const applyButtons = document.querySelectorAll('.apply-btn');
   const modal = document.getElementById('applyModal');
   const subjectInput = document.getElementById('applySubiect');
-  const messageInput = document.getElementById('applyMesaj');
+  const aboutInput = document.getElementById('applyAbout');
+  const experienceInput = document.getElementById('applyExperience');
+  const motivationInput = document.getElementById('applyMotivation');
   const fileDrop = document.getElementById('fileDrop');
   const fileInput = document.getElementById('fileInput');
   const fileListEl = document.getElementById('fileList');
@@ -446,6 +556,29 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
 
   const RECIPIENT = 'career.midnightwebs@gmail.com';
   let selectedFiles = [];
+  const applicationTabs = Array.from(document.querySelectorAll('.application-tab'));
+  const applicationPanels = Array.from(document.querySelectorAll('.application-panel'));
+  function setApplicationTab(index, focusTab=false){
+    applicationTabs.forEach((tab, i) => {
+      const selected = i === index;
+      tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+      tab.tabIndex = selected ? 0 : -1;
+      applicationPanels[i].hidden = !selected;
+    });
+    if (focusTab) applicationTabs[index].focus();
+  }
+  applicationTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => setApplicationTab(index));
+    tab.addEventListener('keydown', event => {
+      let next = null;
+      if (event.key === 'ArrowRight') next = (index + 1) % applicationTabs.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + applicationTabs.length) % applicationTabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = applicationTabs.length - 1;
+      if (next !== null){event.preventDefault();setApplicationTab(next,true);}
+    });
+  });
+
 
   function showMesaj(text, type){
     formMesaj.textContent = text;
@@ -511,12 +644,15 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
 
   function openModal(role){
     subjectInput.value = 'Application for ' + role;
-    messageInput.value = '';
+    aboutInput.value = '';
+    experienceInput.value = '';
+    motivationInput.value = '';
     selectedFiles = [];
     renderFileList();
     agreeConsent.checked = false;
     modalTrimite.disabled = true;
     clearMesaj();
+    setApplicationTab(0);
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -539,17 +675,23 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
 
   modalTrimite.addEventListener('click', () => {
     if (!agreeConsent.checked){
-      showMesaj('Please confirm you\u2019re 18 or older and agree to our Terms & Conditions and Privacy Policy before sending.', 'error');
+      setApplicationTab(2);
+      showMesaj('Confirmă că ai cel puțin 16 ani și că ești de acord cu Termenii și condițiile și Politica de confidențialitate înainte de trimitere.', 'error');
       return;
     }
-    if (!messageInput.value.trim()){
-      showMesaj('Add a short note about yourself before sending \u2014 it helps us know why you\u2019re a good fit.', 'error');
-      messageInput.focus();
+    if (!aboutInput.value.trim() || !motivationInput.value.trim()){
+      setApplicationTab(2);
+      showMesaj('Completează câmpurile „Despre tine” și „De ce acest rol?” înainte de trimitere.', 'error');
+      (aboutInput.value.trim() ? motivationInput : aboutInput).focus();
       return;
     }
 
     const subject = subjectInput.value.trim() || 'Job application';
-    let body = messageInput.value.trim();
+    const bodyParts = [];
+    if (aboutInput.value.trim()) bodyParts.push('Despre tine:\n' + aboutInput.value.trim());
+    if (experienceInput.value.trim()) bodyParts.push('Experiență și competențe:\n' + experienceInput.value.trim());
+    if (motivationInput.value.trim()) bodyParts.push('Motivație:\n' + motivationInput.value.trim());
+    let body = bodyParts.join('\n\n');
 
     if (selectedFiles.length){
       body += '\n\n---\nFiles to attach before sending:\n';

@@ -1,12 +1,12 @@
 # Security Configuration
 
 ## DDoS Protection & Rate Limiting
-Rate limiting is no longer implemented inside the Worker. The previous
-in-memory limiter was per-isolate (resetting on every cold start) and returned
-429 responses that inflated the client 4xx error rate.
+`rate-limiter.js` applies Cloudflare's Workers Rate Limiting binding to
+`/api/*`. The binding is configured in `wrangler.jsonc` as
+`API_RATE_LIMITER` (10 requests per 60 seconds per IP per endpoint).
 
-Use a Cloudflare **WAF > Rate limiting rule** on `/api/*` instead. Static
-assets are served directly by Cloudflare and should not be rate limited.
+Unlike the old in-memory limiter, this state is backed by Cloudflare and
+survives cold starts and isolate restarts. Static assets are not rate limited.
 
 ## Status Monitoring with Discord Webhook
 - `/status` and `/status/*` redirect to `/` (the status page is hidden).

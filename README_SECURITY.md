@@ -29,6 +29,6 @@ Since you're using Cloudflare with static assets, you need to deploy this as a W
 After deployment:
 - Visit `https://your-worker-url.workers.dev/api/status` - This will post to Discord
 - Visit `https://your-worker-url.workers.dev/api/health` - Health check
-- Your site will be protected by rate limiting (60 req/min per IP)
+- `/api/*` is rate limited by the `API_RATE_LIMITER` binding in `wrangler.jsonc`
 
 The webhook is stored as an encrypted secret and never exposed in your code.
