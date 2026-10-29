@@ -555,9 +555,9 @@ section{padding:120px 0;}
 }
 .partner-marquee:hover .partner-track{animation-play-state:paused;}
 .partner-set{display:flex; flex:0 0 auto;}
-/* Moves left to right: each set slides in from the left by exactly its own width. */
+/* Four identical sets: one set is exactly 25% of the track width. */
 @keyframes partnerScroll{
-  from{transform:translate3d(calc(var(--partner-shift, 0px) * -1), 0, 0);}
+  from{transform:translate3d(-25%, 0, 0);}
   to{transform:translate3d(0, 0, 0);}
 }
 .partner-item{

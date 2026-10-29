@@ -21,6 +21,10 @@
 /assets/css/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
 
+# Font filenames contain a content hash, so they can be cached permanently.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Images use stable filenames, so do not mark them immutable.
 /assets/img/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400

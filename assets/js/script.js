@@ -729,30 +729,22 @@ window.addEventListener('scroll', () => {
   const original = track?.querySelector('.partner-set');
   if (!track || !original) return;
 
-  const SPEED = 40; // pixels per second
-  let resizeTimer;
+  const SET_COUNT = 4; // one original + three identical copies
 
   function build(){
-    const setW = original.getBoundingClientRect().width;
-    const marqueeW = marquee.clientWidth;
-    if (!setW) return;
-
     // Remove only generated copies. Never rebuild the original set while it is animating.
     track.querySelectorAll('.partner-set[data-clone]').forEach(node => node.remove());
 
-    // Keep enough identical sets in the track so the next set is always ready
-    // when the current one reaches the exact same starting position.
-    const copies = Math.max(3, Math.ceil(marqueeW / setW) + 2);
-    for (let i = 0; i < copies; i++){
+    // Four identical sets are enough for the track to cover wide viewports.
+    // The CSS animation shifts by exactly one set (-25% of the track), so no
+    // layout measurement is needed and no forced reflow is triggered.
+    while (track.children.length < SET_COUNT){
       const clone = original.cloneNode(true);
       clone.setAttribute('data-clone', '');
       clone.setAttribute('aria-hidden', 'true');
       clone.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '-1'));
       track.appendChild(clone);
     }
-
-    marquee.style.setProperty('--partner-shift', setW + 'px');
-    marquee.style.setProperty('--partner-dur', (setW / SPEED) + 's');
   }
 
   // Build once after the page is ready. The previous script built twice
@@ -762,11 +754,6 @@ window.addEventListener('scroll', () => {
   } else {
     build();
   }
-
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(build, 200);
-  }, { passive:true });
 })();
 
 
