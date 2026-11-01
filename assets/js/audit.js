@@ -10,6 +10,7 @@
   const resultsEl = document.querySelector('#auditResults');
   const resultsTitle = document.querySelector('#auditResultsTitle');
   const resultsUrl = document.querySelector('#auditResultsUrl');
+  const storageStatus = document.querySelector('#auditStorageStatus');
   const scoreEl = document.querySelector('#auditScore');
   const scoreValue = document.querySelector('#auditScoreValue');
   const verdictEl = document.querySelector('#auditVerdict');
@@ -224,6 +225,10 @@
     verdictCopy.textContent = verdict.copy;
 
     resultsUrl.textContent = data.finalUrl;
+    storageStatus.className = `audit-storage-status ${data.storageSaved ? 'saved' : 'failed'}`;
+    storageStatus.textContent = data.storageSaved
+      ? 'Saved to the audit database.'
+      : 'Audit completed, but the database save failed. Check the Cloudflare Worker logs.';
     renderFacts(data);
     renderCategories(data.scores);
     renderDetails(data);

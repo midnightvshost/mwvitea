@@ -74,6 +74,9 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
 .audit-results-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:26px}
 .audit-results-head h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:10px 0 8px;outline:none}
 .audit-results-url{color:var(--muted);font:11.5px 'JetBrains Mono',monospace;word-break:break-all;line-height:1.6}
+.audit-storage-status{margin-top:8px;font:11.5px 'JetBrains Mono',monospace;line-height:1.5}
+.audit-storage-status.saved{color:#9fe2bc}
+.audit-storage-status.failed{color:#ffb0b0}
 .audit-again{flex:none;padding:11px 15px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;color:var(--blue-light);font:11px 'JetBrains Mono',monospace;letter-spacing:.04em;cursor:pointer;transition:border-color .18s ease,background .18s ease}
 .audit-again:hover{border-color:rgba(143,180,255,.6);background:rgba(143,178,255,.05)}
 .audit-again:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px}
