@@ -10,6 +10,7 @@
 // Rate Limiting binding (API_RATE_LIMITER in wrangler.jsonc).
 
 import { enforceApiRateLimit } from './rate-limiter.js';
+import { handleAuditRequest } from './audit.js';
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json; charset=utf-8',
@@ -82,6 +83,10 @@ export default {
       return request.method === 'HEAD'
         ? new Response(null, { headers: JSON_HEADERS })
         : json(statusData);
+    }
+
+    if (url.pathname === '/api/audit' || url.pathname === '/api/audit/') {
+      return handleAuditRequest(request, env, ctx);
     }
 
     // Unknown API route: return JSON, not the HTML 404 page.

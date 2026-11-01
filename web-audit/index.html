@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free website audit - Midnight Webs</title>
+<meta name="description" content="Run a free surface-level website audit. Check response speed, SEO tags, security headers and mobile basics for any public URL.">
+<link rel="canonical" href="https://www.midnightwebs.com/web-audit/">
+<link rel="icon" href="/assets/img/favicon.ico">
+<meta name="theme-color" content="#050914">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/audit.css">
+<link rel="stylesheet" href="/assets/css/back-link.css">
+<script src="/assets/js/audit.js" defer></script>
+</head>
+<body class="audit-page">
+
+<header class="audit-topbar">
+  <nav class="wrap">
+    <a href="/" class="brand" aria-label="Midnight Webs home"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <div class="audit-nav">
+      <a href="/" class="back-link">← Back to site</a>
+    </div>
+  </nav>
+</header>
+
+<main class="audit-main">
+  <div class="wrap">
+    <div class="audit-heading">
+      <h1>See what your website is really doing.</h1>
+      <p>Enter any public URL for an instant, surface-level check of speed, SEO, security and mobile basics. No sign-up and no email needed.</p>
+    </div>
+
+    <section class="audit-panel" aria-labelledby="auditFormTitle">
+      <h2 class="sr-only" id="auditFormTitle">Check a website</h2>
+      <form id="auditForm" class="audit-form" novalidate>
+        <div class="audit-input-row">
+          <label for="auditUrl" class="sr-only">Website URL</label>
+          <input id="auditUrl" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourwebsite.com" spellcheck="false" required>
+          <button type="submit" class="audit-submit" id="auditSubmit">Run audit</button>
+        </div>
+        <p class="audit-error" id="auditError" role="alert" hidden></p>
+      </form>
+      <div class="audit-loading" id="auditLoading" role="status" aria-live="polite" hidden>
+        <span class="audit-spinner" aria-hidden="true"></span>
+        <span id="auditLoadingText">Fetching the page…</span>
+      </div>
+    </section>
+
+    <ul class="audit-intro" aria-label="What the audit checks">
+      <li>
+        <span class="audit-intro-index">01</span>
+        <strong>Speed</strong>
+        <span>Response time, page weight, compression and caching.</span>
+      </li>
+      <li>
+        <span class="audit-intro-index">02</span>
+        <strong>SEO</strong>
+        <span>Title, description, headings, canonical, social tags and indexability.</span>
+      </li>
+      <li>
+        <span class="audit-intro-index">03</span>
+        <strong>Security</strong>
+        <span>HTTPS, HSTS, CSP, clickjacking, referrer policy and mixed content.</span>
+      </li>
+      <li>
+        <span class="audit-intro-index">04</span>
+        <strong>Mobile</strong>
+        <span>Viewport, encoding, favicon, theme color and HTML doctype.</span>
+      </li>
+    </ul>
+
+    <section class="audit-results" id="auditResults" hidden>
+      <div class="audit-results-head">
+        <div>
+          <p class="audit-kicker">Audit results</p>
+          <h2 id="auditResultsTitle" tabindex="-1">Your website report</h2>
+          <p class="audit-results-url" id="auditResultsUrl"></p>
+        </div>
+        <button type="button" class="audit-again" id="auditAgain">Check another site</button>
+      </div>
+
+      <div class="audit-overview">
+        <div class="audit-score-card">
+          <span class="audit-kicker">Overall score</span>
+          <div class="audit-score" id="auditScore" style="--score:0">
+            <span class="audit-score-value" id="auditScoreValue">--</span>
+            <span class="audit-score-max">/100</span>
+          </div>
+          <strong class="audit-verdict" id="auditVerdict">Waiting for a URL</strong>
+          <p class="audit-verdict-copy" id="auditVerdictCopy"></p>
+        </div>
+        <div class="audit-facts" id="auditFacts"></div>
+      </div>
+
+      <div class="audit-categories" id="auditCategories"></div>
+
+      <div class="audit-details" id="auditDetails"></div>
+
+      <div class="audit-cta">
+        <div>
+          <p class="audit-kicker">Need a hand?</p>
+          <h2>Want these issues fixed for you?</h2>
+          <p>We build fast, secure websites and can handle the fixes surfaced by this audit. Tell us what you need and we will put together a clear estimate.</p>
+        </div>
+        <div class="audit-cta-actions">
+          <a href="/estimate/" class="audit-button">Get a project estimate</a>
+          <a href="mailto:contact.midnightwebs@gmail.com" class="audit-button audit-button-ghost">Email us</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="audit-footer">
+  <div class="wrap">
+    <p>&copy; 2026 Midnight Webs. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

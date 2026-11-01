@@ -19,7 +19,9 @@
       }
     }
   ],
-  "vars": {},
+  "vars": {
+    "SUPABASE_URL": "https://pqevbgelvgfalkwamkcl.supabase.co"
+  },
   "observability": {
     "enabled": true
   }
