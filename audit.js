@@ -855,15 +855,8 @@ export async function handleAuditRequest(request, env, ctx) {
 
   try {
     const result = analyze({ target, response, body, ttfb, total, finalUrl, redirects });
-    const storage = persistAudit(result, env);
-    if (ctx && typeof ctx.waitUntil === 'function') {
-      ctx.waitUntil(storage);
-    } else {
-      storage.catch((error) => {
-        console.error('Audit storage failed:', error?.message || 'network error');
-      });
-    }
-    return json(result);
+    const storageSaved = await persistAudit(result, env);
+    return json({ ...result, storageSaved });
   } catch (error) {
     console.error('Audit analysis failed:', error);
     return fail('The page was reached, but the audit could not be completed.', 500);
@@ -908,8 +901,12 @@ function sanitizeForStorage(value) {
 async function persistAudit(result, env) {
   const supabaseUrl = env?.SUPABASE_URL;
   const serviceRoleKey = env?.SUPABASE_SERVICE_ROLE_KEY;
-  if (!supabaseUrl || !serviceRoleKey) {
-    console.error('Audit storage is not configured.');
+  if (!supabaseUrl) {
+    console.error('Audit storage is not configured: SUPABASE_URL is missing.');
+    return false;
+  }
+  if (!serviceRoleKey) {
+    console.error('Audit storage is not configured: SUPABASE_SERVICE_ROLE_KEY is missing.');
     return false;
   }
 
@@ -945,16 +942,22 @@ async function persistAudit(result, env) {
   const timer = setTimeout(() => controller.abort(), 5000);
 
   try {
+    const headers = {
+      apikey: serviceRoleKey,
+      'Content-Type': 'application/json',
+      Prefer: 'return=minimal',
+    };
+    // New Supabase secret API keys are not JWTs, so they must not be sent as
+    // Authorization: Bearer. Legacy service_role keys are JWTs and still use it.
+    if (!serviceRoleKey.startsWith('sb_secret_')) {
+      headers.Authorization = `Bearer ${serviceRoleKey}`;
+    }
+
     const response = await fetch(endpoint, {
       method: 'POST',
       redirect: 'manual',
       signal: controller.signal,
-      headers: {
-        apikey: serviceRoleKey,
-        Authorization: `Bearer ${serviceRoleKey}`,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal',
-      },
+      headers,
       body: JSON.stringify({
         target_url: safeResult.target,
         final_url: safeResult.finalUrl,
@@ -967,7 +970,8 @@ async function persistAudit(result, env) {
       return false;
     }
     if (!response.ok) {
-      console.error('Audit storage request failed with status:', response.status);
+      const detail = (await response.text().catch(() => '')).slice(0, 300);
+      console.error('Audit storage request failed with status:', response.status, detail);
       return false;
     }
     return true;
