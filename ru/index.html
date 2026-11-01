@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Индивидуальные сайты, хостинг, защита и обслуживание для бизнеса в Молдове.">
+<meta name="description" content="Индивидуальные сайты, хостинг, защита и обслуживание для клиентов по всему миру.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Midnight Webs</title>
 <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
@@ -16,17 +16,17 @@
 <meta name="application-name" content="Midnight Webs">
 <meta property="og:site_name" content="Midnight Webs">
 <meta property="og:title" content="Midnight Webs">
-<meta property="og:description" content="Midnight Webs проектирует, размещает и защищает индивидуальные сайты для малого бизнеса в Молдове.">
+<meta property="og:description" content="Midnight Webs проектирует, размещает и защищает индивидуальные сайты для малого бизнеса по всему миру.">
 <meta property="og:locale" content="ru_MD">
 <meta property="og:image" content="https://www.midnightwebs.com/assets/img/social-preview.png">
 <meta property="og:image:secure_url" content="https://www.midnightwebs.com/assets/img/social-preview.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Midnight Webs: web design, hosting, security and maintenance for small businesses in Moldova.">
+<meta property="og:image:alt" content="Midnight Webs: web design, hosting, security and maintenance for small businesses worldwide.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Midnight Webs">
-<meta name="twitter:description" content="Midnight Webs проектирует, размещает и защищает индивидуальные сайты для малого бизнеса в Молдове.">
+<meta name="twitter:description" content="Midnight Webs проектирует, размещает и защищает индивидуальные сайты для малого бизнеса по всему миру.">
 <meta name="twitter:image" content="https://www.midnightwebs.com/assets/img/social-preview.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.midnightwebs.com/ru">
@@ -661,6 +661,11 @@
 .client-role{display:block;margin:2px 0 0;line-height:1.35}
 .client-plan{display:inline;font-family:inherit;font-size:inherit;letter-spacing:normal;text-transform:none;color:var(--blue-light);white-space:normal;margin:0;padding:0;border:0;border-radius:0;background:transparent;line-height:inherit}
 .client-plan::before{content:" — ";width:auto;height:auto;flex:none;border-radius:0;background:none;box-shadow:none}
+.client-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1180px;align-items:stretch}
+.client-grid .client-card{display:flex;flex-direction:column;height:100%;min-width:0}
+.client-grid .client-quote{flex:1 0 auto}
+.client-grid .client-foot{margin-top:auto}
+@media(max-width:760px){.client-grid{grid-template-columns:1fr}}
 </style>
 <style>.lang-menu button{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}</style>
 </head>
@@ -814,7 +819,8 @@
       <div class="plan featured">
         <div class="tag" data-i18n="plan2_tag">Most chosen</div>
         <h3 data-i18n="plan2_title">Growth</h3>
-        <div class="price">$89<span data-i18n="plan2_suffix">/month</span></div>
+        <div class="price">$99<span data-i18n="plan2_suffix">/month</span></div>
+        <p class="setup-note" data-i18n="plan2_build_note">The one-time build price depends on the pages and features you choose.</p>
         <p class="setup-note" data-i18n="plan_setup">One-time design and build fee: quoted for your project and approved before work begins.</p>
         <div class="desc" data-i18n="plan2_desc">For businesses actively marketing themselves and adding pages over time.</div>
         <ul>
@@ -846,7 +852,11 @@
       </div>
     </div>
   </div>
+<p class="pricing-estimator-link" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:13px"><span>У вашего проекта особые требования?</span> <a style="color:var(--blue-light);text-decoration:underline;text-underline-offset:4px" href="/ru/estimate/">Составить оценку →</a></p>
 </section>
+
+
+
 
 <section class="process" id="process">
   <div class="wrap">
@@ -984,6 +994,23 @@
             <div class="client-role"><span data-i18n="client1_role">Client</span><span class="client-plan" data-i18n="client1_plan">Foundation plan</span></div>
           </div>
           <a href="https://legit-interactive.com" target="_blank" rel="noopener" class="client-link" data-i18n="client1_link">legit-interactive.com →</a>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="client-top">
+          <div class="client-vitea-lockup" style="display:flex;align-items:center;gap:16px">
+            <picture><source srcset="/assets/img/vitea-studios-mark.avif" type="image/avif"><img src="/assets/img/vitea-studios-mark.png" width="116" height="136" alt="Логотип Vitea Studios" class="client-logo" style="height:48px" loading="lazy" decoding="async"></picture>
+            <span class="partner-name">Vitea Studios</span>
+          </div>
+          <div class="client-stars" aria-label="5 из 5 звёзд">★★★★★</div>
+        </div>
+        <p class="client-quote">«Мы очень довольны услугами Midnight Webs. Команда ответственная и предана своему делу. Благодаря партнёрству мы получили много преимуществ и более выгодные цены. Они создали именно то, что мы хотели, и завершили работу раньше срока. Мы настоятельно рекомендуем Midnight Webs любой студии или компании, которой нужен современный и функциональный сайт по цене ниже обычной.»</p>
+        <div class="client-foot">
+          <div>
+            <div class="client-name">Vitea Studios</div>
+            <div class="client-role"><span>Партнёр</span><span class="client-plan">План Growth</span></div>
+          </div>
+          <a href="https://viteastudios.com" target="_blank" rel="noopener noreferrer" class="client-link">viteastudios.com →</a>
         </div>
       </div>
     </div>
@@ -1150,7 +1177,7 @@
   </div>
 </div>
 
-<script src="/assets/js/script.min.js?v=20261030" defer></script>
+<script src="/assets/js/script.min.js?v=20261101" defer></script>
 
 </body>
 </html>
