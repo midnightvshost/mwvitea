@@ -111,7 +111,7 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
     <div class="page-head">
       <h1>Privacy Policy</h1>
       <p class="lede">This page explains what information Midnight Webs collects when you visit this site, apply for a role, or use our design, backend, hosting, security, and maintenance services, why we collect it, and what choices you have.</p>
-      <div class="updated">Last updated: 24 October 2026</div>
+      <div class="updated">Last updated: 1 November 2026</div>
     </div>
 
     <section class="block">
@@ -124,6 +124,8 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
         <li><strong>Job applications.</strong> Our <a href="/careers/">Careers</a> page doesn't submit anything to our servers. When you click "Send," it opens your own email app with a message pre-filled, and you choose whether to attach a CV, portfolio, or other files before sending it yourself. We only receive what arrives in that email, the same as any message sent to us directly.</li>
       </ul>
       <p>The FAQ is available in English, Romanian and Russian. Reading it does not create an account or send us information. We do not currently run analytics, advertising or third-party tracking scripts on this site. This site does request web fonts from Google Fonts; your browser connects to Google to retrieve them, and Google may receive standard request information such as your IP address and browser details. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>. If our data practices change, we will update this page.</p>
+      <p><strong>Free Website Audit.</strong> When you submit a URL, our Cloudflare Worker fetches the public page and creates a technical report. We process the submitted URL, the final URL after redirects, the report's check results, and its timestamp. Successful reports are saved in our Supabase database so we can maintain audit history. Before saving, we remove URL credentials, query strings, and fragments from stored URLs and sanitize URL-like text in the report. The audit does not ask for your name or email. Do not submit private, authenticated, or restricted URLs. Audit records do not currently have an automatic deletion schedule; they remain stored until we delete them. You can request deletion by emailing us.</p>
+      <p><strong>Estimate tool.</strong> The estimate is calculated in your browser. Selecting options does not send them to us. If you choose to request a quote, the tool opens a pre-filled email; we receive the information only if you send that email.</p>
     </section>
 
     <section class="block">
@@ -170,6 +172,7 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
       <p>Messages sent through our contact or project form are kept only as long as needed to respond to you or, if you become a client, for the duration of our working relationship plus a reasonable period for our records. Language and cookie-consent preferences live in your own browser and are never transmitted to us.</p>
       <p>For client projects, we keep project files, credentials, and backups for as long as we provide the service, and delete or return them after the engagement ends, unless you ask us to keep them or the law requires us to. Backups are rotated, so older copies are replaced over time. Security audit findings are shared with you and kept only as long as needed to support the work and any follow-up, and test data we collect is deleted once the audit is complete.</p>
       <p>Job applications are kept only as long as needed to consider you for the role (and any other open role you might be a fit for), and are deleted after that unless you ask us to keep them longer.</p>
+      <p>Website audit records are stored in Supabase without an automatic deletion schedule and remain there until we delete them. Cloudflare may separately process request and security logs under its own retention practices.</p>
     </section>
 
     <section class="block">
@@ -178,6 +181,7 @@ h1,h2,h3{font-family:'Bodoni Moda',serif; font-weight:500; letter-spacing:0.01em
       <ul>
         <li>our email provider, through which contact form messages and applications pass,</li>
         <li>hosting, infrastructure, backup, and security-monitoring providers used to run client sites,</li>
+        <li>Cloudflare, which runs the website and audit Worker, and Supabase, which stores audit reports,</li>
         <li>payment processors, for clients who sell online, and</li>
         <li>other tools or services you ask us to connect to your project, such as email, analytics, or shipping services.</li>
       </ul>

@@ -8,8 +8,6 @@ create table if not exists public.audits (
 
 alter table public.audits enable row level security;
 
--- The Cloudflare Worker writes with the service_role key. No public or
--- authenticated policies are created, and those roles receive no table grants.
 revoke all on table public.audits from anon, authenticated;
 grant all on table public.audits to service_role;
 grant usage, select on sequence public.audits_id_seq to service_role;
