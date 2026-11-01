@@ -855,8 +855,8 @@ export async function handleAuditRequest(request, env, ctx) {
 
   try {
     const result = analyze({ target, response, body, ttfb, total, finalUrl, redirects });
-    const storageSaved = await persistAudit(result, env);
-    return json({ ...result, storageSaved });
+    await persistAudit(result, env);
+    return json(result);
   } catch (error) {
     console.error('Audit analysis failed:', error);
     return fail('The page was reached, but the audit could not be completed.', 500);
