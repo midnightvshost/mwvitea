@@ -633,7 +633,13 @@ applyLanguage(savedLang);
   }
 
   document.querySelectorAll('[data-open-project]').forEach(btn => {
-    btn.addEventListener('click', () => openModal(btn));
+    btn.addEventListener('click', () => {
+      const lang = document.documentElement.lang || 'en';
+      const prefix = lang === 'en' ? '' : `/${lang}`;
+      const plan = btn.dataset.plan || 'foundation';
+      const query = new URLSearchParams({ plan });
+      location.assign(`${prefix}/estimate/?${query.toString()}`);
+    });
   });
   closeBtn.addEventListener('click', closeModal);
 

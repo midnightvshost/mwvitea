@@ -74,9 +74,14 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
 .audit-results-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:26px}
 .audit-results-head h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:10px 0 8px;outline:none}
 .audit-results-url{color:var(--muted);font:11.5px 'JetBrains Mono',monospace;word-break:break-all;line-height:1.6}
-.audit-again{flex:none;padding:11px 15px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;color:var(--blue-light);font:11px 'JetBrains Mono',monospace;letter-spacing:.04em;cursor:pointer;transition:border-color .18s ease,background .18s ease}
+.audit-results-actions{display:flex;flex:none;flex-wrap:wrap;gap:10px}
+.audit-again,.audit-download{flex:none;padding:11px 15px;border-radius:3px;font:11px 'JetBrains Mono',monospace;letter-spacing:.04em;cursor:pointer;transition:border-color .18s ease,background .18s ease,filter .18s ease}
+.audit-again{background:transparent;border:1px solid var(--line-strong);color:var(--blue-light)}
 .audit-again:hover{border-color:rgba(143,180,255,.6);background:rgba(143,178,255,.05)}
-.audit-again:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px}
+.audit-again:focus-visible,.audit-download:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px}
+.audit-download{background:linear-gradient(180deg,#5b7df0,#3457d4);border:1px solid transparent;color:#fff;font-weight:700}
+.audit-download:hover{filter:brightness(1.08)}
+.audit-download[disabled]{opacity:.6;cursor:not-allowed;filter:none}
 
 .audit-overview{display:grid;grid-template-columns:minmax(250px,.7fr) minmax(0,1.3fr);gap:18px;align-items:stretch}
 .audit-score-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 24px;background:linear-gradient(160deg,rgba(12,22,56,.98),rgba(8,15,38,.98));border:1px solid var(--line-strong);border-radius:4px}
@@ -160,6 +165,8 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
   .audit-intro{grid-template-columns:1fr}
   .audit-results{margin-top:52px;padding-top:34px}
   .audit-results-head{flex-direction:column;gap:14px}
+  .audit-results-actions{width:100%}
+  .audit-results-actions .audit-again,.audit-results-actions .audit-download{flex:1}
   .audit-score-card{grid-template-columns:1fr;text-align:center;justify-items:center}
   .audit-score{grid-row:auto;margin:20px 0 16px}
   .audit-verdict-copy{grid-column:auto}
