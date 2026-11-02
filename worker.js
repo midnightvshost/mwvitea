@@ -11,6 +11,7 @@
 
 import { enforceApiRateLimit } from './rate-limiter.js';
 import { handleAuditRequest } from './audit.js';
+import { handleInquiryConfig, handleInquiryRequest } from './inquiries.js';
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json; charset=utf-8',
@@ -87,6 +88,17 @@ export default {
 
     if (url.pathname === '/api/audit' || url.pathname === '/api/audit/') {
       return handleAuditRequest(request, env, ctx);
+    }
+
+    if (
+      url.pathname === '/api/inquiry/config' ||
+      url.pathname === '/api/inquiry/config/'
+    ) {
+      return handleInquiryConfig(request, env);
+    }
+
+    if (url.pathname === '/api/inquiry' || url.pathname === '/api/inquiry/') {
+      return handleInquiryRequest(request, env);
     }
 
     // Unknown API route: return JSON, not the HTML 404 page.

@@ -20,7 +20,10 @@
     }
   ],
   "vars": {
-    "SUPABASE_URL": "https://pqevbgelvgfalkwamkcl.supabase.co"
+    "SUPABASE_URL": "https://pqevbgelvgfalkwamkcl.supabase.co",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAFxMnHMrFkj-1Ptx",
+    "MAIL_FROM": "Midnight Webs <projects@midnightwebs.com>",
+    "MAIL_TO": "contact.midnightwebs@gmail.com"
   },
   "observability": {
     "enabled": true

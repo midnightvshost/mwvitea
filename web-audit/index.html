@@ -10,9 +10,9 @@
 <meta name="theme-color" content="#050914">
 <link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
-<link rel="stylesheet" href="/assets/css/audit.css?v=20261101-3">
+<link rel="stylesheet" href="/assets/css/audit.css?v=20261102-2">
 <link rel="stylesheet" href="/assets/css/back-link.css">
-<script src="/assets/js/audit.js?v=20261101-3" defer></script>
+<script src="/assets/js/audit.js?v=20261102-2" defer></script>
 </head>
 <body class="audit-page">
 
@@ -79,7 +79,10 @@
           <p class="audit-results-url" id="auditResultsUrl"></p>
           <span id="auditStorageStatus" hidden aria-hidden="true"></span>
         </div>
-        <button type="button" class="audit-again" id="auditAgain">Check another site</button>
+        <div class="audit-results-actions">
+          <button type="button" class="audit-download" id="auditDownload">Download report (.doc)</button>
+          <button type="button" class="audit-again" id="auditAgain">Check another site</button>
+        </div>
       </div>
 
       <div class="audit-overview">
