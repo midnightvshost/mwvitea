@@ -12,8 +12,9 @@
 # Static assets
 #
 # IMPORTANT: "immutable" is only safe for filenames that contain a content
-# hash. These bundles are not hashed, so they use 30 days plus a ?v= query
-# on their <script> references. Bump ?v= whenever the file changes.
+# hash. Cloudflare's asset cache ignores query strings, so ?v= does not
+# reliably bust it. Version the filename itself (for example
+# estimator-20261102-2.css) whenever a cached asset changes.
 # ---------------------------------------------------------------------------
 /assets/js/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
