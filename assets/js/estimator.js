@@ -340,14 +340,12 @@
 
       if (response.status === 429) throw new Error(t.messages.rate);
       if (response.status === 422) throw new Error(payload?.error || t.messages.badWords);
-      if (!response.ok || !payload?.ok) {
+      if (!response.ok || !payload?.ok || payload?.stored !== true) {
         throw new Error(payload?.error || t.messages.sendError);
       }
 
-      form.reset();
-      resetCaptcha();
-      startedAt = performance.now();
-      setStatus(t.messages.sent, 'success');
+      const successPath = lang === 'en' ? '/success/' : `/${lang}/success/`;
+      window.location.assign(successPath);
     } catch (error) {
       setStatus(error?.message || t.messages.sendError, 'error');
       resetCaptcha();

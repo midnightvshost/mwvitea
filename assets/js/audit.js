@@ -1001,23 +1001,17 @@
     triggerDownload(blob, fileName);
   }
 
-  async function downloadReport() {
+  function downloadReport() {
     if (!lastAudit) return;
 
-    const originalText = downloadBtn.textContent;
-    downloadBtn.disabled = true;
-    downloadBtn.textContent = 'Preparing PDF...';
-
     try {
-      const logo = logoJpeg || (await getLogoJpeg().catch(() => null));
-      const bytes = buildAuditPdf(lastAudit, logo);
+      // Keep PDF generation and the save action in the original click task;
+      // Safari may block a synthetic download after an awaited promise.
+      const bytes = buildAuditPdf(lastAudit, logoJpeg);
       savePdf(bytes, reportFileName(lastAudit));
     } catch (error) {
       console.error(error);
       setError('The PDF report could not be created. Please try again.');
-    } finally {
-      downloadBtn.disabled = false;
-      downloadBtn.textContent = originalText;
     }
   }
 

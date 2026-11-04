@@ -458,9 +458,9 @@ export async function handleInquiryRequest(request, env) {
   }
 
   // Honeypot and too-fast submissions are dropped silently.
-  if (payload?.website) return json({ ok: true });
+  if (payload?.website) return json({ ok: true, stored: false, ignored: true });
   const elapsedMs = Number(payload?.elapsedMs) || 0;
-  if (elapsedMs > 0 && elapsedMs < MIN_SUBMIT_MS) return json({ ok: true });
+  if (elapsedMs > 0 && elapsedMs < MIN_SUBMIT_MS) return json({ ok: true, stored: false, ignored: true });
 
   const captcha = await verifyTurnstile(request, env, payload?.turnstileToken);
   if (!captcha.ok) {
@@ -494,10 +494,10 @@ export async function handleInquiryRequest(request, env) {
     sendNotification(env, inquiry),
   ]);
 
-  if (!stored && !emailed) {
-    console.error('Inquiry was not stored and no notification was sent.');
-    return fail('We could not send your request. Please try again.', 500);
+  if (!stored) {
+    console.error(`Inquiry was not stored in Supabase${emailed ? '; email notification was sent.' : ' and no notification was sent.'}`);
+    return fail('We could not save your request. Please try again.', 500);
   }
 
-  return json({ ok: true });
+  return json({ ok: true, stored: true });
 }

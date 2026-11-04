@@ -79,9 +79,9 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
 .audit-again{background:transparent;border:1px solid var(--line-strong);color:var(--blue-light)}
 .audit-again:hover{border-color:rgba(143,180,255,.6);background:rgba(143,178,255,.05)}
 .audit-again:focus-visible,.audit-download:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px}
-.audit-download{background:var(--ink);border:1px solid transparent;color:var(--void);font-weight:700;transition:background .2s ease,color .2s ease,transform .2s ease}
-.audit-download:hover{background:var(--blue-light);color:var(--void);transform:translateY(-1px)}
-.audit-download[disabled]{opacity:.6;cursor:not-allowed;background:var(--ink);color:var(--void);transform:none}
+.audit-download{background:transparent;border:1px solid var(--line-strong);color:var(--blue-light);font-weight:400;transition:border-color .18s ease,background .18s ease,color .18s ease}
+.audit-download:hover{border-color:rgba(143,180,255,.6);background:rgba(143,178,255,.05)}
+.audit-download[disabled]{opacity:.6;cursor:wait}
 
 .audit-overview{display:grid;grid-template-columns:minmax(250px,.7fr) minmax(0,1.3fr);gap:18px;align-items:stretch}
 .audit-score-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 24px;background:linear-gradient(160deg,rgba(12,22,56,.98),rgba(8,15,38,.98));border:1px solid var(--line-strong);border-radius:4px}
