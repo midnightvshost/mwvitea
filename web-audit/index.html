@@ -10,9 +10,9 @@
 <meta name="theme-color" content="#050914">
 <link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
-<link rel="stylesheet" href="/assets/css/audit.css?v=20261102-2">
+<link rel="stylesheet" href="/assets/css/audit.css">
 <link rel="stylesheet" href="/assets/css/back-link.css">
-<script src="/assets/js/audit.js?v=20261102-2" defer></script>
+<script src="/assets/js/audit.js" defer></script>
 </head>
 <body class="audit-page">
 
@@ -29,7 +29,7 @@
   <div class="wrap">
     <div class="audit-heading">
       <h1>See what your website is really doing.</h1>
-      <p>Enter any public URL for an instant, surface-level check of speed, SEO, security and mobile basics. No sign-up and no email needed.</p>
+      <p>Enter any public URL for an instant, surface-level check of speed, SEO, security and mobile basics. Every warning shows the exact HTML lines, headers and images behind it. No sign-up and no email needed.</p>
     </div>
 
     <section class="audit-panel" aria-labelledby="auditFormTitle">
@@ -80,7 +80,7 @@
           <span id="auditStorageStatus" hidden aria-hidden="true"></span>
         </div>
         <div class="audit-results-actions">
-          <button type="button" class="audit-download" id="auditDownload">Download report (.doc)</button>
+          <button type="button" class="audit-download" id="auditDownload">Download report (PDF)</button>
           <button type="button" class="audit-again" id="auditAgain">Check another site</button>
         </div>
       </div>
@@ -101,6 +101,14 @@
       <div class="audit-categories" id="auditCategories"></div>
 
       <div class="audit-details" id="auditDetails"></div>
+
+      <section class="audit-recommendations" id="auditRecommendations" hidden>
+        <div class="audit-group-head">
+          <h3>Recommended fixes</h3>
+          <span class="audit-group-score" id="auditRecommendationsCount"></span>
+        </div>
+        <ol class="audit-recommendation-list" id="auditRecommendationsList"></ol>
+      </section>
 
       <div class="audit-cta">
         <div>

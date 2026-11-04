@@ -11,16 +11,14 @@
 # ---------------------------------------------------------------------------
 # Static assets
 #
-# IMPORTANT: "immutable" is only safe for filenames that contain a content
-# hash. Cloudflare's asset cache ignores query strings, so ?v= does not
-# reliably bust it. Version the filename itself (for example
-# estimator-20261102-2.css) whenever a cached asset changes.
+# IMPORTANT: CSS and JS keep stable filenames, so they must revalidate.
+# Do not give them a long max-age unless the filename contains a content hash.
 # ---------------------------------------------------------------------------
 /assets/js/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+  Cache-Control: public, max-age=0, must-revalidate
 
 /assets/css/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+  Cache-Control: public, max-age=0, must-revalidate
 
 # Font filenames contain a content hash, so they can be cached permanently.
 /assets/fonts/*
