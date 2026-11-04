@@ -74,12 +74,14 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
 .audit-results-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:26px}
 .audit-results-head h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:10px 0 8px;outline:none}
 .audit-results-url{color:var(--muted);font:11.5px 'JetBrains Mono',monospace;word-break:break-all;line-height:1.6}
-.audit-storage-status{margin-top:8px;font:11.5px 'JetBrains Mono',monospace;line-height:1.5}
-.audit-storage-status.saved{color:#9fe2bc}
-.audit-storage-status.failed{color:#ffb0b0}
-.audit-again{flex:none;padding:11px 15px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;color:var(--blue-light);font:11px 'JetBrains Mono',monospace;letter-spacing:.04em;cursor:pointer;transition:border-color .18s ease,background .18s ease}
+.audit-results-actions{display:flex;flex:none;flex-wrap:wrap;gap:10px}
+.audit-again,.audit-download{flex:none;padding:11px 15px;border-radius:3px;font:11px 'JetBrains Mono',monospace;letter-spacing:.04em;cursor:pointer;transition:border-color .18s ease,background .18s ease,filter .18s ease}
+.audit-again{background:transparent;border:1px solid var(--line-strong);color:var(--blue-light)}
 .audit-again:hover{border-color:rgba(143,180,255,.6);background:rgba(143,178,255,.05)}
-.audit-again:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px}
+.audit-again:focus-visible,.audit-download:focus-visible{outline:2px solid var(--blue-light);outline-offset:3px}
+.audit-download{background:var(--ink);border:1px solid transparent;color:var(--void);font-weight:700;transition:background .2s ease,color .2s ease,transform .2s ease}
+.audit-download:hover{background:var(--blue-light);color:var(--void);transform:translateY(-1px)}
+.audit-download[disabled]{opacity:.6;cursor:not-allowed;background:var(--ink);color:var(--void);transform:none}
 
 .audit-overview{display:grid;grid-template-columns:minmax(250px,.7fr) minmax(0,1.3fr);gap:18px;align-items:stretch}
 .audit-score-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 24px;background:linear-gradient(160deg,rgba(12,22,56,.98),rgba(8,15,38,.98));border:1px solid var(--line-strong);border-radius:4px}
@@ -96,6 +98,8 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
 .audit-fact-value{font-size:20px;font-weight:500;line-height:1.25;word-break:break-word}
 .audit-fact-value.is-link{font-size:11.5px;font-family:'JetBrains Mono',monospace;color:var(--blue-light);word-break:break-all}
 .audit-fact-value .unit{font:11px 'JetBrains Mono',monospace;color:var(--muted)}
+.audit-fact-value.is-pass{color:var(--pass)}
+.audit-fact-value.is-warn{color:var(--warn)}
 
 .audit-categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
 .audit-category{padding:18px;background:rgba(255,255,255,.018);border:1px solid var(--line);border-radius:3px}
@@ -124,6 +128,27 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
 .is-fail .audit-status{color:var(--fail);background:rgba(255,128,128,.1)}
 .audit-check-detail{color:var(--muted);font-size:11.5px;line-height:1.55;word-break:break-word}
 .audit-check-fix{margin-top:8px;padding-top:8px;border-top:1px solid var(--line);color:#a9b6d8;font-size:11px;line-height:1.55}
+
+.audit-evidence{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.audit-evidence-label{margin:0 0 8px;font:8.5px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-light)}
+.audit-evidence-list{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.audit-evidence-item{display:grid;gap:6px;padding:9px 10px;background:rgba(4,8,21,.44);border:1px solid var(--line);border-radius:3px;min-width:0}
+.audit-evidence-item-label{font:8.5px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.audit-evidence-image{display:flex;align-items:center;justify-content:center;min-height:64px;padding:6px;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:2px}
+.audit-evidence-image img{display:block;max-width:100%;max-height:150px;width:auto;height:auto;object-fit:contain}
+.audit-evidence-code{display:block;padding:8px 10px;color:#c8d6ff;background:rgba(0,0,0,.28);border-left:2px solid rgba(143,178,255,.38);font:10px/1.65 'JetBrains Mono',monospace;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.audit-evidence-note{color:var(--muted);font-size:10.5px;line-height:1.5}
+
+.audit-recommendations{margin-top:44px}
+.audit-recommendation-list{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:recommendation}
+.audit-recommendation{position:relative;padding:16px 18px 16px 48px;background:rgba(255,255,255,.018);border:1px solid var(--line);border-left:2px solid var(--line-strong);border-radius:3px;counter-increment:recommendation}
+.audit-recommendation::before{content:counter(recommendation,decimal-leading-zero);position:absolute;left:16px;top:17px;color:var(--muted);font:9px 'JetBrains Mono',monospace;letter-spacing:.08em}
+.audit-recommendation.is-warn{border-left-color:var(--warn)}
+.audit-recommendation.is-fail{border-left-color:var(--fail)}
+.audit-recommendation-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px}
+.audit-recommendation-head h4{margin:0;font-size:12.5px;font-weight:600;line-height:1.4}
+.audit-recommendation-fix{color:#c7d3ef;font-size:11.5px;line-height:1.6}
+.audit-recommendation-detail{margin-top:6px;color:var(--muted);font-size:10.5px;line-height:1.55;word-break:break-word}
 
 .audit-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:54px;padding:32px;background:linear-gradient(135deg,rgba(62,99,224,.14),rgba(12,22,56,.9));border:1px solid var(--line-strong);border-radius:4px}
 .audit-cta h2{font-size:clamp(24px,3.4vw,36px);line-height:1.12;margin:10px 0 10px}
@@ -163,6 +188,8 @@ h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-.01em}
   .audit-intro{grid-template-columns:1fr}
   .audit-results{margin-top:52px;padding-top:34px}
   .audit-results-head{flex-direction:column;gap:14px}
+  .audit-results-actions{width:100%}
+  .audit-results-actions .audit-again,.audit-results-actions .audit-download{flex:1}
   .audit-score-card{grid-template-columns:1fr;text-align:center;justify-items:center}
   .audit-score{grid-row:auto;margin:20px 0 16px}
   .audit-verdict-copy{grid-column:auto}

@@ -153,6 +153,9 @@ header .nav-right > .btn-primary{border-radius:999px;}
   position:relative;
 }
 .nav-links a:hover{color:var(--ink);}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:rgba(143,178,255,.72);transform:scaleX(0);transform-origin:left center;transition:transform .32s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+@media(prefers-reduced-motion:reduce){.nav-links a::after{transition:none}}
 @media (min-width:901px) and (max-width:1100px){
   .nav-links{gap:18px;}
   .nav-links a{font-size:13px;}
