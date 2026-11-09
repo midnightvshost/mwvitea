@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Speed &amp; Core Web Vitals Checklist - Midnight Webs</title>
+<meta name="description" content="A free website performance checklist covering images, fonts, CSS, JavaScript, hosting, Core Web Vitals, mobile testing and monitoring.">
+<link rel="canonical" href="https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-speed-core-web-vitals-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-speed-core-web-vitals-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Website Speed &amp; Core Web Vitals Checklist - Midnight Webs">
+<meta property="og:description" content="A free website performance checklist covering images, fonts, CSS, JavaScript, hosting, Core Web Vitals, mobile testing and monitoring.">
+<meta property="og:url" content="https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/" class="back-link">&larr; Back to site</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a><span>/</span>
+  <a href="/resources/">Resources</a><span>/</span>
+  <span>Website Speed &amp; Core Web Vitals Checklist</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Free performance checklist</p>
+      <h1>Website Speed &amp; Core Web Vitals Checklist</h1>
+      <p class="res-lede">Fast pages are easier to use and easier to rank. Use this checklist to find the slow parts of your site, fix the biggest causes and keep performance from drifting after launch.</p>
+      <div class="res-meta"><span>Updated November 2026</span><span>12 min read</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="measure">
+  <h2>1. Measure the pages that matter</h2>
+  <p>Start with the templates that carry traffic and revenue: home, product, category, service and checkout pages. A perfect score on a page nobody visits is not useful.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Use field data from the Chrome UX Report or your analytics platform to see real mobile performance.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use a lab tool such as PageSpeed Insights or Lighthouse to find specific causes.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test the same page more than once; third-party scripts and caching can change results.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Compare mobile and desktop separately, and record the date of each test.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Write a baseline for LCP, INP and CLS before changing code.</span></li></ul>
+  
+</section><section id="images">
+  <h2>2. Fix images and Largest Contentful Paint</h2>
+  <p>Images are often the heaviest part of a page and the element that determines LCP. Fix them before rewriting application code.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Compress photos and use AVIF or WebP with fallbacks where needed.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Set width and height attributes so the browser can reserve space.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Serve the right size for each screen instead of one huge original.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Do not lazy-load the main hero or product image; load it early.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use a CDN or image service that resizes and converts images automatically.</span></li></ul>
+  
+</section><section id="javascript">
+  <h2>3. Reduce JavaScript and third-party weight</h2>
+  <p>Every tag has a cost. Analytics, chat widgets, consent tools, fonts and A/B testing scripts all compete for the same main thread.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>List every third-party script and remove the ones nobody uses.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Load non-critical scripts after the page is interactive or only when needed.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Split large bundles and remove unused libraries.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Audit tag managers so one container does not load dozens of tags on every page.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test with slow mobile CPU throttling, not only on a fast laptop.</span></li></ul>
+  
+</section><section id="css-fonts">
+  <h2>4. Fonts, CSS and layout stability</h2>
+  <p>Text should appear quickly and stay in place. Font swaps, late CSS and ads can all cause visible movement.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Preload the main font files and use font-display: swap.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Subset fonts and remove weights or languages you do not use.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Inline critical CSS and defer the rest where practical.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Reserve space for ads, embeds, banners and cookie notices.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Avoid icon fonts when a small SVG set will do.</span></li></ul>
+  
+</section><section id="hosting">
+  <h2>5. Hosting, caching and TTFB</h2>
+  <p>A fast front end cannot fix a slow server. Check the time to first byte and how often repeat visitors can reuse cached files.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Measure TTFB from the regions where your customers actually are.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Enable compression and a CDN for static assets.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Cache HTML only when you have a safe way to purge it.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Keep server software, plugins and database queries under review.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Watch for slow API calls and redirect chains before the page can render.</span></li></ul>
+  
+</section><section id="monitor">
+  <h2>6. Test on real devices and monitor after launch</h2>
+  <p>Performance is not a one-time score. New images, scripts and features will change it unless someone owns the number.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Test on a mid-range phone and a slow connection.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Check the main templates in a private window with a clean cache.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Set a performance budget for page weight and Core Web Vitals.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Monitor field data and alert on regressions after releases.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Review the slowest pages every month and fix the top cause first.</span></li></ul>
+  <div class="res-callout"><strong>Start with the biggest template:</strong> improving a product or service page usually beats polishing the homepage.</div>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>On this page</h2>
+          <ul class="res-toc"><li><a href="#measure">1. Measure the pages that matter</a></li><li><a href="#images">2. Fix images and Largest Contentful Paint</a></li><li><a href="#javascript">3. Reduce JavaScript and third-party weight</a></li><li><a href="#css-fonts">4. Fonts, CSS and layout stability</a></li><li><a href="#hosting">5. Hosting, caching and TTFB</a></li><li><a href="#monitor">6. Test on real devices and monitor after launch</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Download the checklist</h2>
+          <p>A print-ready PDF version you can share with your developer, host or marketing team.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-speed-core-web-vitals-checklist.pdf" download>Download PDF</a>
+          <div class="res-download-note">PDF · No email required</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Related resources</h2>
+          <ul class="res-related">
+            <li><a href="/resources/website-launch-security-checklist/"><strong>Website Launch Security Checklist</strong><span>Free security checklist</span></a></li><li><a href="/resources/ecommerce-conversion-optimization-guide/"><strong>E-commerce Conversion Optimization Guide</strong><span>Free optimization guide</span></a></li><li><a href="/resources/local-seo-checklist-for-small-businesses/"><strong>Local SEO Checklist for Small Businesses</strong><span>Free local SEO checklist</span></a></li>
+          <li><a href="/resources/ai-search-visibility-checklist/"><strong>AI Search Visibility Checklist</strong><span>Free AI search checklist</span></a></li><li><a href="/resources/website-accessibility-wcag-2-2-checklist/"><strong>Website Accessibility Checklist: WCAG 2.2</strong><span>Free accessibility checklist</span></a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Want us to handle it for you?</h2>
+        <p>We build, secure and maintain websites for small businesses. If you would rather not manage the technical details, tell us what you need and we will scope it.</p>
+      </div>
+      <a class="btn btn-primary" href="/estimate/">Start a project</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Design, hosting and security for businesses that would rather focus on customers than code.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Free resources</h3>
+        <a href="/resources/">Resources</a>
+        <a href="/resources/website-launch-security-checklist/">Website Launch Security Checklist</a><a href="/resources/ecommerce-conversion-optimization-guide/">E-commerce Conversion Optimization Guide</a><a href="/resources/website-speed-core-web-vitals-checklist/">Website Speed &amp; Core Web Vitals Checklist</a><a href="/resources/local-seo-checklist-for-small-businesses/">Local SEO Checklist for Small Businesses</a><a href="/resources/ai-search-visibility-checklist/">AI Search Visibility Checklist</a><a href="/resources/website-accessibility-wcag-2-2-checklist/">Website Accessibility Checklist: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Site</h3>
+        <a href="/">Home</a>
+        <a href="/estimate/">Start a project</a>
+        <a href="/web-audit/">Website Audit</a>
+        <a href="/faq/">FAQ</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. All rights reserved.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Website Speed & Core Web Vitals Checklist", "description": "A free website performance checklist covering images, fonts, CSS, JavaScript, hosting, Core Web Vitals, mobile testing and monitoring.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/"}, "about": ["Web performance", "Core Web Vitals"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.midnightwebs.com/"}, {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.midnightwebs.com/resources/"}, {"@type": "ListItem", "position": 3, "name": "Website Speed & Core Web Vitals Checklist", "item": "https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/"}]}</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Launch Security Checklist - Midnight Webs</title>
+<meta name="description" content="A free pre-launch website security checklist covering accounts, HTTPS, software, forms, backups, monitoring and launch-day checks.">
+<link rel="canonical" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Website Launch Security Checklist - Midnight Webs">
+<meta property="og:description" content="A free pre-launch website security checklist covering accounts, HTTPS, software, forms, backups, monitoring and launch-day checks.">
+<meta property="og:url" content="https://www.midnightwebs.com/resources/website-launch-security-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/" class="back-link">&larr; Back to site</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a><span>/</span>
+  <a href="/resources/">Resources</a><span>/</span>
+  <span>Website Launch Security Checklist</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Free security checklist</p>
+      <h1>Website Launch Security Checklist</h1>
+      <p class="res-lede">Use this checklist before you point a new website at your domain. It covers the access, HTTPS, backup and launch basics that prevent the most common problems.</p>
+      <div class="res-meta"><span>Updated November 2026</span><span>12 min read</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="accounts">
+  <h2>1. Accounts and access</h2>
+  <p>Most website compromises start with weak or reused credentials, not sophisticated attacks. Fix the basics before launch.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Use a unique password for every admin account; store them in a password manager.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Turn on two-factor authentication for hosting, the domain registrar, the CMS/admin panel and business email.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Remove old admin accounts and anyone who no longer needs access.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Give each person their own account; never share logins.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use the smallest permission level that still lets each person do their job.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Keep a secure record of who owns each account and how to recover it.</span></li></ul>
+  
+</section><section id="domain">
+  <h2>2. Domain, DNS and HTTPS</h2>
+  <p>Your domain and DNS control trust. A misconfigured record can redirect visitors or let attackers send email as your brand.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Enable registrar lock and two-factor authentication on the domain account.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Confirm the SSL certificate is valid, covers the correct domain and renews automatically.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Redirect HTTP to HTTPS and test every page.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Add SPF, DKIM and DMARC records for business email.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Remove unused DNS records and subdomains.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Enable HSTS only after HTTPS works on every subdomain.</span></li></ul>
+  
+</section><section id="platform">
+  <h2>3. Platform and software</h2>
+  <p>Every old plugin is another way in. Keep the platform current and remove what you do not use.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Update the CMS, plugins, themes and server packages before launch.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Delete plugins, themes and extensions you do not use.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Remove sample content, demo users and default admin usernames.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Disable directory listing and file editing in the admin panel where possible.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Set secure file permissions and keep secrets out of public files.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use a web application firewall or security rules if your host provides them.</span></li></ul>
+  
+</section><section id="forms">
+  <h2>4. Forms, payments and data</h2>
+  <p>Forms and checkout are the parts of the site that accept untrusted input. Treat every field as hostile until it has been validated.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Add CAPTCHA or rate limiting to public forms.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Validate and sanitize every input on the server, not only in the browser.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use CSRF protection for logged-in actions.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Collect only the data you actually need, and explain why you collect it.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Store form submissions in a protected system, not in plain email if they contain sensitive data.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use hosted payment fields so card data never touches your server.</span></li></ul>
+  
+</section><section id="backups">
+  <h2>5. Backups and recovery</h2>
+  <p>A backup you have never restored is only a hope. Test recovery before you need it.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Turn on automatic daily backups.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Keep at least one backup outside the hosting account.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Encrypt backups that contain personal data.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test a restore before launch, not during an incident.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Write down who can restore, where backups live and how long recovery takes.</span></li></ul>
+  
+</section><section id="monitoring">
+  <h2>6. Monitoring and response</h2>
+  <p>You cannot fix what you cannot see. Make sure someone is watching the important signals.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Enable uptime, malware and file-change monitoring.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Send security alerts to a monitored inbox, not an address nobody checks.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Set up error logging and review it after launch.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Keep a short incident plan: who to call, how to take the site offline and how to contact customers.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Know how to revoke access quickly if a device or account is lost.</span></li></ul>
+  
+</section><section id="privacy">
+  <h2>7. Privacy and legal basics</h2>
+  <p>Security and privacy overlap. Do not collect data you cannot protect or explain.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Publish a privacy policy that matches the data you collect.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Add cookie consent if you use analytics, ads or non-essential cookies.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Check that forms, newsletters and checkout flows link to the right policies.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Remove test orders, test users and personal data before launch.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Make sure contact and company details are accurate.</span></li></ul>
+  
+</section><section id="launch-day">
+  <h2>8. Launch-day checks</h2>
+  <p>The final pass is about proving the site works in the real world, on real devices and with real data.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Test every form and confirm submissions arrive.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test checkout, payment confirmation and the refund flow if you sell online.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Check 404 pages, redirects and broken links.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Remove noindex directives and confirm the site is indexable.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Submit the sitemap in Google Search Console and Bing Webmaster Tools.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test on a phone, a slow connection and a private browser window.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Take a final backup and record the launch time.</span></li></ul>
+  <div class="res-callout"><strong>Quick win:</strong> do the account and backup sections first. They protect you even if you have to delay the launch by a day.</div>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>On this page</h2>
+          <ul class="res-toc"><li><a href="#accounts">1. Accounts and access</a></li><li><a href="#domain">2. Domain, DNS and HTTPS</a></li><li><a href="#platform">3. Platform and software</a></li><li><a href="#forms">4. Forms, payments and data</a></li><li><a href="#backups">5. Backups and recovery</a></li><li><a href="#monitoring">6. Monitoring and response</a></li><li><a href="#privacy">7. Privacy and legal basics</a></li><li><a href="#launch-day">8. Launch-day checks</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Download the checklist</h2>
+          <p>A print-ready PDF version you can share with your team or use during launch.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-launch-security-checklist.pdf" download>Download PDF</a>
+          <div class="res-download-note">PDF · No email required</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Related resource</h2>
+          <ul class="res-related">
+            <li><a href="/resources/ecommerce-conversion-optimization-guide/"><strong>E-commerce Conversion Optimization Guide</strong><span>Free optimization guide</span></a></li><li><a href="/resources/website-speed-core-web-vitals-checklist/"><strong>Website Speed &amp; Core Web Vitals Checklist</strong><span>Free performance checklist</span></a></li><li><a href="/resources/local-seo-checklist-for-small-businesses/"><strong>Local SEO Checklist for Small Businesses</strong><span>Free local SEO checklist</span></a></li>
+          <li><a href="/resources/ai-search-visibility-checklist/"><strong>AI Search Visibility Checklist</strong><span>Free AI search checklist</span></a></li><li><a href="/resources/website-accessibility-wcag-2-2-checklist/"><strong>Website Accessibility Checklist: WCAG 2.2</strong><span>Free accessibility checklist</span></a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Want us to handle it for you?</h2>
+        <p>We build, secure and maintain websites for small businesses. If you would rather not manage the technical details, tell us what you need and we will scope it.</p>
+      </div>
+      <a class="btn btn-primary" href="/estimate/">Start a project</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Design, hosting and security for businesses that would rather focus on customers than code.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Free resources</h3>
+        <a href="/resources/">Resources</a>
+        <a href="/resources/website-launch-security-checklist/">Website Launch Security Checklist</a><a href="/resources/ecommerce-conversion-optimization-guide/">E-commerce Conversion Optimization Guide</a><a href="/resources/website-speed-core-web-vitals-checklist/">Website Speed &amp; Core Web Vitals Checklist</a><a href="/resources/local-seo-checklist-for-small-businesses/">Local SEO Checklist for Small Businesses</a><a href="/resources/ai-search-visibility-checklist/">AI Search Visibility Checklist</a><a href="/resources/website-accessibility-wcag-2-2-checklist/">Website Accessibility Checklist: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Site</h3>
+        <a href="/">Home</a>
+        <a href="/estimate/">Start a project</a>
+        <a href="/web-audit/">Website Audit</a>
+        <a href="/faq/">FAQ</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. All rights reserved.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Website Launch Security Checklist", "description": "A free pre-launch website security checklist covering accounts, HTTPS, software, forms, backups, monitoring and launch-day checks.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/resources/website-launch-security-checklist/"}, "about": ["Website security", "Website launch"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.midnightwebs.com/"}, {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.midnightwebs.com/resources/"}, {"@type": "ListItem", "position": 3, "name": "Website Launch Security Checklist", "item": "https://www.midnightwebs.com/resources/website-launch-security-checklist/"}]}</script>
+</body>
+</html>

@@ -75,6 +75,9 @@
 /fail/*
   Cache-Control: public, max-age=0, must-revalidate
 
+/resources/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 /ro/*
   Cache-Control: public, max-age=0, must-revalidate
 

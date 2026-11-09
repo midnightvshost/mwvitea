@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Чек-лист безопасности перед запуском сайта - Midnight Webs</title>
+<meta name="description" content="Бесплатный чек-лист безопасности перед запуском сайта: аккаунты, HTTPS, ПО, формы, резервные копии, мониторинг и финальные проверки.">
+<link rel="canonical" href="https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Чек-лист безопасности перед запуском сайта - Midnight Webs">
+<meta property="og:description" content="Бесплатный чек-лист безопасности перед запуском сайта: аккаунты, HTTPS, ПО, формы, резервные копии, мониторинг и финальные проверки.">
+<meta property="og:url" content="https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/ru/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/ru/" class="back-link">&larr; На главную</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/ru/">Главная</a><span>/</span>
+  <a href="/ru/resources/">Ресурсы</a><span>/</span>
+  <span>Чек-лист безопасности перед запуском сайта</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Бесплатный чек-лист</p>
+      <h1>Чек-лист безопасности перед запуском сайта</h1>
+      <p class="res-lede">Используйте этот чек-лист до того, как привязать новый сайт к домену. Он охватывает доступ, HTTPS, резервные копии и базовые проверки, которые предотвращают самые частые проблемы.</p>
+      <div class="res-meta"><span>Обновлено в ноябре 2026</span><span>12 минут чтения</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="accounts">
+  <h2>1. Аккаунты и доступ</h2>
+  <p>Большинство взломов начинается со слабых или повторно используемых паролей, а не с изощрённых атак. Наведите порядок в основах до запуска.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Используйте уникальный пароль для каждого административного аккаунта и храните их в менеджере паролей.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Включите двухфакторную аутентификацию для хостинга, регистратора домена, CMS/админ-панели и рабочей почты.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Удалите старые административные аккаунты и доступ тех, кому он больше не нужен.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Дайте каждому человеку отдельный аккаунт; никогда не передавайте логины.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Используйте минимальный уровень прав, достаточный для работы человека.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Ведите защищённый список владельцев аккаунтов и способов восстановления доступа.</span></li></ul>
+  
+</section><section id="domain">
+  <h2>2. Домен, DNS и HTTPS</h2>
+  <p>Домен и DNS управляют доверием. Неверная запись может перенаправить посетителей или позволить злоумышленникам отправлять письма от имени вашего бренда.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Включите блокировку регистратора и двухфакторную аутентификацию для аккаунта домена.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Убедитесь, что SSL-сертификат действителен, покрывает нужный домен и продлевается автоматически.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Перенаправьте HTTP на HTTPS и проверьте каждую страницу.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Добавьте записи SPF, DKIM и DMARC для рабочей почты.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Удалите неиспользуемые DNS-записи и поддомены.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Включайте HSTS только после того, как HTTPS работает на всех поддоменах.</span></li></ul>
+  
+</section><section id="platform">
+  <h2>3. Платформа и программное обеспечение</h2>
+  <p>Каждый старый плагин — ещё один путь внутрь. Поддерживайте платформу в актуальном состоянии и удаляйте лишнее.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Обновите CMS, плагины, темы и серверные пакеты перед запуском.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Удалите плагины, темы и расширения, которые не используете.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Уберите демонстрационный контент, демо-пользователей и стандартные имена администратора.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Отключите листинг каталогов и редактирование файлов в админ-панели, если это возможно.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Настройте безопасные права на файлы и не храните секреты в публичных файлах.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Используйте веб-фаервол или правила безопасности, если хостинг их предоставляет.</span></li></ul>
+  
+</section><section id="forms">
+  <h2>4. Формы, платежи и данные</h2>
+  <p>Формы и оформление заказа принимают недоверенные данные. Считайте каждое поле потенциально опасным, пока оно не проверено.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Добавьте CAPTCHA или ограничение частоты запросов для публичных форм.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверяйте и очищайте каждое поле на сервере, а не только в браузере.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Используйте защиту CSRF для действий после входа.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Собирайте только те данные, которые действительно нужны, и объясняйте, зачем они нужны.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Храните отправленные формы в защищённой системе, а не в обычной почте, если там есть чувствительные данные.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Используйте размещённые платёжные поля, чтобы данные карты не попадали на ваш сервер.</span></li></ul>
+  
+</section><section id="backups">
+  <h2>5. Резервные копии и восстановление</h2>
+  <p>Резервная копия, которую вы никогда не восстанавливали, — это только надежда. Проверьте восстановление до того, как оно понадобится.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Включите автоматическое ежедневное резервное копирование.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Храните хотя бы одну копию вне аккаунта хостинга.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Шифруйте резервные копии с персональными данными.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте восстановление до запуска, а не во время инцидента.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Запишите, кто может восстановить данные, где хранятся копии и сколько занимает восстановление.</span></li></ul>
+  
+</section><section id="monitoring">
+  <h2>6. Мониторинг и реагирование</h2>
+  <p>Нельзя исправить то, чего не видно. Убедитесь, что кто-то следит за важными сигналами.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Включите мониторинг доступности, вредоносного ПО и изменений файлов.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Отправляйте оповещения о безопасности на проверяемый ящик, а не на адрес, который никто не читает.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Настройте журналирование ошибок и проверяйте его после запуска.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Держите короткий план на случай инцидента: кому звонить, как отключить сайт и как связаться с клиентами.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Знайте, как быстро отозвать доступ, если устройство или аккаунт потеряны.</span></li></ul>
+  
+</section><section id="privacy">
+  <h2>7. Конфиденциальность и юридические основы</h2>
+  <p>Безопасность и конфиденциальность пересекаются. Не собирайте данные, которые не можете защитить или объяснить.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Опубликуйте политику конфиденциальности, соответствующую собираемым данным.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Добавьте согласие на cookie, если используете аналитику, рекламу или необязательные cookie.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте, что формы, рассылки и оформление заказа ссылаются на нужные политики.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Удалите тестовые заказы, тестовых пользователей и персональные данные перед запуском.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Убедитесь, что контактные данные и данные компании указаны верно.</span></li></ul>
+  
+</section><section id="launch-day">
+  <h2>8. Проверки в день запуска</h2>
+  <p>Финальная проверка подтверждает, что сайт работает в реальном мире, на реальных устройствах и с реальными данными.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Проверьте каждую форму и убедитесь, что заявки приходят.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте оформление заказа, подтверждение оплаты и возврат средств, если продаёте онлайн.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте страницы 404, перенаправления и битые ссылки.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Уберите директиву noindex и подтвердите, что сайт доступен для индексации.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Отправьте sitemap в Google Search Console и Bing Webmaster Tools.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте на телефоне, медленном соединении и в приватном окне браузера.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Сделайте финальную резервную копию и запишите время запуска.</span></li></ul>
+  <div class="res-callout"><strong>Быстрый результат:</strong> начните с разделов об аккаунтах и резервных копиях. Они защитят вас, даже если запуск придётся отложить на день.</div>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>На этой странице</h2>
+          <ul class="res-toc"><li><a href="#accounts">1. Аккаунты и доступ</a></li><li><a href="#domain">2. Домен, DNS и HTTPS</a></li><li><a href="#platform">3. Платформа и программное обеспечение</a></li><li><a href="#forms">4. Формы, платежи и данные</a></li><li><a href="#backups">5. Резервные копии и восстановление</a></li><li><a href="#monitoring">6. Мониторинг и реагирование</a></li><li><a href="#privacy">7. Конфиденциальность и юридические основы</a></li><li><a href="#launch-day">8. Проверки в день запуска</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Скачать чек-лист</h2>
+          <p>PDF-версия, готовая к печати: можно поделиться с командой или использовать при запуске.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-launch-security-checklist-ru.pdf" download>Скачать PDF</a>
+          <div class="res-download-note">PDF · Без email</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Связанный материал</h2>
+          <ul class="res-related">
+            <li><a href="/ru/resources/ecommerce-conversion-optimization-guide/"><strong>Руководство по оптимизации конверсии интернет-магазина</strong><span>Бесплатное руководство</span></a></li><li><a href="/ru/resources/website-speed-core-web-vitals-checklist/"><strong>Чек-лист скорости сайта и Core Web Vitals</strong><span>Бесплатный чек-лист производительности</span></a></li><li><a href="/ru/resources/local-seo-checklist-for-small-businesses/"><strong>Чек-лист локального SEO для малого бизнеса</strong><span>Бесплатный чек-лист локального SEO</span></a></li>
+          <li><a href="/ru/resources/ai-search-visibility-checklist/"><strong>Чек-лист видимости в AI-поиске</strong><span>Бесплатный чек-лист для AI-поиска</span></a></li><li><a href="/ru/resources/website-accessibility-wcag-2-2-checklist/"><strong>Чек-лист доступности сайта: WCAG 2.2</strong><span>Бесплатный чек-лист доступности</span></a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Хотите, чтобы мы взяли это на себя?</h2>
+        <p>Мы создаём, защищаем и поддерживаем сайты для малого бизнеса. Если не хотите разбираться в технических деталях, расскажите, что нужно, и мы определим объём работ.</p>
+      </div>
+      <a class="btn btn-primary" href="/ru/estimate/">Начать проект</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/ru/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Дизайн, хостинг и безопасность для бизнеса, который которому важнее клиенты, а не код.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Бесплатные материалы</h3>
+        <a href="/ru/resources/">Ресурсы</a>
+        <a href="/ru/resources/website-launch-security-checklist/">Чек-лист безопасности перед запуском сайта</a><a href="/ru/resources/ecommerce-conversion-optimization-guide/">Руководство по оптимизации конверсии интернет-магазина</a><a href="/ru/resources/website-speed-core-web-vitals-checklist/">Чек-лист скорости сайта и Core Web Vitals</a><a href="/ru/resources/local-seo-checklist-for-small-businesses/">Чек-лист локального SEO для малого бизнеса</a><a href="/ru/resources/ai-search-visibility-checklist/">Чек-лист видимости в AI-поиске</a><a href="/ru/resources/website-accessibility-wcag-2-2-checklist/">Чек-лист доступности сайта: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Сайт</h3>
+        <a href="/ru/">Главная</a>
+        <a href="/ru/estimate/">Начать проект</a>
+        <a href="/web-audit/">Аудит сайта</a>
+        <a href="/ru/faq/">Вопросы и ответы</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Контакты</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. Все права защищены.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Чек-лист безопасности перед запуском сайта", "description": "Бесплатный чек-лист безопасности перед запуском сайта: аккаунты, HTTPS, ПО, формы, резервные копии, мониторинг и финальные проверки.", "inLanguage": "ru", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/"}, "about": ["Website security", "Website launch"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.midnightwebs.com/ru/"}, {"@type": "ListItem", "position": 2, "name": "Ресурсы", "item": "https://www.midnightwebs.com/ru/resources/"}, {"@type": "ListItem", "position": 3, "name": "Чек-лист безопасности перед запуском сайта", "item": "https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/"}]}</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Listă de verificare pentru viteza site-ului și Core Web Vitals - Midnight Webs</title>
+<meta name="description" content="O listă gratuită pentru performanța site-ului care acoperă imagini, fonturi, CSS, JavaScript, găzduire, Core Web Vitals, testare mobilă și monitorizare.">
+<link rel="canonical" href="https://www.midnightwebs.com/ro/resources/website-speed-core-web-vitals-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-speed-core-web-vitals-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-speed-core-web-vitals-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-speed-core-web-vitals-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Listă de verificare pentru viteza site-ului și Core Web Vitals - Midnight Webs">
+<meta property="og:description" content="O listă gratuită pentru performanța site-ului care acoperă imagini, fonturi, CSS, JavaScript, găzduire, Core Web Vitals, testare mobilă și monitorizare.">
+<meta property="og:url" content="https://www.midnightwebs.com/ro/resources/website-speed-core-web-vitals-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/ro/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/ro/" class="back-link">&larr; Înapoi la site</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/ro/">Acasă</a><span>/</span>
+  <a href="/ro/resources/">Resurse</a><span>/</span>
+  <span>Listă de verificare pentru viteza site-ului și Core Web Vitals</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Listă gratuită pentru performanță</p>
+      <h1>Listă de verificare pentru viteza site-ului și Core Web Vitals</h1>
+      <p class="res-lede">Paginile rapide sunt mai ușor de folosit și mai ușor de clasat. Folosește această listă pentru a găsi părțile lente ale site-ului, a rezolva cele mai mari cauze și a menține performanța după lansare.</p>
+      <div class="res-meta"><span>Actualizat în noiembrie 2026</span><span>12 min de citit</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="measure">
+  <h2>1. Măsoară paginile care contează</h2>
+  <p>Începe cu șabloanele care aduc trafic și venituri: pagina principală, produs, categorie, serviciu și finalizarea comenzii. Un scor perfect pe o pagină pe care nu o vizitează nimeni nu este util.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Folosește date de teren din Chrome UX Report sau din platforma de analiză pentru a vedea performanța reală pe mobil.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Folosește un instrument de laborator precum PageSpeed Insights sau Lighthouse pentru a găsi cauzele concrete.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Testează aceeași pagină de mai multe ori; scripturile terțe și cache-ul pot schimba rezultatele.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Compară separat mobilul și desktopul și notează data fiecărui test.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Stabilește o valoare de referință pentru LCP, INP și CLS înainte de a schimba codul.</span></li></ul>
+  
+</section><section id="images">
+  <h2>2. Repară imaginile și Largest Contentful Paint</h2>
+  <p>Imaginile sunt adesea cea mai grea parte a paginii și elementul care determină LCP. Rezolvă-le înainte de a rescrie codul aplicației.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Comprimă fotografiile și folosește AVIF sau WebP, cu fallback unde este nevoie.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Setează atributele width și height pentru ca browserul să rezerve spațiu.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Servește dimensiunea potrivită pentru fiecare ecran, nu o singură imagine originală uriașă.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Nu aplica lazy-load imaginii principale sau imaginii de produs; încarcă-le devreme.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Folosește un CDN sau un serviciu de imagini care redimensionează și convertește automat.</span></li></ul>
+  
+</section><section id="javascript">
+  <h2>3. Reduce JavaScript și scripturile terțe</h2>
+  <p>Fiecare tag are un cost. Analiza, widgeturile de chat, instrumentele de consimțământ, fonturile și scripturile de testare concurează pe același fir principal.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Inventariază fiecare script terț și elimină-l pe cel pe care nu îl folosește nimeni.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Încarcă scripturile necritice după ce pagina devine interactivă sau doar când este nevoie.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Împarte bundle-urile mari și elimină bibliotecile nefolosite.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Verifică managerul de taguri ca un singur container să nu încarce zeci de taguri pe fiecare pagină.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Testează pagina cu limitarea CPU pentru mobil lent, nu doar pe un laptop rapid.</span></li></ul>
+  
+</section><section id="css-fonts">
+  <h2>4. Fonturi, CSS și stabilitatea layoutului</h2>
+  <p>Textul trebuie să apară rapid și să rămână pe loc. Schimbarea fonturilor, CSS-ul întârziat și reclamele pot provoca mișcări vizibile.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Preîncarcă fișierele principale de font și folosește font-display: swap.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Subsetează fonturile și elimină greutățile sau limbile pe care nu le folosești.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Include CSS-ul critic inline și amână restul acolo unde este practic.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Rezervă spațiu pentru reclame, embed-uri, bannere și notificări de cookie-uri.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Evită fonturile-iconi când un set mic de SVG este suficient.</span></li></ul>
+  
+</section><section id="hosting">
+  <h2>5. Găzduire, cache și TTFB</h2>
+  <p>Un front end rapid nu poate repara un server lent. Verifică timpul până la primul byte și cât de des pot refolosi vizitatorii fișierele din cache.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Măsoară TTFB din regiunile în care se află clienții tăi.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Activează compresia și un CDN pentru fișierele statice.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Cache-uiește HTML doar dacă ai o modalitate sigură de a-l invalida.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Revizuiește periodic software-ul serverului, pluginurile și interogările bazei de date.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Ferește-te de apelurile API lente și de lanțurile de redirecționare înainte ca pagina să se afișeze.</span></li></ul>
+  
+</section><section id="monitor">
+  <h2>6. Testează pe dispozitive reale și monitorizează după lansare</h2>
+  <p>Performanța nu este un scor obținut o singură dată. Imaginile, scripturile și funcțiile noi o vor schimba dacă nimeni nu urmărește cifra.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Testează pe un telefon de gamă medie și pe o conexiune lentă.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Verifică șabloanele principale într-o fereastră privată, cu cache curat.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Stabilește un buget de performanță pentru greutatea paginii și Core Web Vitals.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Monitorizează datele de teren și alertă la regresii după lansări.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Revizuiește lunar cele mai lente pagini și rezolvă mai întâi cauza principală.</span></li></ul>
+  <div class="res-callout"><strong>Începe cu șablonul cel mai important:</strong> îmbunătățirea unei pagini de produs sau serviciu bate de obicei lustruirea paginii principale.</div>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>Pe această pagină</h2>
+          <ul class="res-toc"><li><a href="#measure">1. Măsoară paginile care contează</a></li><li><a href="#images">2. Repară imaginile și Largest Contentful Paint</a></li><li><a href="#javascript">3. Reduce JavaScript și scripturile terțe</a></li><li><a href="#css-fonts">4. Fonturi, CSS și stabilitatea layoutului</a></li><li><a href="#hosting">5. Găzduire, cache și TTFB</a></li><li><a href="#monitor">6. Testează pe dispozitive reale și monitorizează după lansare</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Descarcă lista</h2>
+          <p>O versiune PDF pregătită pentru print, pe care o poți împărtăși dezvoltatorului, găzduirii sau echipei de marketing.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-speed-core-web-vitals-checklist-ro.pdf" download>Descarcă PDF</a>
+          <div class="res-download-note">PDF · Fără email</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Resurse similare</h2>
+          <ul class="res-related">
+            <li><a href="/ro/resources/website-launch-security-checklist/"><strong>Listă de verificare pentru securitatea lansării site-ului</strong><span>Listă gratuită de securitate</span></a></li><li><a href="/ro/resources/ecommerce-conversion-optimization-guide/"><strong>Ghid de optimizare a conversiilor pentru magazine online</strong><span>Ghid gratuit de optimizare</span></a></li><li><a href="/ro/resources/local-seo-checklist-for-small-businesses/"><strong>Listă de verificare SEO local pentru afaceri mici</strong><span>Listă gratuită de SEO local</span></a></li>
+          <li><a href="/ro/resources/ai-search-visibility-checklist/"><strong>Listă de verificare pentru vizibilitatea în căutarea AI</strong><span>Listă gratuită pentru căutarea AI</span></a></li><li><a href="/ro/resources/website-accessibility-wcag-2-2-checklist/"><strong>Listă de verificare pentru accesibilitate: WCAG 2.2</strong><span>Listă gratuită pentru accesibilitate</span></a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Vrei să ne ocupăm noi de asta?</h2>
+        <p>Construim, securizăm și întreținem site-uri pentru afaceri mici. Dacă preferi să nu gestionezi detaliile tehnice, spune-ne ce ai nevoie și stabilim împreună scopul.</p>
+      </div>
+      <a class="btn btn-primary" href="/ro/estimate/">Începe un proiect</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/ro/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Design, găzduire și securitate pentru afaceri care preferă să se concentreze pe clienți, nu pe cod.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Resurse gratuite</h3>
+        <a href="/ro/resources/">Resurse</a>
+        <a href="/ro/resources/website-launch-security-checklist/">Listă de verificare pentru securitatea lansării site-ului</a><a href="/ro/resources/ecommerce-conversion-optimization-guide/">Ghid de optimizare a conversiilor pentru magazine online</a><a href="/ro/resources/website-speed-core-web-vitals-checklist/">Listă de verificare pentru viteza site-ului și Core Web Vitals</a><a href="/ro/resources/local-seo-checklist-for-small-businesses/">Listă de verificare SEO local pentru afaceri mici</a><a href="/ro/resources/ai-search-visibility-checklist/">Listă de verificare pentru vizibilitatea în căutarea AI</a><a href="/ro/resources/website-accessibility-wcag-2-2-checklist/">Listă de verificare pentru accesibilitate: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Site</h3>
+        <a href="/ro/">Acasă</a>
+        <a href="/ro/estimate/">Începe un proiect</a>
+        <a href="/web-audit/">Audit de site</a>
+        <a href="/ro/faq/">Întrebări frecvente</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. Toate drepturile rezervate.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Listă de verificare pentru viteza site-ului și Core Web Vitals", "description": "O listă gratuită pentru performanța site-ului care acoperă imagini, fonturi, CSS, JavaScript, găzduire, Core Web Vitals, testare mobilă și monitorizare.", "inLanguage": "ro", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/ro/resources/website-speed-core-web-vitals-checklist/"}, "about": ["Performanța site-ului", "Core Web Vitals"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.midnightwebs.com/ro/"}, {"@type": "ListItem", "position": 2, "name": "Resurse", "item": "https://www.midnightwebs.com/ro/resources/"}, {"@type": "ListItem", "position": 3, "name": "Listă de verificare pentru viteza site-ului și Core Web Vitals", "item": "https://www.midnightwebs.com/ro/resources/website-speed-core-web-vitals-checklist/"}]}</script>
+</body>
+</html>

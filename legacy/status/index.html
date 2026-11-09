@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status - Midnight Webs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #050914 0%, #0a1020 100%);
+            color: #e5e7eb;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        .status-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .status-indicator {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #10b981;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .status-indicator.down {
+            background: #ef4444;
+            box-shadow: 0 0 40px rgba(239, 68, 68, 0.5);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .status-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: white;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .status-text {
+            font-size: 18px;
+            color: #10b981;
+            margin-bottom: 32px;
+        }
+        .status-text.down {
+            color: #ef4444;
+        }
+        .info-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 32px;
+            text-align: left;
+        }
+        .info-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 16px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid rgba(71, 85, 105, 0.3);
+        }
+        .info-label {
+            color: #94a3b8;
+        }
+        .info-value {
+            color: #e5e7eb;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="status-card">
+            <div class="status-indicator" id="statusIndicator">
+                <div class="status-dot"></div>
+            </div>
+            <h1>Midnight Webs</h1>
+            <div class="status-text" id="statusText">All Systems Operational</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value" id="statusValue">Operational</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Last Checked</span>
+                    <span class="info-value" id="lastChecked">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Uptime</span>
+                    <span class="info-value">99.9%</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2026 Midnight Webs</p>
+        </div>
+    </div>
+    <script>
+        async function checkStatus() {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                document.getElementById('lastChecked').textContent = new Date().toLocaleString();
+                if (data.status === 'healthy') {
+                    document.getElementById('statusIndicator').classList.remove('down');
+                    document.getElementById('statusText').textContent = 'All Systems Operational';
+                    document.getElementById('statusText').classList.remove('down');
+                    document.getElementById('statusValue').textContent = 'Operational';
+                }
+            } catch (error) {
+                document.getElementById('statusIndicator').classList.add('down');
+                document.getElementById('statusText').textContent = 'System Issues Detected';
+                document.getElementById('statusText').classList.add('down');
+                document.getElementById('statusValue').textContent = 'Down';
+                document.getElementById('lastChecked').textContent = new Date().toLocaleString();
+            }
+        }
+        checkStatus();
+        setInterval(checkStatus, 60000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Listă de verificare pentru securitatea lansării site-ului - Midnight Webs</title>
+<meta name="description" content="O listă gratuită de verificare pentru securitatea site-ului înainte de lansare: conturi, HTTPS, software, formulare, backup-uri, monitorizare și verificări finale.">
+<link rel="canonical" href="https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-launch-security-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-launch-security-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Listă de verificare pentru securitatea lansării site-ului - Midnight Webs">
+<meta property="og:description" content="O listă gratuită de verificare pentru securitatea site-ului înainte de lansare: conturi, HTTPS, software, formulare, backup-uri, monitorizare și verificări finale.">
+<meta property="og:url" content="https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/ro/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/ro/" class="back-link">&larr; Înapoi la site</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/ro/">Acasă</a><span>/</span>
+  <a href="/ro/resources/">Resurse</a><span>/</span>
+  <span>Listă de verificare pentru securitatea lansării site-ului</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Listă gratuită de securitate</p>
+      <h1>Listă de verificare pentru securitatea lansării site-ului</h1>
+      <p class="res-lede">Folosește această listă înainte de a conecta un site nou la domeniu. Acoperă accesul, HTTPS, backup-urile și elementele de bază care previn cele mai frecvente probleme.</p>
+      <div class="res-meta"><span>Actualizat în noiembrie 2026</span><span>12 min de citit</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="accounts">
+  <h2>1. Conturi și acces</h2>
+  <p>Majoritatea compromiterilor încep cu parole slabe sau refolosite, nu cu atacuri sofisticate. Rezolvă elementele de bază înainte de lansare.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Folosește o parolă unică pentru fiecare cont de administrator; păstreaz-o într-un manager de parole.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Activează autentificarea în doi pași pentru găzduire, registrarul de domenii, panoul CMS/admin și emailul de business.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Șterge conturile vechi de administrator și accesul persoanelor care nu mai au nevoie de el.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Oferă fiecărei persoane propriul cont; nu partaja datele de autentificare.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Folosește cel mai mic nivel de permisiuni care îi permite fiecărei persoane să își facă treaba.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Păstrează o evidență sigură a proprietarilor fiecărui cont și a modului de recuperare.</span></li></ul>
+  
+</section><section id="domain">
+  <h2>2. Domeniu, DNS și HTTPS</h2>
+  <p>Domeniul și DNS-ul controlează încrederea. O înregistrare configurată greșit poate redirecționa vizitatorii sau permite altora să trimită email în numele brandului tău.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Activează blocarea registrarului și autentificarea în doi pași pentru contul de domeniu.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Confirmă că certificatul SSL este valid, acoperă domeniul corect și se reînnoiește automat.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Redirecționează HTTP către HTTPS și testează fiecare pagină.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Adaugă înregistrările SPF, DKIM și DMARC pentru emailul de business.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Șterge înregistrările DNS și subdomeniile nefolosite.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Activează HSTS doar după ce HTTPS funcționează pe fiecare subdomeniu.</span></li></ul>
+  
+</section><section id="platform">
+  <h2>3. Platformă și software</h2>
+  <p>Fiecare plugin vechi este o altă cale de acces. Menține platforma actualizată și elimină ce nu folosești.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Actualizează CMS-ul, pluginurile, temele și pachetele de server înainte de lansare.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Șterge pluginurile, temele și extensiile pe care nu le folosești.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Elimină conținutul demonstrativ, utilizatorii demo și numele de administrator implicite.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Dezactivează listarea directoarelor și editarea fișierelor din panoul de administrare, dacă este posibil.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Setează permisiuni sigure pentru fișiere și ține secretele în afara fișierelor publice.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Folosește un firewall pentru aplicații web sau reguli de securitate dacă furnizorul de găzduire le oferă.</span></li></ul>
+  
+</section><section id="forms">
+  <h2>4. Formulare, plăți și date</h2>
+  <p>Formularele și checkout-ul sunt părțile site-ului care primesc date necunoscute. Tratează fiecare câmp ca fiind ostil până când a fost validat.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Adaugă CAPTCHA sau limitare a cererilor pentru formularele publice.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Validează și curăță fiecare câmp pe server, nu doar în browser.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Folosește protecție CSRF pentru acțiunile disponibile după autentificare.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Colectează doar datele de care ai nevoie și explică de ce le colectezi.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Stochează trimiterile formularelor într-un sistem protejat, nu în email simplu dacă includ date sensibile.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Folosește câmpuri de plată găzduite, astfel încât datele cardului să nu ajungă pe serverul tău.</span></li></ul>
+  
+</section><section id="backups">
+  <h2>5. Backup și recuperare</h2>
+  <p>Un backup pe care nu l-ai restaurat niciodată este doar o speranță. Testează recuperarea înainte de a avea nevoie de ea.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Activează backup-urile automate zilnice.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Păstrează cel puțin un backup în afara contului de găzduire.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Criptează backup-urile care conțin date personale.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Testează o restaurare înainte de lansare, nu în timpul unui incident.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Notează cine poate restaura, unde sunt backup-urile și cât durează recuperarea.</span></li></ul>
+  
+</section><section id="monitoring">
+  <h2>6. Monitorizare și reacție</h2>
+  <p>Nu poți repara ce nu vezi. Asigură-te că cineva urmărește semnalele importante.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Activează monitorizarea uptime-ului, a malware-ului și a modificărilor de fișiere.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Trimite alertele de securitate către o căsuță monitorizată, nu către o adresă pe care nu o verifică nimeni.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Configurează jurnalizarea erorilor și verifică-le după lansare.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Păstrează un plan scurt de incident: pe cine suni, cum scoți site-ul offline și cum contactezi clienții.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Știi cum să revoci rapid accesul dacă un dispozitiv sau un cont este pierdut.</span></li></ul>
+  
+</section><section id="privacy">
+  <h2>7. Confidențialitate și aspecte legale</h2>
+  <p>Securitatea și confidențialitatea se suprapun. Nu colecta date pe care nu le poți proteja sau explica.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Publică o politică de confidențialitate care corespunde datelor colectate.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Adaugă consimțământ pentru cookie-uri dacă folosești analytics, reclame sau cookie-uri neesențiale.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Verifică faptul că formularele, newsletterele și checkout-ul trimit către politicile corecte.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Șterge comenzile de test, utilizatorii de test și datele personale înainte de lansare.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Asigură-te că datele de contact și de firmă sunt corecte.</span></li></ul>
+  
+</section><section id="launch-day">
+  <h2>8. Verificări în ziua lansării</h2>
+  <p>Verificarea finală confirmă că site-ul funcționează în lumea reală, pe dispozitive reale și cu date reale.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Testează fiecare formular și confirmă că trimiterile ajung.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Testează checkout-ul, confirmarea plății și fluxul de rambursare dacă vinzi online.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Verifică paginile 404, redirecționările și linkurile rupte.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Elimină directiva noindex și confirmă că site-ul poate fi indexat.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Trimite sitemap-ul în Google Search Console și Bing Webmaster Tools.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Testează pe telefon, pe o conexiune lentă și într-o fereastră privată.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Fă un backup final și notează ora lansării.</span></li></ul>
+  <div class="res-callout"><strong>Repede de câștigat:</strong> începe cu secțiunile despre conturi și backup-uri. Te protejează chiar dacă trebuie să amâni lansarea cu o zi.</div>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>Pe această pagină</h2>
+          <ul class="res-toc"><li><a href="#accounts">1. Conturi și acces</a></li><li><a href="#domain">2. Domeniu, DNS și HTTPS</a></li><li><a href="#platform">3. Platformă și software</a></li><li><a href="#forms">4. Formulare, plăți și date</a></li><li><a href="#backups">5. Backup și recuperare</a></li><li><a href="#monitoring">6. Monitorizare și reacție</a></li><li><a href="#privacy">7. Confidențialitate și aspecte legale</a></li><li><a href="#launch-day">8. Verificări în ziua lansării</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Descarcă lista</h2>
+          <p>O versiune PDF pregătită pentru print, pe care o poți împărtăși echipei sau folosi la lansare.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-launch-security-checklist-ro.pdf" download>Descarcă PDF</a>
+          <div class="res-download-note">PDF · Fără email</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Resursă similară</h2>
+          <ul class="res-related">
+            <li><a href="/ro/resources/ecommerce-conversion-optimization-guide/"><strong>Ghid de optimizare a conversiilor pentru magazine online</strong><span>Ghid gratuit de optimizare</span></a></li><li><a href="/ro/resources/website-speed-core-web-vitals-checklist/"><strong>Listă de verificare pentru viteza site-ului și Core Web Vitals</strong><span>Listă gratuită pentru performanță</span></a></li><li><a href="/ro/resources/local-seo-checklist-for-small-businesses/"><strong>Listă de verificare SEO local pentru afaceri mici</strong><span>Listă gratuită de SEO local</span></a></li>
+          <li><a href="/ro/resources/ai-search-visibility-checklist/"><strong>Listă de verificare pentru vizibilitatea în căutarea AI</strong><span>Listă gratuită pentru căutarea AI</span></a></li><li><a href="/ro/resources/website-accessibility-wcag-2-2-checklist/"><strong>Listă de verificare pentru accesibilitate: WCAG 2.2</strong><span>Listă gratuită pentru accesibilitate</span></a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Vrei să ne ocupăm noi de asta?</h2>
+        <p>Construim, securizăm și întreținem site-uri pentru afaceri mici. Dacă preferi să nu gestionezi detaliile tehnice, spune-ne ce ai nevoie și stabilim împreună scopul.</p>
+      </div>
+      <a class="btn btn-primary" href="/ro/estimate/">Începe un proiect</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/ro/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Design, găzduire și securitate pentru afaceri care preferă să se concentreze pe clienți, nu pe cod.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Resurse gratuite</h3>
+        <a href="/ro/resources/">Resurse</a>
+        <a href="/ro/resources/website-launch-security-checklist/">Listă de verificare pentru securitatea lansării site-ului</a><a href="/ro/resources/ecommerce-conversion-optimization-guide/">Ghid de optimizare a conversiilor pentru magazine online</a><a href="/ro/resources/website-speed-core-web-vitals-checklist/">Listă de verificare pentru viteza site-ului și Core Web Vitals</a><a href="/ro/resources/local-seo-checklist-for-small-businesses/">Listă de verificare SEO local pentru afaceri mici</a><a href="/ro/resources/ai-search-visibility-checklist/">Listă de verificare pentru vizibilitatea în căutarea AI</a><a href="/ro/resources/website-accessibility-wcag-2-2-checklist/">Listă de verificare pentru accesibilitate: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Site</h3>
+        <a href="/ro/">Acasă</a>
+        <a href="/ro/estimate/">Începe un proiect</a>
+        <a href="/web-audit/">Audit de site</a>
+        <a href="/ro/faq/">Întrebări frecvente</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. Toate drepturile rezervate.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Listă de verificare pentru securitatea lansării site-ului", "description": "O listă gratuită de verificare pentru securitatea site-ului înainte de lansare: conturi, HTTPS, software, formulare, backup-uri, monitorizare și verificări finale.", "inLanguage": "ro", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/"}, "about": ["Website security", "Website launch"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.midnightwebs.com/ro/"}, {"@type": "ListItem", "position": 2, "name": "Resurse", "item": "https://www.midnightwebs.com/ro/resources/"}, {"@type": "ListItem", "position": 3, "name": "Listă de verificare pentru securitatea lansării site-ului", "item": "https://www.midnightwebs.com/ro/resources/website-launch-security-checklist/"}]}</script>
+</body>
+</html>

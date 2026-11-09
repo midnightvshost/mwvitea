@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Accessibility Checklist: WCAG 2.2 - Midnight Webs</title>
+<meta name="description" content="A practical WCAG 2.2 AA checklist for business websites, covering the European Accessibility Act, keyboard access, contrast, forms, focus, target size, authentication and testing.">
+<link rel="canonical" href="https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-accessibility-wcag-2-2-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-accessibility-wcag-2-2-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Website Accessibility Checklist: WCAG 2.2 - Midnight Webs">
+<meta property="og:description" content="A practical WCAG 2.2 AA checklist for business websites, covering the European Accessibility Act, keyboard access, contrast, forms, focus, target size, authentication and testing.">
+<meta property="og:url" content="https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/" class="back-link">&larr; Back to site</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a><span>/</span>
+  <a href="/resources/">Resources</a><span>/</span>
+  <span>Website Accessibility Checklist: WCAG 2.2</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Free accessibility checklist</p>
+      <h1>Website Accessibility Checklist: WCAG 2.2</h1>
+      <p class="res-lede">Accessibility is a legal requirement for many EU services and a practical advantage everywhere else. Use this WCAG 2.2 AA checklist to find the barriers that stop people using your site, fix the highest-impact issues first and keep new ones out.</p>
+      <div class="res-meta"><span>Updated November 2026</span><span>14 min read</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="rules">
+  <h2>1. Know the rules that apply to you</h2>
+  <p>WCAG 2.2 became a W3C Recommendation in October 2023. Level AA means meeting all Level A and AA criteria: 55 in total, including six new criteria added in 2.2. The European Accessibility Act (EAA) applies from 28 June 2025 to many consumer-facing services, including e-commerce.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Treat WCAG 2.2 AA as your working target; it is the practical path to the EAA's accessibility outcomes.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Check whether the EAA covers you: e-commerce, banking, e-books, transport and several other consumer services are in scope.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Do not assume a non-EU address exempts you if you sell to consumers in the EU.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Know the exceptions: microenterprises providing services may be exempt, and disproportionate burden must be documented, not assumed.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Check your country's national transposition and enforcement rules; penalties and dates can differ.</span></li></ul>
+  <div class="res-callout"><strong>Important:</strong> the EAA does not name WCAG in the directive, but its requirements align with the same four principles. WCAG 2.2 AA is the clearest way to demonstrate conformance.</div>
+</section><section id="perceivable">
+  <h2>2. Perceivable: text alternatives, contrast and structure</h2>
+  <p>People must be able to see or hear your content. Most failures here are cheap to fix and affect every visitor, not only those using assistive technology.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Give meaningful images useful alt text; use empty alt text for purely decorative images.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Add captions to video and transcripts to audio; do not rely on autoplay.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Meet 4.5:1 contrast for normal text and 3:1 for large text, icons and interface boundaries.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Do not use colour alone to convey meaning; underline links inside body text and keep labels visible.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Use real headings in order, real lists and tables with header cells; avoid text baked into images.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Support 200% zoom and reflow at 320 CSS pixels without horizontal scrolling for content.</span></li></ul>
+</section><section id="operable">
+  <h2>3. Operable: keyboard, focus, target size and motion</h2>
+  <p>If a task can only be completed with a mouse or a precise drag, some customers cannot complete it at all. WCAG 2.2 added specific requirements here.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Make every function work with a keyboard in a logical order, and provide a skip link to the main content.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Keep a clearly visible focus indicator; check that sticky headers, footers and cookie banners do not hide the focused element (2.4.11).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Make pointer targets at least 24 by 24 CSS pixels, or provide enough spacing; 44 by 44 is a safer default (2.5.8).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Provide a single-pointer alternative for every drag action, such as buttons to reorder a list or adjust a slider (2.5.7).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Let users pause, stop or hide moving content, and respect <code>prefers-reduced-motion</code>.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Remove keyboard traps: menus, modals and embedded widgets must be escapable with standard keys.</span></li></ul>
+</section><section id="understandable">
+  <h2>4. Understandable: forms, errors, consistency and help</h2>
+  <p>Clear language and predictable behaviour reduce effort for everyone. Forms are where accessibility problems most often become lost sales.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Give every input a visible, programmatically associated label; explain required fields in text, not only with an asterisk.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Describe errors next to the field, explain what went wrong and how to fix it; never rely on colour alone.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Do not ask for the same information twice in one process; autofill it or let users select it (3.3.7).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Keep help mechanisms such as contact details or chat in the same relative order across pages (3.2.6).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Allow password managers and paste, and offer an alternative to puzzle-only login such as an email link or passkey (3.3.8).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Declare the page language, mark language changes, and keep navigation and naming consistent.</span></li></ul>
+</section><section id="robust">
+  <h2>5. Robust: code, ARIA and third-party widgets</h2>
+  <p>Assistive technology depends on correct names, roles and states. Native HTML usually does this better than custom script.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Use valid, semantic HTML and native controls before reaching for ARIA.</span></li><li><span class="res-check" aria-hidden="true"></span><span>If you build a custom widget, expose its name, role and state, and support keyboard interaction.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Do not override native semantics or hide focusable content from assistive technology.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test with real screen readers: VoiceOver on macOS/iOS, NVDA on Windows, TalkBack on Android.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Audit third-party components: cookie banners, chat widgets, carousels, checkout and booking tools.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Announce status messages with a live region without unexpectedly moving focus.</span></li></ul>
+</section><section id="test">
+  <h2>6. Test with tools and with people</h2>
+  <p>Automated scans are useful, but they catch only part of the problem. A site can pass a scanner and still be unusable with a keyboard or screen reader.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Run an automated scan to catch missing alt text, contrast failures, empty links and basic structure issues.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Complete a keyboard-only pass of the main journeys: home, search, product, cart, checkout, contact and login.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Test with a screen reader, at 200% zoom and at 320 CSS pixels wide.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Submit forms with errors and check that the message is announced and easy to correct.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Include people with disabilities in usability testing where possible; it finds issues no checklist will.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Publish an accessibility statement with known limitations, a contact channel and remediation plans.</span></li></ul>
+</section><section id="plan">
+  <h2>7. A 30-day remediation plan</h2>
+  <p>Accessibility is easier as a routine than as a one-off project. Fix the barriers that block revenue first, then build checks into design and release.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Week 1: confirm legal scope, run an automated scan and a keyboard pass, and list blockers by user impact.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Week 2: fix alt text, contrast, labels, focus visibility, cookie banner behaviour and target sizes.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Week 3: repair forms, authentication, menus, carousels and third-party embeds; run a screen reader test.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Week 4: publish an accessibility statement, train content editors, and add accessibility to design and release checklists.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Then schedule a quarterly audit and retest after major template or checkout changes.</span></li></ul>
+  <div class="res-callout"><strong>Automated tools are a smoke test, not a certificate.</strong> Use them to find obvious failures, then verify the important journeys manually and with assistive technology.</div>
+</section><section id="sources">
+  <h2>Sources and further reading</h2>
+  <p>Guidance in this checklist was checked against the following standards and regulatory sources in November 2026.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" rel="noopener" target="_blank">W3C WAI: What's new in WCAG 2.2</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://www.w3.org/WAI/policies/european-union/" rel="noopener" target="_blank">W3C WAI: European Union accessibility policy</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en" rel="noopener" target="_blank">European Commission: European Accessibility Act</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://eur-lex.europa.eu/EN/legal-content/summary/accessibility-of-products-and-services.html" rel="noopener" target="_blank">EUR-Lex: Accessibility of products and services</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://www.onetrust.com/blog/understanding-the-european-accessibility-act-and-wcag-22/" rel="noopener" target="_blank">OneTrust: Understanding the EAA and WCAG 2.2</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" rel="noopener" target="_blank">AccessibleEU: The EAA comes into effect in June 2025</a></span></li></ul>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>On this page</h2>
+          <ul class="res-toc"><li><a href="#rules">1. Know the rules that apply to you</a></li><li><a href="#perceivable">2. Perceivable: text alternatives, contrast and structure</a></li><li><a href="#operable">3. Operable: keyboard, focus, target size and motion</a></li><li><a href="#understandable">4. Understandable: forms, errors, consistency and help</a></li><li><a href="#robust">5. Robust: code, ARIA and third-party widgets</a></li><li><a href="#test">6. Test with tools and with people</a></li><li><a href="#plan">7. A 30-day remediation plan</a></li><li><a href="#sources">Sources and further reading</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Download the checklist</h2>
+          <p>A print-ready PDF version you can share with your designer, developer, content team or legal adviser.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-accessibility-wcag-2-2-checklist.pdf" download>Download PDF</a>
+          <div class="res-download-note">PDF · No email required</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Related resources</h2>
+          <ul class="res-related">
+            <li><a href="/resources/ai-search-visibility-checklist/"><strong>AI Search Visibility Checklist</strong><span>Free AI search checklist</span></a></li><li><a href="/resources/website-speed-core-web-vitals-checklist/"><strong>Website Speed &amp; Core Web Vitals Checklist</strong><span>Free performance checklist</span></a></li><li><a href="/resources/website-launch-security-checklist/"><strong>Website Launch Security Checklist</strong><span>Free security checklist</span></a></li><li><a href="/resources/ecommerce-conversion-optimization-guide/"><strong>E-commerce Conversion Optimization Guide</strong><span>Free optimization guide</span></a></li><li><a href="/resources/local-seo-checklist-for-small-businesses/"><strong>Local SEO Checklist for Small Businesses</strong><span>Free local SEO checklist</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Want us to handle it for you?</h2>
+        <p>We build, secure and maintain websites for small businesses. If you would rather not manage the technical details, tell us what you need and we will scope it.</p>
+      </div>
+      <a class="btn btn-primary" href="/estimate/">Start a project</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Design, hosting and security for businesses that would rather focus on customers than code.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Free resources</h3>
+        <a href="/resources/">Resources</a>
+        <a href="/resources/website-launch-security-checklist/">Website Launch Security Checklist</a><a href="/resources/ecommerce-conversion-optimization-guide/">E-commerce Conversion Optimization Guide</a><a href="/resources/website-speed-core-web-vitals-checklist/">Website Speed &amp; Core Web Vitals Checklist</a><a href="/resources/local-seo-checklist-for-small-businesses/">Local SEO Checklist for Small Businesses</a><a href="/resources/ai-search-visibility-checklist/">AI Search Visibility Checklist</a><a href="/resources/website-accessibility-wcag-2-2-checklist/">Website Accessibility Checklist: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Site</h3>
+        <a href="/">Home</a>
+        <a href="/estimate/">Start a project</a>
+        <a href="/web-audit/">Website Audit</a>
+        <a href="/faq/">FAQ</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. All rights reserved.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Website Accessibility Checklist: WCAG 2.2", "description": "A practical WCAG 2.2 AA checklist for business websites, covering the European Accessibility Act, keyboard access, contrast, forms, focus, target size, authentication and testing.", "inLanguage": "en", "datePublished": "2026-11-08", "dateModified": "2026-11-08", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/"}, "about": ["Accessibility", "WCAG 2.2", "European Accessibility Act"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.midnightwebs.com/"}, {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.midnightwebs.com/resources/"}, {"@type": "ListItem", "position": 3, "name": "Website Accessibility Checklist: WCAG 2.2", "item": "https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/"}]}</script>
+</body>
+</html>

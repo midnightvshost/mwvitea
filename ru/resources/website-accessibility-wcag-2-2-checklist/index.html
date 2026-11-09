@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Чек-лист доступности сайта: WCAG 2.2 - Midnight Webs</title>
+<meta name="description" content="Практический чек-лист WCAG 2.2 AA для сайтов бизнеса: European Accessibility Act, клавиатура, контраст, формы, фокус, размер цели, аутентификация и тестирование.">
+<link rel="canonical" href="https://www.midnightwebs.com/ru/resources/website-accessibility-wcag-2-2-checklist/">
+<link rel="alternate" hreflang="en" href="https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/"><link rel="alternate" hreflang="ro" href="https://www.midnightwebs.com/ro/resources/website-accessibility-wcag-2-2-checklist/"><link rel="alternate" hreflang="ru" href="https://www.midnightwebs.com/ru/resources/website-accessibility-wcag-2-2-checklist/"><link rel="alternate" hreflang="x-default" href="https://www.midnightwebs.com/resources/website-accessibility-wcag-2-2-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Webs">
+<meta property="og:title" content="Чек-лист доступности сайта: WCAG 2.2 - Midnight Webs">
+<meta property="og:description" content="Практический чек-лист WCAG 2.2 AA для сайтов бизнеса: European Accessibility Act, клавиатура, контраст, формы, фокус, размер цели, аутентификация и тестирование.">
+<meta property="og:url" content="https://www.midnightwebs.com/ru/resources/website-accessibility-wcag-2-2-checklist/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050914">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="style" href="/assets/css/fonts.css?v=20261030" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/css/fonts.css?v=20261030"></noscript>
+<link rel="stylesheet" href="/assets/css/resources.css?v=20261108-print">
+</head>
+<body>
+<header class="res-topbar">
+  <nav class="wrap">
+    <a href="/ru/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+    <a href="/ru/" class="back-link">&larr; На главную</a>
+  </nav>
+</header>
+<main class="res-article">
+  <div class="wrap">
+    <nav class="res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/ru/">Главная</a><span>/</span>
+  <a href="/ru/resources/">Ресурсы</a><span>/</span>
+  <span>Чек-лист доступности сайта: WCAG 2.2</span>
+</nav>
+    <header class="res-article-header">
+      <p class="eyebrow">Бесплатный чек-лист доступности</p>
+      <h1>Чек-лист доступности сайта: WCAG 2.2</h1>
+      <p class="res-lede">Доступность — юридическое требование для многих сервисов в ЕС и практическое преимущество везде. Используйте этот чек-лист WCAG 2.2 AA, чтобы найти барьеры, мешающие людям пользоваться сайтом, сначала устранить самые важные проблемы и не допустить новых.</p>
+      <div class="res-meta"><span>Обновлено в ноябре 2026</span><span>14 минут чтения</span><span>PDF</span></div>
+    </header>
+    <div class="res-layout">
+      <article class="res-prose">
+        <section id="rules">
+  <h2>1. Узнайте, какие правила к вам применяются</h2>
+  <p>WCAG 2.2 стала рекомендацией W3C в октябре 2023 года. Уровень AA означает выполнение всех критериев уровня A и AA: всего 55, включая шесть новых критериев, добавленных в 2.2. European Accessibility Act (EAA) действует с 28 июня 2025 года для многих потребительских сервисов, включая интернет-магазины.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Считайте WCAG 2.2 AA рабочей целью; это практический путь к результатам доступности, которых требует EAA.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте, распространяется ли на вас EAA: электронная коммерция, банковские услуги, электронные книги, транспорт и ряд других потребительских сервисов входят в сферу действия.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Не думайте, что адрес вне ЕС освобождает вас, если вы продаёте потребителям в ЕС.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Знайте исключения: микропредприятия, оказывающие услуги, могут быть освобождены, а непропорциональное бремя нужно документировать, а не предполагать.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте национальные правила переноса и правоприменения; штрафы и сроки могут отличаться.</span></li></ul>
+  <div class="res-callout"><strong>Важно:</strong> в директиве EAA не назван WCAG, но её требования совпадают с теми же четырьмя принципами. WCAG 2.2 AA — самый понятный способ подтвердить соответствие.</div>
+</section><section id="perceivable">
+  <h2>2. Воспринимаемость: текстовые альтернативы, контраст и структура</h2>
+  <p>Люди должны видеть или слышать контент. Большинство проблем здесь недорого исправить, и они влияют на всех посетителей, а не только на тех, кто использует вспомогательные технологии.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Давайте содержательным изображениям полезный alt-текст; для чисто декоративных изображений используйте пустой alt.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Добавляйте субтитры к видео и расшифровки к аудио; не полагайтесь на автозапуск.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Соблюдайте контраст 4,5:1 для обычного текста и 3:1 для крупного текста, иконок и границ интерфейса.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Не передавайте смысл только цветом; подчёркивайте ссылки в тексте и оставляйте подписи видимыми.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Используйте настоящие заголовки по порядку, настоящие списки и таблицы с ячейками-заголовками; избегайте текста внутри изображений.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Поддерживайте масштаб 200% и перекомпоновку при ширине 320 CSS-пикселей без горизонтальной прокрутки контента.</span></li></ul>
+</section><section id="operable">
+  <h2>3. Управляемость: клавиатура, фокус, размер цели и движение</h2>
+  <p>Если задачу можно выполнить только мышью или точным перетаскиванием, некоторые клиенты не смогут её выполнить вообще. WCAG 2.2 добавила здесь конкретные требования.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Сделайте так, чтобы каждая функция работала с клавиатуры в логическом порядке, и добавьте ссылку для перехода к основному контенту.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Сохраняйте чётко видимый индикатор фокуса; проверьте, что закреплённые шапки, подвалы и баннеры cookie не скрывают элемент в фокусе (2.4.11).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Делайте цели указателя не меньше 24 на 24 CSS-пикселя или оставляйте достаточно пространства; 44 на 44 — более безопасный вариант по умолчанию (2.5.8).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Для каждого действия перетаскиванием предлагайте альтернативу одним указателем, например кнопки для изменения порядка списка или ползунка (2.5.7).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Позволяйте приостанавливать, останавливать или скрывать движущийся контент и учитывайте <code>prefers-reduced-motion</code>.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Убирайте клавиатурные ловушки: из меню, модальных окон и встроенных виджетов должно быть можно выйти стандартными клавишами.</span></li></ul>
+</section><section id="understandable">
+  <h2>4. Понятность: формы, ошибки, последовательность и помощь</h2>
+  <p>Ясный язык и предсказуемое поведение снижают усилия для всех. Формы — место, где проблемы доступности чаще всего превращаются в потерянные продажи.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Давайте каждому полю видимую подпись, программно связанную с ним; объясняйте обязательные поля текстом, а не только звёздочкой.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Описывайте ошибки рядом с полем, объясняйте, что пошло не так и как это исправить; не полагайтесь только на цвет.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Не запрашивайте одну и ту же информацию дважды в одном процессе; подставляйте её автоматически или давайте выбрать (3.3.7).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Держите механизмы помощи, например контакты или чат, в одном и том же относительном порядке на страницах (3.2.6).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Разрешайте менеджеры паролей и вставку, предлагайте альтернативу входу только с головоломкой, например ссылку по email или passkey (3.3.8).</span></li><li><span class="res-check" aria-hidden="true"></span><span>Указывайте язык страницы, отмечайте смену языка и сохраняйте последовательность навигации и названий.</span></li></ul>
+</section><section id="robust">
+  <h2>5. Надёжность: код, ARIA и сторонние виджеты</h2>
+  <p>Вспомогательные технологии зависят от правильных имён, ролей и состояний. Нативный HTML обычно справляется с этим лучше пользовательского скрипта.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Используйте валидный семантический HTML и нативные элементы управления до того, как обращаться к ARIA.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Если создаёте собственный виджет, раскрывайте его имя, роль и состояние и поддерживайте управление с клавиатуры.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Не переопределяйте нативную семантику и не скрывайте фокусируемый контент от вспомогательных технологий.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Тестируйте с реальными скринридерами: VoiceOver на macOS/iOS, NVDA на Windows, TalkBack на Android.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверяйте сторонние компоненты: баннеры cookie, виджеты чата, карусели, оформление заказа и инструменты бронирования.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Объявляйте сообщения о состоянии через live-регион, не перемещая фокус неожиданно.</span></li></ul>
+</section><section id="test">
+  <h2>6. Тестируйте инструментами и с людьми</h2>
+  <p>Автоматические проверки полезны, но находят лишь часть проблем. Сайт может пройти сканер и всё равно быть непригодным для работы с клавиатуры или скринридера.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Запустите автоматическую проверку, чтобы найти отсутствующий alt-текст, проблемы контраста, пустые ссылки и базовые проблемы структуры.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Пройдите только с клавиатуры основные сценарии: главная, поиск, товар, корзина, оформление заказа, контакты и вход.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Проверьте со скринридером, при масштабе 200% и ширине 320 CSS-пикселей.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Отправьте формы с ошибками и проверьте, что сообщение объявляется и легко исправляется.</span></li><li><span class="res-check" aria-hidden="true"></span><span>По возможности включайте людей с инвалидностью в юзабилити-тестирование; они находят проблемы, которых нет ни в одном чек-листе.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Опубликуйте заявление о доступности с известными ограничениями, каналом связи и планами исправления.</span></li></ul>
+</section><section id="plan">
+  <h2>7. План исправлений на 30 дней</h2>
+  <p>Доступность проще как рутина, чем как разовый проект. Сначала устраните барьеры, которые блокируют выручку, затем встройте проверки в дизайн и релиз.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span>Неделя 1: подтвердите правовую сферу, запустите автоматическую проверку и проход с клавиатуры, перечислите блокеры по влиянию на пользователя.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Неделя 2: исправьте alt-текст, контраст, подписи, видимость фокуса, поведение баннера cookie и размеры целей.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Неделя 3: почините формы, аутентификацию, меню, карусели и сторонние вставки; проведите тест со скринридером.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Неделя 4: опубликуйте заявление о доступности, обучите редакторов контента и добавьте доступность в чек-листы дизайна и релиза.</span></li><li><span class="res-check" aria-hidden="true"></span><span>Затем планируйте ежеквартальный аудит и повторное тестирование после крупных изменений шаблона или оформления заказа.</span></li></ul>
+  <div class="res-callout"><strong>Автоматические инструменты — это дымовой тест, а не сертификат.</strong> Используйте их для поиска очевидных ошибок, затем вручную проверяйте важные сценарии и работу со вспомогательными технологиями.</div>
+</section><section id="sources">
+  <h2>Источники и дополнительное чтение</h2>
+  <p>Рекомендации в этом чек-листе сверены со следующими стандартами и источниками регулирования в ноябре 2026 года.</p>
+  <ul class="res-checklist"><li><span class="res-check" aria-hidden="true"></span><span><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" rel="noopener" target="_blank">W3C WAI: What's new in WCAG 2.2</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://www.w3.org/WAI/policies/european-union/" rel="noopener" target="_blank">W3C WAI: European Union accessibility policy</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en" rel="noopener" target="_blank">European Commission: European Accessibility Act</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://eur-lex.europa.eu/EN/legal-content/summary/accessibility-of-products-and-services.html" rel="noopener" target="_blank">EUR-Lex: Accessibility of products and services</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://www.onetrust.com/blog/understanding-the-european-accessibility-act-and-wcag-22/" rel="noopener" target="_blank">OneTrust: Understanding the EAA and WCAG 2.2</a></span></li><li><span class="res-check" aria-hidden="true"></span><span><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" rel="noopener" target="_blank">AccessibleEU: The EAA comes into effect in June 2025</a></span></li></ul>
+</section>
+      </article>
+      <aside class="res-side">
+        <div class="res-side-box">
+          <h2>На этой странице</h2>
+          <ul class="res-toc"><li><a href="#rules">1. Узнайте, какие правила к вам применяются</a></li><li><a href="#perceivable">2. Воспринимаемость: текстовые альтернативы, контраст и структура</a></li><li><a href="#operable">3. Управляемость: клавиатура, фокус, размер цели и движение</a></li><li><a href="#understandable">4. Понятность: формы, ошибки, последовательность и помощь</a></li><li><a href="#robust">5. Надёжность: код, ARIA и сторонние виджеты</a></li><li><a href="#test">6. Тестируйте инструментами и с людьми</a></li><li><a href="#plan">7. План исправлений на 30 дней</a></li><li><a href="#sources">Источники и дополнительное чтение</a></li></ul>
+        </div>
+        <div class="res-side-box res-download">
+          <h2>Скачать чек-лист</h2>
+          <p>Версия PDF для печати, которой можно поделиться с дизайнером, разработчиком, контент-командой или юристом.</p>
+          <a class="btn btn-primary" href="/resources/downloads/website-accessibility-wcag-2-2-checklist-ru.pdf" download>Скачать PDF</a>
+          <div class="res-download-note">PDF · Без email</div>
+        </div>
+        <div class="res-side-box">
+          <h2>Связанные материалы</h2>
+          <ul class="res-related">
+            <li><a href="/ru/resources/ai-search-visibility-checklist/"><strong>Чек-лист видимости в AI-поиске</strong><span>Бесплатный чек-лист для AI-поиска</span></a></li><li><a href="/ru/resources/website-speed-core-web-vitals-checklist/"><strong>Чек-лист скорости сайта и Core Web Vitals</strong><span>Бесплатный чек-лист производительности</span></a></li><li><a href="/ru/resources/website-launch-security-checklist/"><strong>Чек-лист безопасности перед запуском сайта</strong><span>Бесплатный чек-лист безопасности</span></a></li><li><a href="/ru/resources/ecommerce-conversion-optimization-guide/"><strong>Руководство по оптимизации конверсии интернет-магазина</strong><span>Бесплатное руководство</span></a></li><li><a href="/ru/resources/local-seo-checklist-for-small-businesses/"><strong>Чек-лист локального SEO для малого бизнеса</strong><span>Бесплатный чек-лист локального SEO</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <section class="res-cta">
+      <div>
+        <h2>Хотите, чтобы мы взяли это на себя?</h2>
+        <p>Мы создаём, защищаем и поддерживаем сайты для малого бизнеса. Если не хотите разбираться в технических деталях, расскажите, что нужно, и мы определим объём работ.</p>
+      </div>
+      <a class="btn btn-primary" href="/ru/estimate/">Начать проект</a>
+    </section>
+  </div>
+</main>
+<footer class="res-footer">
+  <div class="wrap">
+    <div class="res-footer-grid">
+      <div>
+        <a href="/ru/" class="brand"><span class="brand-word">Midnight<em>Webs</em></span></a>
+        <p>Дизайн, хостинг и безопасность для бизнеса, которому важнее клиенты, а не код.</p>
+      </div>
+      <div class="res-footer-col">
+        <h3>Бесплатные материалы</h3>
+        <a href="/ru/resources/">Ресурсы</a>
+        <a href="/ru/resources/website-launch-security-checklist/">Чек-лист безопасности перед запуском сайта</a><a href="/ru/resources/ecommerce-conversion-optimization-guide/">Руководство по оптимизации конверсии интернет-магазина</a><a href="/ru/resources/website-speed-core-web-vitals-checklist/">Чек-лист скорости сайта и Core Web Vitals</a><a href="/ru/resources/local-seo-checklist-for-small-businesses/">Чек-лист локального SEO для малого бизнеса</a><a href="/ru/resources/ai-search-visibility-checklist/">Чек-лист видимости в AI-поиске</a><a href="/ru/resources/website-accessibility-wcag-2-2-checklist/">Чек-лист доступности сайта: WCAG 2.2</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Сайт</h3>
+        <a href="/ru/">Главная</a>
+        <a href="/ru/estimate/">Начать проект</a>
+        <a href="/web-audit/">Аудит сайта</a>
+        <a href="/ru/faq/">Вопросы и ответы</a>
+      </div>
+      <div class="res-footer-col">
+        <h3>Контакты</h3>
+        <a href="mailto:contact.midnightwebs@gmail.com">contact.midnightwebs@gmail.com</a>
+        <a href="https://www.midnightwebs.com/">www.midnightwebs.com</a>
+      </div>
+    </div>
+    <div class="res-footer-bottom">
+      <span>© 2026 Midnight Webs. Все права защищены.</span>
+      <span>Midnight Webs</span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Чек-лист доступности сайта: WCAG 2.2", "description": "Практический чек-лист WCAG 2.2 AA для сайтов бизнеса: European Accessibility Act, клавиатура, контраст, формы, фокус, размер цели, аутентификация и тестирование.", "inLanguage": "ru", "datePublished": "2026-11-08", "dateModified": "2026-11-08", "author": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "publisher": {"@type": "Organization", "name": "Midnight Webs", "url": "https://www.midnightwebs.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.midnightwebs.com/ru/resources/website-accessibility-wcag-2-2-checklist/"}, "about": ["Доступность", "WCAG 2.2", "European Accessibility Act"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.midnightwebs.com/ru/"}, {"@type": "ListItem", "position": 2, "name": "Ресурсы", "item": "https://www.midnightwebs.com/ru/resources/"}, {"@type": "ListItem", "position": 3, "name": "Чек-лист доступности сайта: WCAG 2.2", "item": "https://www.midnightwebs.com/ru/resources/website-accessibility-wcag-2-2-checklist/"}]}</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /status
+Disallow: /success/
+Disallow: /fail/
+
+Sitemap: https://www.midnightwebs.com/sitemap.xml

@@ -1,6 +1,6 @@
 {
   "name": "mwvitea",
-  "main": "worker.js",
+  "main": "src/worker.js",
   "compatibility_date": "2025-01-01",
   "assets": {
     "directory": ".",
@@ -22,7 +22,8 @@
   "vars": {
     "SUPABASE_URL": "https://pqevbgelvgfalkwamkcl.supabase.co",
     "TURNSTILE_SITE_KEY": "0x4AAAAAAFxMnHMrFkj-1Ptx",
-    "MAIL_FROM": "Midnight Webs <projects@midnightwebs.com>",
+    "MAIL_FROM_NAME": "Midnight Webs",
+    "GMAIL_USER": "contact.midnightwebs@gmail.com",
     "MAIL_TO": "contact.midnightwebs@gmail.com"
   },
   "observability": {
