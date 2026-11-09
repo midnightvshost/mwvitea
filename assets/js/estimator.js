@@ -144,20 +144,20 @@
     const pageCount = Number(pages.value);
     const base =
       pageCount <= 3
-        ? 50
+        ? 250
         : pageCount <= 6
-          ? 630
+          ? 400
           : pageCount <= 10
-            ? 930
+            ? 550
             : pageCount <= 15
-              ? 1320
+              ? 700
               : pageCount <= 20
-                ? 1740
-                : 2160;
+                ? 850
+                : 1000;
     const total = base + checks.reduce((sum, item) => sum + Number(item.dataset.price), 0);
     const low = Math.round(total / 50) * 50;
     const high = Math.round((total * 1.3) / 50) * 50;
-    cost.textContent = `${money(low)}–${money(high)}`;
+    cost.textContent = low === high ? money(low) : `${money(low)}–${money(high)}`;
 
     const planValue = planSelect.value;
     monthly.textContent =
