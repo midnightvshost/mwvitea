@@ -820,10 +820,25 @@
       ['Requested URL', data.target || '-'],
       ['Final URL', data.finalUrl || '-'],
       ['Checked at', checkedLabel],
-      ['HTTP status', `HTTP ${data.metrics.status}`],
+      [
+        'HTTP status',
+        `HTTP ${data.metrics.status}${
+          Number(data.metrics.redirects) > 0
+            ? ` after ${Number(data.metrics.redirects)} redirect${
+                Number(data.metrics.redirects) === 1 ? '' : 's'
+              }`
+            : ''
+        }`,
+      ],
       ['Server response (TTFB)', `${Number(data.metrics.ttfbMs) || 0} ms`],
-      ['Page download time', `${Number(data.metrics.totalMs) || 0} ms`],
-      ['HTML size', formatBytes(data.metrics.htmlBytes)],
+      ['Redirect time', `${Number(data.metrics.redirectMs) || 0} ms`],
+      ['Download time after TTFB', `${Number(data.metrics.downloadMs) || 0} ms`],
+      ['Total time', `${Number(data.metrics.totalMs) || 0} ms`],
+      ['HTML size (decoded)', formatBytes(data.metrics.htmlBytes)],
+      [
+        'Transfer size',
+        data.metrics.transferBytes ? formatBytes(data.metrics.transferBytes) : 'Not reported',
+      ],
       ['HTML read limit reached', data.metrics.htmlTruncated ? 'Yes' : 'No'],
       ['Content type', data.metrics.contentType || '-'],
       ['Served over HTTPS', data.metrics.pageIsHttps ? 'Yes' : 'No'],
@@ -832,6 +847,8 @@
       ['Content encoding', data.metrics.contentEncoding || '-'],
       ['Compression', data.metrics.compressed ? 'Enabled' : 'Not detected'],
       ['Cache-Control', data.metrics.cacheControl || '-'],
+      ['Render-blocking resources', String(Number(data.metrics.renderBlockingCount) || 0)],
+      ['Inline code in HTML', formatBytes(Number(data.metrics.inlineBytes) || 0)],
     ]);
 
     heading('Page information');
@@ -849,6 +866,11 @@
       ['Images missing alt text', data.page.imagesMissingAlt == null ? '-' : String(data.page.imagesMissingAlt)],
       ['Word count', data.page.wordCount == null ? '-' : String(data.page.wordCount)],
       ['Links', data.page.linkCount == null ? '-' : String(data.page.linkCount)],
+      [
+        'Scripts (external / inline)',
+        `${Number(data.page.externalScriptCount) || 0} / ${Number(data.page.inlineScriptCount) || 0}`,
+      ],
+      ['Stylesheets', String(Number(data.page.stylesheetCount) || 0)],
       [
         'Open Graph tags',
         data.page.openGraph && data.page.openGraph.length ? data.page.openGraph.join(', ') : '-',
@@ -889,10 +911,23 @@
 
     if (fixes.length) {
       heading('Recommended fixes');
+      paragraph(
+        'Work through these in order. Each item explains why it matters and lists the exact steps to fix it.',
+        { size: 8.8, color: '#5b6577', gapAfter: 8 }
+      );
       table(
-        ['Priority', 'Check', 'What to do'],
+        ['Priority', 'Check', 'Why it matters and how to fix it'],
         fixes.map((check) => {
           const example = checkEvidenceLines(check)[0];
+          const steps = Array.isArray(check.steps) ? check.steps.filter(Boolean) : [];
+          const guide = [
+            check.why ? `Why it matters: ${check.why}` : '',
+            check.fix || '',
+            ...steps.map((step, index) => `${index + 1}. ${step}`),
+            example ? `Example: ${example}` : '',
+          ]
+            .filter(Boolean)
+            .join('\n');
           return [
             {
               text: check.status === 'fail' ? 'Fix first' : 'Improve',
@@ -900,14 +935,10 @@
               color: statusColor(check.status),
             },
             { text: check.label || '-', bold: true },
-            {
-              text: [check.fix, example ? `Example: ${example}` : '']
-                .filter(Boolean)
-                .join('\n'),
-            },
+            { text: guide },
           ];
         }),
-        [0.14, 0.26, 0.6]
+        [0.13, 0.2, 0.67]
       );
     }
 
@@ -970,11 +1001,17 @@
       link.target = '_blank';
       link.rel = 'noopener';
     }
-    link.style.display = 'none';
+    link.setAttribute('aria-hidden', 'true');
+    link.tabIndex = -1;
+    link.style.position = 'fixed';
+    link.style.left = '-10000px';
+    link.style.top = '0';
     document.body.appendChild(link);
     link.click();
-    link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 60000);
+    window.setTimeout(() => {
+      link.remove();
+      URL.revokeObjectURL(url);
+    }, 1000);
   }
 
   function savePdf(bytes, fileName) {
@@ -1001,14 +1038,41 @@
     triggerDownload(blob, fileName);
   }
 
-  function downloadReport() {
+  async function downloadReport() {
     if (!lastAudit) return;
 
+    const fileName = reportFileName(lastAudit);
+    let pickerRequest = null;
+
+    // Chrome's native save picker is started directly in the trusted click,
+    // before PDF generation can take enough time to lose transient activation.
+    if (window.isSecureContext && typeof window.showSaveFilePicker === 'function') {
+      try {
+        pickerRequest = window.showSaveFilePicker({
+          suggestedName: fileName,
+          types: [{ description: 'PDF document', accept: { 'application/pdf': ['.pdf'] } }],
+        });
+      } catch {}
+    }
+
     try {
-      // Keep PDF generation and the save action in the original click task;
-      // Safari may block a synthetic download after an awaited promise.
       const bytes = buildAuditPdf(lastAudit, logoJpeg);
-      savePdf(bytes, reportFileName(lastAudit));
+      const blob = new Blob([bytes], { type: 'application/pdf' });
+
+      if (pickerRequest) {
+        try {
+          const handle = await pickerRequest;
+          const writable = await handle.createWritable();
+          await writable.write(blob);
+          await writable.close();
+          return;
+        } catch (error) {
+          if (error?.name === 'AbortError') return;
+          console.warn('Native PDF save failed; using browser download.', error);
+        }
+      }
+
+      savePdf(bytes, fileName);
     } catch (error) {
       console.error(error);
       setError('The PDF report could not be created. Please try again.');
@@ -1020,11 +1084,26 @@
 
     const counts = data.counts || { pass: 0, warn: 0, fail: 0 };
     const issues = (Number(counts.warn) || 0) + (Number(counts.fail) || 0);
+    const transferBytes = Number(data.metrics.transferBytes) || 0;
     const facts = [
       { label: 'Final URL', value: data.finalUrl, link: true },
-      { label: 'HTTP status', value: `HTTP ${data.metrics.status}` },
-      { label: 'Response time', value: `${data.metrics.ttfbMs} ms` },
-      { label: 'HTML size', value: formatBytes(data.metrics.htmlBytes) },
+      {
+        label: 'HTTP status',
+        value: `HTTP ${data.metrics.status}${
+          Number(data.metrics.redirects) > 0
+            ? ` (${Number(data.metrics.redirects)} redirect${
+                Number(data.metrics.redirects) === 1 ? '' : 's'
+              })`
+            : ''
+        }`,
+      },
+      { label: 'Server response (TTFB)', value: `${data.metrics.ttfbMs} ms` },
+      { label: 'Total fetch time', value: `${data.metrics.totalMs} ms` },
+      { label: 'HTML size (decoded)', value: formatBytes(data.metrics.htmlBytes) },
+      {
+        label: 'Transfer size',
+        value: transferBytes ? formatBytes(transferBytes) : 'Not reported',
+      },
       { label: 'Checks passed', value: String(counts.pass || 0), tone: 'pass' },
       {
         label: 'Issues found',
@@ -1116,6 +1195,27 @@
     return wrap;
   }
 
+  function renderFixGuide(check, className) {
+    if (!check || check.status === 'pass') return null;
+
+    const steps = Array.isArray(check.steps) ? check.steps.filter(Boolean) : [];
+    if (!check.fix && !check.why && !steps.length) return null;
+
+    const wrap = el('div', className || 'audit-fix');
+    wrap.appendChild(el('p', 'audit-fix-label', 'How to fix'));
+
+    if (check.why) wrap.appendChild(el('p', 'audit-fix-why', check.why));
+    if (check.fix) wrap.appendChild(el('p', 'audit-fix-summary', check.fix));
+
+    if (steps.length) {
+      const list = el('ol', 'audit-fix-steps');
+      for (const step of steps) list.appendChild(el('li', null, step));
+      wrap.appendChild(list);
+    }
+
+    return wrap;
+  }
+
   function renderDetails(data) {
     clear(detailsEl);
 
@@ -1142,6 +1242,9 @@
         itemHead.appendChild(el('span', 'audit-status', STATUS_LABELS[check.status] || check.status));
         item.appendChild(itemHead);
         item.appendChild(el('p', 'audit-check-detail', check.detail));
+
+        const fixGuide = renderFixGuide(check);
+        if (fixGuide) item.appendChild(fixGuide);
 
         const evidence = renderEvidence(check);
         if (evidence) item.appendChild(evidence);
@@ -1179,7 +1282,17 @@
       head.appendChild(el('h4', null, check.label));
       head.appendChild(el('span', 'audit-status', STATUS_LABELS[check.status] || check.status));
       item.appendChild(head);
+
+      if (check.why) item.appendChild(el('p', 'audit-recommendation-why', check.why));
       item.appendChild(el('p', 'audit-recommendation-fix', check.fix));
+
+      const steps = Array.isArray(check.steps) ? check.steps.filter(Boolean) : [];
+      if (steps.length) {
+        const list = el('ol', 'audit-recommendation-steps');
+        for (const step of steps) list.appendChild(el('li', null, step));
+        item.appendChild(list);
+      }
+
       item.appendChild(el('p', 'audit-recommendation-detail', check.detail));
       recommendationsList.appendChild(item);
     }

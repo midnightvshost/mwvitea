@@ -1090,3 +1090,10 @@ html.pm-lock{overflow:hidden;}
 
 /* Keep language labels on the system mono stack so extra Cyrillic/Latin-ext web fonts are not downloaded just for them. */
 .lang-menu button{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;}
+
+
+/* Optical alignment: center the wordmarks and nav labels on the logo mark. */
+#siteHeader .brand-word{
+  position:relative;
+  top:2px;
+}
